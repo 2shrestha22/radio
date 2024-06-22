@@ -46,10 +46,10 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => const Gutter(),
-              itemCount: radios.length,
+              itemCount: radioStations.length,
               padding: const EdgeInsets.all(16),
               itemBuilder: (context, index) {
-                final station = radios.elementAt(index);
+                final station = radioStations.elementAt(index);
                 return GestureDetector(
                   onTap: () async {
                     setState(() {
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                 : ShadCard(
                     title: Row(
                       children: [
-                        const _ImageWidget(),
+                        _ImageWidget(focusedStation!.logo),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -193,7 +193,9 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _ImageWidget extends StatelessWidget {
-  const _ImageWidget();
+  const _ImageWidget(this.url);
+
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +203,7 @@ class _ImageWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.hardEdge,
       child: Image.network(
-        'https://picsum.photos/200/200',
+        url,
         height: 70,
         width: 70,
       ),

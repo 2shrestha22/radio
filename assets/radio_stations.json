@@ -1,0 +1,20 @@
+[
+    {
+        "name": "उज्यालो रेडियो नेटवर्क",
+        "frequency": "90.0 MHz",
+        "url": "https://stream.zeno.fm/h527zwd11uquv",
+        "logo": "https://unncdn.prixacdn.net/static/frontend/img/logo.png"
+    },
+    {
+        "name": "Kantipur FM",
+        "frequency": "96.1 MHz",
+        "url": "https://radio-broadcast.ekantipur.com/stream",
+        "logo": "https://radio-jcss-cdn.ekantipur.com/images/kfm_logo.png"
+    },
+    {
+        "name": "भोरुकवा एफएम",
+        "frequency": "92.8 MHz",
+        "url": "https://live.itech.host:8379/streadm",
+        "logo": "https://www.bhorukawafm.org.np/assets/images/fav.png"
+    }
+]
