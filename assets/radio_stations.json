@@ -16,5 +16,11 @@
         "frequency": "92.8 MHz",
         "url": "https://live.itech.host:8379/stream",
         "logo": "https://www.bhorukawafm.org.np/assets/images/fav.png"
+    },
+    {
+        "name": "Sky FM",
+        "frequency": "106.6 MHz",
+        "url": "https://onlineradio.websoftitnepal.com/8002/stream",
+        "logo": "https://hamro.com/media/upload/images/radio/sky_fm.jpg"
     }
 ]
