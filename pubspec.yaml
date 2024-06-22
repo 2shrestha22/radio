@@ -41,6 +41,7 @@ dependencies:
   just_audio: ^0.9.38
   flutter_animate: ^4.5.0
   lucide_icons_flutter: ^1.1.1
+  extended_image: ^8.2.1
 
 
 dev_dependencies:

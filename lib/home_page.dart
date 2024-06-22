@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:just_audio/just_audio.dart';
@@ -27,14 +28,14 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    audioPlayer.playbackEventStream.listen(
-      (event) async {},
-      onError: (Object e, StackTrace st) {
-        log('player error: ${e.toString()}');
-        // setState(() => error = e);
-        // audioPlayer.stop();
-      },
-    );
+    // audioPlayer.playbackEventStream.listen(
+    //   (event) async {},
+    //   onError: (Object e, StackTrace st) {
+    //     log('player error: ${e.toString()}');
+    //     // setState(() => error = e);
+    //     // audioPlayer.stop();
+    //   },
+    // );
   }
 
   @override
@@ -67,7 +68,10 @@ class _HomePageState extends State<HomePage> {
                       });
                     }
                   },
-                  child: ShadCard(title: Text(station.name)),
+                  child: ShadCard(
+                    leading: _ImageWidget(station.logo),
+                    title: Text(station.name),
+                  ),
                 );
               },
             ),
@@ -87,7 +91,7 @@ class _HomePageState extends State<HomePage> {
             )
                 .animate(onComplete: (_) => setState(() => error = null))
                 .fadeIn()
-                .fadeOut(delay: const Duration(seconds: 5)),
+                .fadeOut(delay: const Duration(seconds: 3)),
           AnimatedSwitcher(
             duration: animationDuration,
             child: focusedStation == null
@@ -202,10 +206,12 @@ class _ImageWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.hardEdge,
-      child: Image.network(
+      child: ExtendedImage.network(
         url,
         height: 70,
         width: 70,
+        cacheHeight: 140,
+        cacheWidth: 140,
       ),
     );
   }
