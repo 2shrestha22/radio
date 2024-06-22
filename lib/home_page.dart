@@ -71,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                   child: ShadCard(
                     leading: _ImageWidget(station.logo),
                     title: Text(station.name),
+                    content: Text(station.frequency),
                   ),
                 );
               },
