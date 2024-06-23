@@ -151,7 +151,10 @@ class _HomePageState extends State<HomePage> {
                                   builder: (context, snapshot) {
                                     if (snapshot.hasData) {
                                       final metadata = snapshot.data!;
-                                      return Text(metadata.info?.title ?? '');
+                                      return SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Text(metadata.info?.title ?? ''),
+                                      );
                                     }
                                     return const Text('');
                                   },
