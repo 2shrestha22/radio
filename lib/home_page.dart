@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
@@ -25,17 +23,9 @@ class _HomePageState extends State<HomePage> {
   bool shouldResetUrl = false;
 
   @override
-  void initState() {
-    super.initState();
-
-    // audioPlayer.playbackEventStream.listen(
-    //   (event) async {},
-    //   onError: (Object e, StackTrace st) {
-    //     log('player error: ${e.toString()}');
-    //     // setState(() => error = e);
-    //     // audioPlayer.stop();
-    //   },
-    // );
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
   }
 
   @override
@@ -57,7 +47,6 @@ class _HomePageState extends State<HomePage> {
                       focusedStation = station;
                     });
                     try {
-                      await audioPlayer.stop();
                       await audioPlayer.setUrl(station.url);
                       await audioPlayer.play();
                       shouldResetUrl = false;
@@ -69,11 +58,25 @@ class _HomePageState extends State<HomePage> {
                     }
                   },
                   child: ShadCard(
-                    leading: _ImageWidget(station.logo),
-                    title: Text(station.name),
+                    padding: const EdgeInsets.all(12),
+                    trailing: _ImageWidget(station.logo),
+                    title: Text(
+                      station.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                     content: station.frequency != null
-                        ? Text('${station.frequency} MHz')
-                        : const Text('--'),
+                        ? Text('${station.frequency} MHz',
+                            style: const TextStyle(fontWeight: FontWeight.bold))
+                        : const Text(
+                            'Online Radio',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                    footer: Text(
+                      station.address ?? '--',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 );
               },
