@@ -5,6 +5,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
 import 'package:radio/radio_station.dart';
+import 'package:radio/utils/bitrate.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,6 +48,7 @@ class _HomePageState extends State<HomePage> {
                       focusedStation = station;
                     });
                     try {
+                      await audioPlayer.stop();
                       await audioPlayer.setUrl(station.url);
                       await audioPlayer.play();
                       shouldResetUrl = false;
@@ -103,9 +105,34 @@ class _HomePageState extends State<HomePage> {
             child: focusedStation == null
                 ? const SizedBox.shrink()
                 : ShadCard(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     title: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _ImageWidget(focusedStation!.logo),
+                        Column(
+                          children: [
+                            _ImageWidget(focusedStation!.logo),
+                            DefaultTextStyle(
+                              style: ShadTheme.of(context).textTheme.small,
+                              child: StreamBuilder(
+                                stream: audioPlayer.icyMetadataStream,
+                                builder: (context, snapshot) {
+                                  if (snapshot.hasData) {
+                                    final bitrate =
+                                        snapshot.data!.headers?.bitrate;
+
+                                    if (bitrate == null) {
+                                      return const Text('-- Kbps');
+                                    }
+                                    return Text(formatBitrate(bitrate));
+                                  }
+                                  return const Text('');
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,6 +143,19 @@ class _HomePageState extends State<HomePage> {
                                     .textTheme
                                     .titleMedium
                                     ?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              DefaultTextStyle(
+                                style: ShadTheme.of(context).textTheme.small,
+                                child: StreamBuilder(
+                                  stream: audioPlayer.icyMetadataStream,
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasData) {
+                                      final metadata = snapshot.data!;
+                                      return Text(metadata.info?.title ?? '');
+                                    }
+                                    return const Text('');
+                                  },
+                                ),
                               ),
                               SizedBox(
                                 height: 70,
@@ -137,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
