@@ -71,7 +71,9 @@ class _HomePageState extends State<HomePage> {
                   child: ShadCard(
                     leading: _ImageWidget(station.logo),
                     title: Text(station.name),
-                    content: Text(station.frequency),
+                    content: station.frequency != null
+                        ? Text('${station.frequency} MHz')
+                        : const Text('--'),
                   ),
                 );
               },
@@ -200,20 +202,28 @@ class _HomePageState extends State<HomePage> {
 class _ImageWidget extends StatelessWidget {
   const _ImageWidget(this.url);
 
-  final String url;
+  final String? url;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.hardEdge,
-      child: ExtendedImage.network(
-        url,
-        height: 70,
-        width: 70,
-        cacheHeight: 140,
-        cacheWidth: 140,
-      ),
+      child: url != null
+          ? ExtendedImage.network(
+              url!,
+              height: 70,
+              width: 70,
+              cacheHeight: 140,
+              cacheWidth: 140,
+            )
+          : ExtendedImage.asset(
+              'assets/images/radio-300.png',
+              height: 70,
+              width: 70,
+              cacheHeight: 140,
+              cacheWidth: 140,
+            ),
     );
   }
 }
