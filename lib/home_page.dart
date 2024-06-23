@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   RadioStation? focusedStation;
   Object? error;
   bool shouldResetUrl = false;
+  final textEditingController = TextEditingController();
 
   @override
   void dispose() {
@@ -33,32 +34,148 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Radio')),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.separated(
-              separatorBuilder: (context, index) => const Gutter(),
-              itemCount: radioStations.length,
-              padding: const EdgeInsets.all(16),
-              itemBuilder: (context, index) {
-                final station = radioStations.elementAt(index);
-                return GestureDetector(
-                  onTap: () async {
-                    setState(() {
-                      focusedStation = station;
-                    });
-                    try {
-                      await audioPlayer.stop();
-                      await audioPlayer.setUrl(station.url);
-                      await audioPlayer.play();
-                      shouldResetUrl = false;
-                    } catch (e) {
-                      setState(() {
-                        shouldResetUrl = true;
-                        error = e;
-                      });
-                    }
+      bottomNavigationBar: AnimatedSwitcher(
+        duration: animationDuration,
+        child: focusedStation == null
+            ? const SizedBox.shrink()
+            : ShadCard(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        _ImageWidget(focusedStation!.logo),
+                        DefaultTextStyle(
+                          style: ShadTheme.of(context).textTheme.small,
+                          child: StreamBuilder(
+                            stream: audioPlayer.icyMetadataStream,
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData) {
+                                final bitrate = snapshot.data!.headers?.bitrate;
+
+                                if (bitrate == null) {
+                                  return const Text('-- Kbps');
+                                }
+                                return Text(formatBitrate(bitrate));
+                              }
+                              return const Text('');
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            focusedStation!.name,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          DefaultTextStyle(
+                            style: ShadTheme.of(context).textTheme.small,
+                            child: StreamBuilder(
+                              stream: audioPlayer.icyMetadataStream,
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData) {
+                                  final metadata = snapshot.data!;
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Text(metadata.info?.title ?? ''),
+                                  );
+                                }
+                                return const Text('');
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 70,
+                            child: StreamBuilder<PlayerState>(
+                              stream: audioPlayer.playerStateStream,
+                              builder: (context, snapshot) {
+                                final loading = snapshot.data == null ||
+                                    snapshot.data?.processingState ==
+                                        ProcessingState.loading;
+
+                                return AnimatedSwitcher(
+                                  duration: animationDuration,
+                                  child: loading
+                                      ? const Loader()
+                                      : _buttonBar(snapshot),
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            floating: true,
+            flexibleSpace: Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 4, 8, 8),
+              child: ShadInput(
+                controller: textEditingController,
+                placeholder: const Text('Search'),
+                decoration: const ShadDecoration(
+                  secondaryFocusedBorder: ShadBorder.none,
+                  secondaryBorder: ShadBorder.none,
+                ),
+                suffix: ShadButton.ghost(
+                  width: 24,
+                  height: 24,
+                  foregroundColor: ShadTheme.of(context).colorScheme.border,
+                  padding: EdgeInsets.zero,
+                  decoration: const ShadDecoration(
+                    secondaryBorder: ShadBorder.none,
+                    secondaryFocusedBorder: ShadBorder.none,
+                  ),
+                  icon: const Icon(
+                    LucideIcons.x,
+                  ),
+                  onPressed: () {
+                    textEditingController.clear();
                   },
+                ),
+              ),
+            ),
+            backgroundColor: ShadTheme.of(context).colorScheme.card,
+            surfaceTintColor: Colors.transparent,
+          ),
+          SliverList.separated(
+            separatorBuilder: (context, index) => const Gutter(),
+            itemCount: radioStations.length,
+            itemBuilder: (context, index) {
+              final station = radioStations.elementAt(index);
+              return GestureDetector(
+                onTap: () async {
+                  setState(() {
+                    focusedStation = station;
+                  });
+                  try {
+                    await audioPlayer.stop();
+                    await audioPlayer.setUrl(station.url);
+                    await audioPlayer.play();
+                    shouldResetUrl = false;
+                  } catch (e) {
+                    setState(() {
+                      shouldResetUrl = true;
+                      error = e;
+                    });
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: ShadCard(
                     padding: const EdgeInsets.all(12),
                     trailing: _ImageWidget(station.logo),
@@ -80,9 +197,9 @@ class _HomePageState extends State<HomePage> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
           if (error != null)
             ColoredBox(
@@ -100,91 +217,6 @@ class _HomePageState extends State<HomePage> {
                 .animate(onComplete: (_) => setState(() => error = null))
                 .fadeIn()
                 .fadeOut(delay: const Duration(seconds: 3)),
-          AnimatedSwitcher(
-            duration: animationDuration,
-            child: focusedStation == null
-                ? const SizedBox.shrink()
-                : ShadCard(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Column(
-                          children: [
-                            _ImageWidget(focusedStation!.logo),
-                            DefaultTextStyle(
-                              style: ShadTheme.of(context).textTheme.small,
-                              child: StreamBuilder(
-                                stream: audioPlayer.icyMetadataStream,
-                                builder: (context, snapshot) {
-                                  if (snapshot.hasData) {
-                                    final bitrate =
-                                        snapshot.data!.headers?.bitrate;
-
-                                    if (bitrate == null) {
-                                      return const Text('-- Kbps');
-                                    }
-                                    return Text(formatBitrate(bitrate));
-                                  }
-                                  return const Text('');
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                focusedStation!.name,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium
-                                    ?.copyWith(fontWeight: FontWeight.bold),
-                              ),
-                              DefaultTextStyle(
-                                style: ShadTheme.of(context).textTheme.small,
-                                child: StreamBuilder(
-                                  stream: audioPlayer.icyMetadataStream,
-                                  builder: (context, snapshot) {
-                                    if (snapshot.hasData) {
-                                      final metadata = snapshot.data!;
-                                      return SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                        child: Text(metadata.info?.title ?? ''),
-                                      );
-                                    }
-                                    return const Text('');
-                                  },
-                                ),
-                              ),
-                              SizedBox(
-                                height: 70,
-                                child: StreamBuilder<PlayerState>(
-                                  stream: audioPlayer.playerStateStream,
-                                  builder: (context, snapshot) {
-                                    final loading = snapshot.data == null ||
-                                        snapshot.data?.processingState ==
-                                            ProcessingState.loading;
-
-                                    return AnimatedSwitcher(
-                                      duration: animationDuration,
-                                      child: loading
-                                          ? const Loader()
-                                          : _buttonBar(snapshot),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-          ),
         ],
       ),
     );

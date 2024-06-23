@@ -4,7 +4,7 @@
         "name": "Heart FM\t",
         "url": "https://live.itech.host:9592/live",
         "freq": 87.6,
-        "logo": null,
+        "logo": "https://www.heartfmdharan.com.np/assets/images/heartfm.png",
         "addr": "Dharan-15 , Sunsari",
         "province": 1
     },
@@ -542,7 +542,7 @@
     {
         "id": "AXCdtWN4d8JoM7BqQ6LWf",
         "name": "Sky FM",
-        "url": "https://onlineradio.websoftitnepal.com/8022/stream",
+        "url": "https://onlineradio.websoftitnepal.com/8002/stream",
         "freq": 106.6,
         "logo": "https://hamro.com/media/upload/images/radio/sky_fm.jpg",
         "addr": "Biratnagar-15, Morang",
