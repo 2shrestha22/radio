@@ -1,38 +1,53 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:just_audio/just_audio.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 part 'radio.g.dart';
 
 @riverpod
 class Radio extends _$Radio {
-  @override
-  RadioState build() {
-    _listenUpdates();
-    return const RadioState();
-  }
+  StreamSubscription<PlayerState>? playerStateSubscription;
+  StreamSubscription<IcyMetadata?>? icyMetadataSubscription;
 
   late final _audioPlayer = AudioPlayer();
 
   // Internal variables
   /// After error setting url this field is true. Then when trying to play
-  /// radio again we need to reset the url to foucused station.
+  /// radio again we need to reset the url to focused station.
   bool _needUrlReset = false;
+
+  @override
+  RadioState build() {
+    ref.onDispose(() {
+      playerStateSubscription?.cancel();
+      icyMetadataSubscription?.cancel();
+    });
+
+    _listenUpdates();
+    return const RadioState();
+  }
 
   /// Focus a station and start playing.
   Future<void> setFocusedStation(RadioStation station) async {
+    if (state.station == station && !_needUrlReset) return;
+
     state = state.copyWith(station: station);
 
     try {
       await _audioPlayer.stop();
       await _audioPlayer.setUrl(station.url);
-      await _audioPlayer.play();
+      unawaited(_audioPlayer.play());
+      play();
       _needUrlReset = false;
     } on PlayerException catch (e) {
       _needUrlReset = true;
       state = state.copyWith(error: e);
+    } on PlayerInterruptedException catch (e) {
+      log(e.toString());
     }
   }
 
@@ -42,7 +57,7 @@ class Radio extends _$Radio {
       // resetting stream url.
       await setFocusedStation(state.station!);
     } else {
-      await _audioPlayer.play();
+      unawaited(_audioPlayer.play());
     }
   }
 
@@ -54,7 +69,7 @@ class Radio extends _$Radio {
   Future<void> stop() => _audioPlayer.stop();
 
   void _listenUpdates() {
-    _audioPlayer.playerStateStream.listen(
+    playerStateSubscription = _audioPlayer.playerStateStream.listen(
       (event) {
         state = state.copyWith(
           processingState: event.processingState,
@@ -63,7 +78,7 @@ class Radio extends _$Radio {
       },
     );
 
-    _audioPlayer.icyMetadataStream.listen(
+    icyMetadataSubscription = _audioPlayer.icyMetadataStream.listen(
       (event) {
         state = state.copyWith(
           bitRate: event?.headers?.bitrate,
