@@ -51,7 +51,11 @@ class RadioControlPanel extends ConsumerWidget {
                   child: Builder(
                     builder: (context) {
                       if (radioState.isPlaying && radioState.title != null) {
-                        return Text(radioState.title!);
+                        return Text(
+                          radioState.title!,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        );
                       }
                       return const Text('');
                     },
