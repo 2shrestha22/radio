@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/provider/stations.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 import 'package:radio/widgets/station_list.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final textEditingController = TextEditingController();
+class _HomePageState extends ConsumerState<HomePage> {
+  late final TextEditingController textEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    textEditingController = TextEditingController()
+      ..addListener(() {
+        ref.read(stationsProvider.notifier).search(textEditingController.text);
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +58,8 @@ class _HomePageState extends State<HomePage> {
                     secondaryBorder: ShadBorder.none,
                     secondaryFocusedBorder: ShadBorder.none,
                   ),
-                  icon: const Icon(
-                    LucideIcons.x,
-                  ),
-                  onPressed: () {
-                    textEditingController.clear();
-                  },
+                  icon: const Icon(LucideIcons.x),
+                  onPressed: () => textEditingController.clear(),
                 ),
               ),
             ),

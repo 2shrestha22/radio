@@ -62,6 +62,7 @@ class RadioStation {
 }
 
 List<RadioStation> radioStations = [];
+
 Future<void> loadStations() async {
   final data = await rootBundle.loadString("assets/radio_stations.json");
   radioStations =

@@ -46,6 +46,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
   freezed_annotation: ^2.4.1
+  fuzzy: ^0.5.1
 
 
 dev_dependencies:
