@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -39,7 +40,15 @@ class Radio extends _$Radio {
 
     try {
       await _audioPlayer.stop();
-      await _audioPlayer.setUrl(station.url);
+      await _audioPlayer.setAudioSource(
+        AudioSource.uri(
+          Uri.parse(station.url),
+          tag: MediaItem(
+            id: station.id,
+            title: station.name,
+          ),
+        ),
+      );
       unawaited(_audioPlayer.play());
       play();
       _needUrlReset = false;

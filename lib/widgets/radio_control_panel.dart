@@ -4,6 +4,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/widgets/station_logo.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
@@ -70,10 +71,10 @@ class RadioControlPanel extends ConsumerWidget {
                         : ButtonBar(
                             alignment: MainAxisAlignment.center,
                             children: [
-                              const ShadButton.outline(
-                                size: ShadButtonSize.icon,
-                                icon: Icon(LucideIcons.skipBack),
-                              ),
+                              // const ShadButton.outline(
+                              //   size: ShadButtonSize.icon,
+                              //   icon: Icon(LucideIcons.skipBack),
+                              // ),
                               Builder(
                                 builder: (context) {
                                   return ShadButton.outline(
@@ -104,10 +105,10 @@ class RadioControlPanel extends ConsumerWidget {
                                   );
                                 },
                               ),
-                              const ShadButton.outline(
-                                size: ShadButtonSize.icon,
-                                icon: Icon(LucideIcons.skipForward),
-                              ),
+                              // const ShadButton.outline(
+                              //   size: ShadButtonSize.icon,
+                              //   icon: Icon(LucideIcons.skipForward),
+                              // ),
                             ],
                           ),
                   ),

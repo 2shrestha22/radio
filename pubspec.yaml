@@ -39,6 +39,7 @@ dependencies:
   go_router: ^14.2.0
   flutter_gutter: ^1.0.2
   just_audio: ^0.9.38
+  just_audio_background: ^0.0.1-beta.12
   flutter_animate: ^4.5.0
   lucide_icons_flutter: ^1.1.1
   extended_image: ^8.2.1
