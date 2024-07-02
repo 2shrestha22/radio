@@ -6,7 +6,7 @@ part 'stations.g.dart';
 
 @riverpod
 class Stations extends _$Stations {
-  final fuzzy = Fuzzy<RadioStation>(
+  final _fuzzy = Fuzzy<RadioStation>(
     radioStations,
     options: FuzzyOptions(
       keys: [
@@ -37,6 +37,6 @@ class Stations extends _$Stations {
   void search(String pattern) {
     final trimmed = pattern.trim();
     if (trimmed.isEmpty) state = radioStations;
-    state = fuzzy.search(trimmed).map((e) => e.item).toList();
+    state = _fuzzy.search(trimmed).map((e) => e.item).toList();
   }
 }

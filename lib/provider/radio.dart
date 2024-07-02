@@ -10,8 +10,8 @@ part 'radio.g.dart';
 
 @riverpod
 class Radio extends _$Radio {
-  StreamSubscription<PlayerState>? playerStateSubscription;
-  StreamSubscription<IcyMetadata?>? icyMetadataSubscription;
+  StreamSubscription<PlayerState>? _playerStateSubscription;
+  StreamSubscription<IcyMetadata?>? _icyMetadataSubscription;
 
   late final _audioPlayer = AudioPlayer();
 
@@ -23,8 +23,8 @@ class Radio extends _$Radio {
   @override
   RadioState build() {
     ref.onDispose(() {
-      playerStateSubscription?.cancel();
-      icyMetadataSubscription?.cancel();
+      _playerStateSubscription?.cancel();
+      _icyMetadataSubscription?.cancel();
     });
 
     _listenUpdates();
@@ -69,7 +69,7 @@ class Radio extends _$Radio {
   Future<void> stop() => _audioPlayer.stop();
 
   void _listenUpdates() {
-    playerStateSubscription = _audioPlayer.playerStateStream.listen(
+    _playerStateSubscription = _audioPlayer.playerStateStream.listen(
       (event) {
         state = state.copyWith(
           processingState: event.processingState,
@@ -78,7 +78,7 @@ class Radio extends _$Radio {
       },
     );
 
-    icyMetadataSubscription = _audioPlayer.icyMetadataStream.listen(
+    _icyMetadataSubscription = _audioPlayer.icyMetadataStream.listen(
       (event) {
         state = state.copyWith(
           bitRate: event?.headers?.bitrate,
