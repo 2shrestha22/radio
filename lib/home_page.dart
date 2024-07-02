@@ -15,6 +15,7 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> {
   late final TextEditingController textEditingController;
+  final focusNode = FocusNode();
 
   @override
   void initState() {
@@ -43,6 +44,7 @@ class _HomePageState extends ConsumerState<HomePage> {
             flexibleSpace: Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 4, 8, 8),
               child: ShadInput(
+                focusNode: focusNode,
                 controller: textEditingController,
                 placeholder: const Text('Search'),
                 decoration: const ShadDecoration(
@@ -82,6 +84,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               return StationList(
                 onTap: (station) {
                   ShadToaster.of(context).hide();
+                  focusNode.unfocus();
                   return ref
                       .read(radioProvider.notifier)
                       .setFocusedStation(station);
