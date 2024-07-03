@@ -4,7 +4,6 @@ import 'package:just_audio/just_audio.dart';
 import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
 import 'package:radio/provider/radio.dart';
-import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/widgets/station_logo.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
