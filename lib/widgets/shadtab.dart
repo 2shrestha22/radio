@@ -13,7 +13,7 @@ class ShadcnTabBar extends StatefulWidget {
   });
 
   @override
-  _ShadcnTabBarState createState() => _ShadcnTabBarState();
+  State<ShadcnTabBar> createState() => _ShadcnTabBarState();
 }
 
 class _ShadcnTabBarState extends State<ShadcnTabBar> {

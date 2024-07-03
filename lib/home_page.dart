@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
@@ -46,11 +47,20 @@ class _HomePageState extends ConsumerState<HomePage> {
           slivers: [
             SliverAppBar(
               floating: true,
-              bottom: PreferredSize(
-                  preferredSize: const Size(double.infinity, 48),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 4, 8, 8),
-                    child: ShadInput(
+              toolbarHeight: 112,
+              flexibleSpace: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    ShadcnTabBar(
+                      tabs: const ['Favourite', 'Browse'],
+                      onTabChanged: (index) {
+                        print('Selected tab: $index');
+                        // Handle tab change
+                      },
+                    ),
+                    const GutterTiny(),
+                    ShadInput(
                       focusNode: focusNode,
                       controller: textEditingController,
                       placeholder: const Text('Search'),
@@ -72,13 +82,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                         onPressed: () => textEditingController.clear(),
                       ),
                     ),
-                  )),
-              flexibleSpace: ShadcnTabBar(
-                tabs: const ['Tab 1', 'Tab 2', 'Tab 3'],
-                onTabChanged: (index) {
-                  print('Selected tab: $index');
-                  // Handle tab change
-                },
+                  ],
+                ),
               ),
               backgroundColor: ShadTheme.of(context).colorScheme.card,
               surfaceTintColor: Colors.transparent,
