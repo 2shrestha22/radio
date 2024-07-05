@@ -7,7 +7,7 @@ part 'stations.g.dart';
 @riverpod
 class Stations extends _$Stations {
   final _fuzzy = Fuzzy<RadioStation>(
-    radioStations,
+    allRadioStations,
     options: FuzzyOptions(
       keys: [
         WeightedKey(
@@ -31,12 +31,12 @@ class Stations extends _$Stations {
 
   @override
   List<RadioStation> build() {
-    return radioStations;
+    return allRadioStations;
   }
 
   void search(String pattern) {
     final trimmed = pattern.trim();
-    if (trimmed.isEmpty) state = radioStations;
+    if (trimmed.isEmpty) state = allRadioStations;
     state = _fuzzy.search(trimmed).map((e) => e.item).toList();
   }
 }

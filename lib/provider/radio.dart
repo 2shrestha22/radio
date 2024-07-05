@@ -39,18 +39,21 @@ class Radio extends _$Radio {
     state = state.copyWith(station: station);
 
     try {
-      await _audioPlayer.stop();
+      if (_audioPlayer.playing) {
+        await _audioPlayer.stop();
+      }
       await _audioPlayer.setAudioSource(
         AudioSource.uri(
           Uri.parse(station.url),
           tag: MediaItem(
             id: station.id,
             title: station.name,
+            duration: Duration.zero,
+            artUri: Uri.tryParse(station.logo ?? ''),
           ),
         ),
       );
       unawaited(_audioPlayer.play());
-      play();
       _needUrlReset = false;
     } on PlayerException catch (e) {
       _needUrlReset = true;

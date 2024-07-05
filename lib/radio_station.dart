@@ -61,10 +61,10 @@ class RadioStation {
       RadioStation.fromMap(json.decode(source));
 }
 
-List<RadioStation> radioStations = [];
+List<RadioStation> allRadioStations = [];
 
 Future<void> loadStations() async {
   final data = await rootBundle.loadString("assets/radio_stations.json");
-  radioStations =
+  allRadioStations =
       (jsonDecode(data) as List).map((e) => RadioStation.fromMap(e)).toList();
 }

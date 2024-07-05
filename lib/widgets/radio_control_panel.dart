@@ -77,7 +77,7 @@ class RadioControlPanel extends ConsumerWidget {
                               Builder(
                                 builder: (context) {
                                   return ShadButton.outline(
-                                    size: ShadButtonSize.icon,
+                                    size: ShadButtonSize.regular,
                                     icon: AnimatedSwitcher(
                                       duration: animationDuration,
                                       child: switch (radioState.isPlaying) {
