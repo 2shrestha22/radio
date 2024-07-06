@@ -23,70 +23,62 @@ class StationListView extends StatelessWidget {
         child: Icon(LucideIcons.dot),
       );
     }
-    return SliverList.separated(
-      separatorBuilder: (context, index) => const Divider(),
-      itemCount: stations.length,
-      itemBuilder: (context, index) {
-        final theme = Theme.of(context);
-        final station = stations.elementAt(index);
-        return Container(
-          padding: const EdgeInsets.all(4),
-          // decoration: BoxDecoration(
-          //   color: theme.cardTheme.backgroundColor ?? theme.colorScheme.card,
-          //   borderRadius: theme.cardTheme.radius ?? theme.radius,
-          //   border: theme.cardTheme.border ??
-          //       Border.all(color: theme.colorScheme.border),
-          //   boxShadow: theme.cardTheme.shadows,
-          // ),
-          child: Row(
-            children: [
-              StationLogo(station.logo),
-              const GutterTiny(),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      station.name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.bodyLarge,
+    return SliverPadding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      sliver: SliverList.separated(
+        separatorBuilder: (context, index) => const Divider(),
+        itemCount: stations.length,
+        itemBuilder: (context, index) {
+          final theme = Theme.of(context);
+          final station = stations.elementAt(index);
+          return InkWell(
+            onTap: () => onTap(station),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                children: [
+                  StationLogo(station.logo),
+                  const GutterTiny(),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          station.name,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.bodyLarge,
+                        ),
+                        Text(
+                          station.getFreqString(),
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          station.address ?? '--',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
                     ),
-                    Text(
-                      station.getFreqString(),
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      station.address ?? '--',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ),
+                  ),
+                  const GutterTiny(),
+                  IconButton(
+                    onPressed: () => onFavTap(station),
+                    icon: switch (station.fav) {
+                      true => const Icon(
+                          Icons.favorite,
+                          key: ValueKey('true'),
+                          color: Colors.red,
+                        ),
+                      false => const Icon(Icons.favorite_outline),
+                    },
+                  ),
+                ],
               ),
-              const GutterTiny(),
-              IconButton(
-                onPressed: () => onFavTap(station),
-                icon: switch (station.fav) {
-                  true => const Icon(
-                      Icons.favorite,
-                      key: ValueKey('true'),
-                      color: Colors.red,
-                    ),
-                  false => const Icon(Icons.favorite_outline),
-                },
-              ),
-              IconButton(
-                onPressed: () => onTap(station),
-                icon: const Icon(
-                  LucideIcons.play,
-                  key: ValueKey('false'),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+            ),
+          );
+        },
+      ),
     );
   }
 }

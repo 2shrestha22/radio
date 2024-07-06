@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/const.dart';
@@ -170,7 +169,7 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.only(top: 8),
       child: TextField(
         focusNode: focusNode,
         controller: textEditingController,
