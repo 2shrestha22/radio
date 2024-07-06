@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/widgets/station_logo.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
 
 class RadioControlPanel extends ConsumerWidget {
   const RadioControlPanel({super.key});
@@ -14,16 +14,17 @@ class RadioControlPanel extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final radioState = ref.watch(radioProvider);
-    return ShadCard(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      title: Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               StationLogo(radioState.station!.logo),
               DefaultTextStyle(
-                style: ShadTheme.of(context).textTheme.small,
+                style: Theme.of(context).textTheme.bodySmall!,
                 child: Builder(
                   builder: (context) {
                     if (radioState.isPlaying && radioState.bitRate != null) {
@@ -37,6 +38,7 @@ class RadioControlPanel extends ConsumerWidget {
           ),
           Expanded(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
@@ -47,7 +49,7 @@ class RadioControlPanel extends ConsumerWidget {
                       ?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 DefaultTextStyle(
-                  style: ShadTheme.of(context).textTheme.small,
+                  style: Theme.of(context).textTheme.bodySmall!,
                   child: Builder(
                     builder: (context) {
                       if (radioState.isPlaying && radioState.title != null) {
@@ -76,8 +78,7 @@ class RadioControlPanel extends ConsumerWidget {
                               // ),
                               Builder(
                                 builder: (context) {
-                                  return ShadButton.outline(
-                                    size: ShadButtonSize.regular,
+                                  return IconButton(
                                     icon: AnimatedSwitcher(
                                       duration: animationDuration,
                                       child: switch (radioState.isPlaying) {

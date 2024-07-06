@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:radio/provider/shared_pref.dart';
+import 'package:radio/shared_pref.dart';
 import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

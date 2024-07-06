@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/radio_station.dart';
 import 'package:radio/widgets/station_logo.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
 
 class StationListView extends StatelessWidget {
   const StationListView({
@@ -24,20 +24,20 @@ class StationListView extends StatelessWidget {
       );
     }
     return SliverList.separated(
-      separatorBuilder: (context, index) => const Gutter(),
+      separatorBuilder: (context, index) => const Divider(),
       itemCount: stations.length,
       itemBuilder: (context, index) {
-        final theme = ShadTheme.of(context);
+        final theme = Theme.of(context);
         final station = stations.elementAt(index);
         return Container(
           padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: theme.cardTheme.backgroundColor ?? theme.colorScheme.card,
-            borderRadius: theme.cardTheme.radius ?? theme.radius,
-            border: theme.cardTheme.border ??
-                Border.all(color: theme.colorScheme.border),
-            boxShadow: theme.cardTheme.shadows,
-          ),
+          // decoration: BoxDecoration(
+          //   color: theme.cardTheme.backgroundColor ?? theme.colorScheme.card,
+          //   borderRadius: theme.cardTheme.radius ?? theme.radius,
+          //   border: theme.cardTheme.border ??
+          //       Border.all(color: theme.colorScheme.border),
+          //   boxShadow: theme.cardTheme.shadows,
+          // ),
           child: Row(
             children: [
               StationLogo(station.logo),
@@ -50,7 +50,7 @@ class StationListView extends StatelessWidget {
                       station.name,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.large,
+                      style: theme.textTheme.bodyLarge,
                     ),
                     Text(
                       station.getFreqString(),
@@ -65,8 +65,7 @@ class StationListView extends StatelessWidget {
                 ),
               ),
               const GutterTiny(),
-              ShadButton.secondary(
-                applyIconColorFilter: false,
+              IconButton(
                 onPressed: () => onFavTap(station),
                 icon: switch (station.fav) {
                   true => const Icon(
@@ -77,7 +76,7 @@ class StationListView extends StatelessWidget {
                   false => const Icon(Icons.favorite_outline),
                 },
               ),
-              ShadButton.secondary(
+              IconButton(
                 onPressed: () => onTap(station),
                 icon: const Icon(
                   LucideIcons.play,

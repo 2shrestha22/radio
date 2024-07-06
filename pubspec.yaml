@@ -35,7 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  shadcn_ui: ^0.6.1
+  # shadcn_ui: ^0.6.1
   go_router: ^14.2.0
   flutter_gutter: ^1.0.2
   just_audio: ^0.9.38
@@ -49,6 +49,7 @@ dependencies:
   fuzzy: ^0.5.1
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
+  google_fonts: ^6.2.1
 
 
 dev_dependencies:

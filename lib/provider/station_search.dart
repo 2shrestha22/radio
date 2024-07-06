@@ -1,14 +1,13 @@
 import 'package:fuzzy/fuzzy.dart';
+import 'package:radio/provider/search_input.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'search_stations.g.dart';
+part 'station_search.g.dart';
 
 @riverpod
-class SearchStations extends _$SearchStations {
-  var _searchText = '';
-
+class StationSearch extends _$StationSearch {
   final _fuzzyOptions = FuzzyOptions<RadioStation>(
     keys: [
       WeightedKey(
@@ -31,14 +30,11 @@ class SearchStations extends _$SearchStations {
 
   @override
   List<RadioStation> build() {
+    final searchInput = ref.watch(searchInputProvider);
+
     return Fuzzy<RadioStation>(
       ref.watch(stationsProvider),
       options: _fuzzyOptions,
-    ).search(_searchText).map((e) => e.item).toList();
-  }
-
-  void search(String pattern) {
-    _searchText = pattern.trim();
-    ref.invalidateSelf();
+    ).search(searchInput).map((e) => e.item).toList();
   }
 }
