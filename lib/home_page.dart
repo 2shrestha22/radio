@@ -72,7 +72,6 @@ class _HomePageState extends ConsumerState<HomePage> {
                   value: 1,
                   text: const Text('Favorite'),
                   content: CustomScrollView(
-                    shrinkWrap: true,
                     slivers: [
                       Consumer(
                         builder: (context, ref, child) {
