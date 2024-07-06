@@ -44,12 +44,12 @@ class Radio extends _$Radio {
       }
       await _audioPlayer.setAudioSource(
         AudioSource.uri(
-          Uri.parse(station.url),
+          Uri.parse(station.streamUrl),
           tag: MediaItem(
             id: station.id,
             title: station.name,
             duration: Duration.zero,
-            artUri: Uri.tryParse(station.logo ?? ''),
+            artUri: Uri.tryParse(station.logoPath ?? ''),
           ),
         ),
       );

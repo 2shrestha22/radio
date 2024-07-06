@@ -2,18 +2,18 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 class StationLogo extends StatelessWidget {
-  const StationLogo(this.url, {super.key});
+  const StationLogo(this.path, {super.key});
 
-  final String? url;
+  final String? path;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.hardEdge,
-      child: url != null
-          ? ExtendedImage.network(
-              url!,
+      child: path != null
+          ? ExtendedImage.asset(
+              path!,
               height: 70,
               width: 70,
               cacheHeight: 140,

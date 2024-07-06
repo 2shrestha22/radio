@@ -22,7 +22,7 @@ class RadioControlPanel extends ConsumerWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              StationLogo(radioState.station!.logo),
+              StationLogo(radioState.station!.logoPath),
               DefaultTextStyle(
                 style: Theme.of(context).textTheme.bodySmall!,
                 child: Builder(

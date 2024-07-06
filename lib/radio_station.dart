@@ -14,13 +14,14 @@ class RadioStation with _$RadioStation {
   const factory RadioStation({
     required String id,
     required String name,
-    @JsonKey(name: 'freq') required double? frequency,
-    @JsonKey(name: 'addr') required String? address,
-    required String url,
-    required String? logo,
-    required int? province,
+    required String streamUrl,
+    required String? frequency,
+    required String? frequencyType,
+    required String? address,
     @Default(false) bool fav,
   }) = _RadioStation;
+
+  String? get logoPath => 'assets/logo/$id';
 
   factory RadioStation.fromJson(Map<String, dynamic> json) =>
       _$RadioStationFromJson(json);
@@ -32,7 +33,7 @@ class RadioStation with _$RadioStation {
 List<RadioStation> allRadioStations = [];
 
 Future<void> loadStations() async {
-  final data = await rootBundle.loadString("assets/radio_stations.json");
+  final data = await rootBundle.loadString("assets/radio_list.json");
   allRadioStations =
       (jsonDecode(data) as List).map((e) => RadioStation.fromJson(e)).toList();
 }

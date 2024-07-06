@@ -10,11 +10,10 @@ _$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
     _$RadioStationImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      frequency: (json['freq'] as num?)?.toDouble(),
-      address: json['addr'] as String?,
-      url: json['url'] as String,
-      logo: json['logo'] as String?,
-      province: (json['province'] as num?)?.toInt(),
+      streamUrl: json['streamUrl'] as String,
+      frequency: json['frequency'] as String?,
+      frequencyType: json['frequencyType'] as String?,
+      address: json['address'] as String?,
       fav: json['fav'] as bool? ?? false,
     );
 
@@ -22,10 +21,9 @@ Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'freq': instance.frequency,
-      'addr': instance.address,
-      'url': instance.url,
-      'logo': instance.logo,
-      'province': instance.province,
+      'streamUrl': instance.streamUrl,
+      'frequency': instance.frequency,
+      'frequencyType': instance.frequencyType,
+      'address': instance.address,
       'fav': instance.fav,
     };

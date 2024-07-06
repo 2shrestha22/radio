@@ -6,7 +6,7 @@ part of 'radio.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$radioHash() => r'53f3974c557ebcb41bee5911c56bfb073954c7ee';
+String _$radioHash() => r'83f8d6a9e5484a1a84dc52987a4bc5b7def3c411';
 
 /// See also [Radio].
 @ProviderFor(Radio)
