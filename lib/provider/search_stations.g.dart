@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorite_stations.dart';
+part of 'search_stations.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$favoriteStationsHash() => r'28cd684ad065ce7b567e1dafba57093707af1724';
+String _$searchStationsHash() => r'56bc414c78362a4d4802584edc592e763c519cf5';
 
-/// See also [FavoriteStations].
-@ProviderFor(FavoriteStations)
-final favoriteStationsProvider =
-    AutoDisposeNotifierProvider<FavoriteStations, List<RadioStation>>.internal(
-  FavoriteStations.new,
-  name: r'favoriteStationsProvider',
+/// See also [SearchStations].
+@ProviderFor(SearchStations)
+final searchStationsProvider =
+    AutoDisposeNotifierProvider<SearchStations, List<RadioStation>>.internal(
+  SearchStations.new,
+  name: r'searchStationsProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$favoriteStationsHash,
+      : _$searchStationsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$FavoriteStations = AutoDisposeNotifier<List<RadioStation>>;
+typedef _$SearchStations = AutoDisposeNotifier<List<RadioStation>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

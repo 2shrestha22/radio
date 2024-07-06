@@ -1,4 +1,6 @@
-import 'package:fuzzy/fuzzy.dart';
+import 'dart:async';
+
+import 'package:radio/provider/shared_pref.dart';
 import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -6,37 +8,29 @@ part 'stations.g.dart';
 
 @riverpod
 class Stations extends _$Stations {
-  final _fuzzy = Fuzzy<RadioStation>(
-    allRadioStations,
-    options: FuzzyOptions(
-      keys: [
-        WeightedKey(
-          name: 'name',
-          getter: (obj) => obj.name,
-          weight: 0.6,
-        ),
-        WeightedKey(
-          name: 'frequency',
-          getter: (obj) => obj.frequency?.toString() ?? '',
-          weight: 0.3,
-        ),
-        WeightedKey(
-          name: 'address',
-          getter: (obj) => obj.address ?? '',
-          weight: 0.1,
-        ),
-      ],
-    ),
-  );
-
   @override
   List<RadioStation> build() {
-    return allRadioStations;
+    final favIds = SharedPref.fav;
+    return [
+      for (final station in allRadioStations)
+        if (favIds.contains(station.id))
+          station.copyWith(fav: true)
+        else
+          station
+    ];
   }
 
-  void search(String pattern) {
-    final trimmed = pattern.trim();
-    if (trimmed.isEmpty) state = allRadioStations;
-    state = _fuzzy.search(trimmed).map((e) => e.item).toList();
+  /// toggle favorite
+  Future<void> toggleFav(String id) async {
+    // update state
+    state = [
+      for (final station in state)
+        if (station.id == id) station.copyWith(fav: !station.fav) else station,
+    ];
+
+    // update saved favs
+    final favStationIds =
+        state.where((element) => element.fav).map((e) => e.id);
+    await SharedPref.updateFavorite(favStationIds.toList());
   }
 }

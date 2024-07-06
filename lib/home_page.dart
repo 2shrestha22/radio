@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:radio/provider/favorite_stations.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/provider/search_stations.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 import 'package:radio/widgets/station_list_view.dart';
@@ -24,7 +25,9 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.initState();
     textEditingController = TextEditingController()
       ..addListener(() {
-        ref.read(stationsProvider.notifier).search(textEditingController.text);
+        ref
+            .read(searchStationsProvider.notifier)
+            .search(textEditingController.text);
       });
   }
 
@@ -82,7 +85,39 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   .read(radioProvider.notifier)
                                   .setFocusedStation(station);
                             },
-                            onFavTap: () {},
+                            onFavTap: (station) async {
+                              final shouldRemove = await showShadDialog(
+                                context: context,
+                                builder: (context) => ShadDialog.alert(
+                                  title: Text(
+                                      'Remove ${station.name} from favorite?'),
+                                  description: Padding(
+                                    padding: const EdgeInsets.only(bottom: 8),
+                                    child: Text(
+                                      '${station.name} will be removed from your favorite list. You can add it again later from all station list.',
+                                    ),
+                                  ),
+                                  actions: [
+                                    ShadButton.outline(
+                                      text: const Text('Cancel'),
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(false),
+                                    ),
+                                    ShadButton(
+                                      text: const Text('Remove'),
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(true),
+                                    ),
+                                  ],
+                                ),
+                              );
+
+                              if (shouldRemove) {
+                                ref
+                                    .read(stationsProvider.notifier)
+                                    .toggleFav(station.id);
+                              }
+                            },
                           );
                         },
                       ),
@@ -123,7 +158,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       Consumer(
                         builder: (context, ref, child) {
                           return StationListView(
-                            stations: ref.watch(stationsProvider),
+                            stations: ref.watch(searchStationsProvider),
                             onTap: (station) async {
                               ShadToaster.of(context).hide();
                               focusNode.unfocus();
@@ -131,7 +166,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   .read(radioProvider.notifier)
                                   .setFocusedStation(station);
                             },
-                            onFavTap: () {},
+                            onFavTap: (station) {
+                              ref
+                                  .read(stationsProvider.notifier)
+                                  .toggleFav(station.id);
+                            },
                           );
                         },
                       ),

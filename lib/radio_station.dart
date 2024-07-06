@@ -19,6 +19,7 @@ class RadioStation with _$RadioStation {
     required String url,
     required String? logo,
     required int? province,
+    @Default(false) bool fav,
   }) = _RadioStation;
 
   factory RadioStation.fromJson(Map<String, dynamic> json) =>

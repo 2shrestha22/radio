@@ -13,7 +13,7 @@ class StationListView extends StatelessWidget {
   });
 
   final void Function(RadioStation station) onTap;
-  final VoidCallback onFavTap;
+  final void Function(RadioStation station) onFavTap;
   final List<RadioStation> stations;
 
   @override
@@ -66,12 +66,23 @@ class StationListView extends StatelessWidget {
               ),
               const GutterTiny(),
               ShadButton.secondary(
-                onPressed: onFavTap,
-                icon: const Icon(LucideIcons.heart),
+                applyIconColorFilter: false,
+                onPressed: () => onFavTap(station),
+                icon: switch (station.fav) {
+                  true => const Icon(
+                      Icons.favorite,
+                      key: ValueKey('true'),
+                      color: Colors.red,
+                    ),
+                  false => const Icon(Icons.favorite_outline),
+                },
               ),
               ShadButton.secondary(
                 onPressed: () => onTap(station),
-                icon: const Icon(LucideIcons.play),
+                icon: const Icon(
+                  LucideIcons.play,
+                  key: ValueKey('false'),
+                ),
               ),
             ],
           ),

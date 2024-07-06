@@ -15,6 +15,7 @@ _$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String,
       logo: json['logo'] as String?,
       province: (json['province'] as num?)?.toInt(),
+      fav: json['fav'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
       'url': instance.url,
       'logo': instance.logo,
       'province': instance.province,
+      'fav': instance.fav,
     };

@@ -13,11 +13,15 @@ class SharedPref {
     _sharedPref = await SharedPreferences.getInstance();
   }
 
-  static Future<void> addToFavorite(String id) async {
-    _sharedPref.setStringList(_favKey, fav..add(id));
-  }
+  // static Future<void> addToFavorite(String id) async {
+  //   _sharedPref.setStringList(_favKey, fav..add(id));
+  // }
 
-  static Future<void> removeFromFavorite(String id) async {
-    _sharedPref.setStringList(_favKey, fav..remove(id));
+  // static Future<void> removeFromFavorite(String id) async {
+  //   _sharedPref.setStringList(_favKey, fav..remove(id));
+  // }
+
+  static Future<void> updateFavorite(List<String> ids) async {
+    _sharedPref.setStringList(_favKey, ids);
   }
 }
