@@ -48,6 +48,7 @@ dependencies:
   freezed_annotation: ^2.4.2
   fuzzy: ^0.5.1
   shared_preferences: ^2.2.3
+  json_annotation: ^4.9.0
 
 
 dev_dependencies:
@@ -65,6 +66,7 @@ dev_dependencies:
   riverpod_lint: ^2.3.10
   custom_lint: ^0.6.4
   freezed: ^2.5.2
+  json_serializable: ^6.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

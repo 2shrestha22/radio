@@ -55,11 +55,11 @@ class Radio extends _$Radio {
       );
       unawaited(_audioPlayer.play());
       _needUrlReset = false;
-    } on PlayerException catch (e) {
-      _needUrlReset = true;
-      state = state.copyWith(error: e);
     } on PlayerInterruptedException catch (e) {
       log(e.toString());
+    } catch (e) {
+      _needUrlReset = true;
+      state = state.copyWith(error: e);
     }
   }
 

@@ -41,6 +41,8 @@ abstract class $RadioStateCopyWith<$Res> {
       String? title,
       int? bitRate,
       Object? error});
+
+  $RadioStationCopyWith<$Res>? get station;
 }
 
 /// @nodoc
@@ -87,6 +89,18 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
       error: freezed == error ? _value.error : error,
     ) as $Val);
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RadioStationCopyWith<$Res>? get station {
+    if (_value.station == null) {
+      return null;
+    }
+
+    return $RadioStationCopyWith<$Res>(_value.station!, (value) {
+      return _then(_value.copyWith(station: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -104,6 +118,9 @@ abstract class _$$RadioStateImplCopyWith<$Res>
       String? title,
       int? bitRate,
       Object? error});
+
+  @override
+  $RadioStationCopyWith<$Res>? get station;
 }
 
 /// @nodoc

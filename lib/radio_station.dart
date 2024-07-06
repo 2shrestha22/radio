@@ -1,64 +1,31 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'radio_station.freezed.dart';
+part 'radio_station.g.dart';
 
-class RadioStation {
-  final String id;
-  final String name;
-  final double? frequency;
-  final String? address;
-  final String url;
-  final String? logo;
-  final int? province;
+@freezed
+class RadioStation with _$RadioStation {
+  const RadioStation._();
 
-  RadioStation({
-    required this.id,
-    required this.name,
-    required this.frequency,
-    required this.address,
-    required this.url,
-    required this.logo,
-    required this.province,
-  });
+  const factory RadioStation({
+    required String id,
+    required String name,
+    @JsonKey(name: 'freq') required double? frequency,
+    @JsonKey(name: 'addr') required String? address,
+    required String url,
+    required String? logo,
+    required int? province,
+  }) = _RadioStation;
 
-  Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
+  factory RadioStation.fromJson(Map<String, dynamic> json) =>
+      _$RadioStationFromJson(json);
 
-    result.addAll({'id': id});
-    result.addAll({'name': name});
-    if (frequency != null) {
-      result.addAll({'freq': frequency});
-    }
-    if (address != null) {
-      result.addAll({'addr': address});
-    }
-    result.addAll({'url': url});
-    if (logo != null) {
-      result.addAll({'logo': logo});
-    }
-    if (province != null) {
-      result.addAll({'province': province});
-    }
-
-    return result;
-  }
-
-  factory RadioStation.fromMap(Map<String, dynamic> map) {
-    return RadioStation(
-      id: map['id'] ?? '',
-      name: map['name'] ?? '',
-      frequency: map['freq']?.toDouble(),
-      address: map['addr'],
-      url: map['url'] ?? '',
-      logo: map['logo'],
-      province: map['province']?.toInt(),
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory RadioStation.fromJson(String source) =>
-      RadioStation.fromMap(json.decode(source));
+  String getFreqString() =>
+      frequency != null ? '$frequency MHz' : 'Online Radio';
 }
 
 List<RadioStation> allRadioStations = [];
@@ -66,5 +33,5 @@ List<RadioStation> allRadioStations = [];
 Future<void> loadStations() async {
   final data = await rootBundle.loadString("assets/radio_stations.json");
   allRadioStations =
-      (jsonDecode(data) as List).map((e) => RadioStation.fromMap(e)).toList();
+      (jsonDecode(data) as List).map((e) => RadioStation.fromJson(e)).toList();
 }
