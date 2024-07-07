@@ -1,4 +1,4 @@
-# Radio
+# Nepali Radio
 
 <img src="assets/images/radio-512.png" width="100">
 
@@ -6,9 +6,7 @@ A free and open source online radio app that provides access to all Nepali radio
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
-
+<img src="screenshots/screenshot1.png" width="300"> <img src="screenshots/screenshot2.png" width="300">
 
 ## Development
 

@@ -37,7 +37,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Radio'),
+        title: const Text('Nepali Radio'),
         surfaceTintColor: Colors.transparent,
       ),
       resizeToAvoidBottomInset: false,
@@ -170,28 +170,31 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: TextField(
-        focusNode: focusNode,
-        controller: textEditingController,
-        decoration: InputDecoration(
-          hintText: 'Search',
-          prefixIcon: const Icon(LucideIcons.search),
-          suffixIcon: Consumer(
-            builder: (context, ref, child) {
-              final isNotEmpty = ref.watch(
-                  searchInputProvider.select((value) => value.isNotEmpty));
-              return AnimatedOpacity(
-                opacity: isNotEmpty ? 1 : 0,
-                duration: animationDuration,
-                child: IconButton(
-                  padding: EdgeInsets.zero,
-                  icon: const Icon(LucideIcons.x),
-                  onPressed: textEditingController.clear,
-                ),
-              );
-            },
+    return SizedBox(
+      height: kToolbarHeight,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4),
+        child: TextField(
+          focusNode: focusNode,
+          controller: textEditingController,
+          decoration: InputDecoration(
+            hintText: 'Search',
+            prefixIcon: const Icon(LucideIcons.search),
+            suffixIcon: Consumer(
+              builder: (context, ref, child) {
+                final isNotEmpty = ref.watch(
+                    searchInputProvider.select((value) => value.isNotEmpty));
+                return AnimatedOpacity(
+                  opacity: isNotEmpty ? 1 : 0,
+                  duration: animationDuration,
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(LucideIcons.x),
+                    onPressed: textEditingController.clear,
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),
