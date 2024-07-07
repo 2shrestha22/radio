@@ -23,8 +23,7 @@ mixin _$RadioStation {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get streamUrl => throw _privateConstructorUsedError;
-  String? get frequency => throw _privateConstructorUsedError;
-  String? get frequencyType => throw _privateConstructorUsedError;
+  double? get frequency => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   bool get fav => throw _privateConstructorUsedError;
 
@@ -44,8 +43,7 @@ abstract class $RadioStationCopyWith<$Res> {
       {String id,
       String name,
       String streamUrl,
-      String? frequency,
-      String? frequencyType,
+      double? frequency,
       String? address,
       bool fav});
 }
@@ -67,7 +65,6 @@ class _$RadioStationCopyWithImpl<$Res, $Val extends RadioStation>
     Object? name = null,
     Object? streamUrl = null,
     Object? frequency = freezed,
-    Object? frequencyType = freezed,
     Object? address = freezed,
     Object? fav = null,
   }) {
@@ -87,11 +84,7 @@ class _$RadioStationCopyWithImpl<$Res, $Val extends RadioStation>
       frequency: freezed == frequency
           ? _value.frequency
           : frequency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      frequencyType: freezed == frequencyType
-          ? _value.frequencyType
-          : frequencyType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -116,8 +109,7 @@ abstract class _$$RadioStationImplCopyWith<$Res>
       {String id,
       String name,
       String streamUrl,
-      String? frequency,
-      String? frequencyType,
+      double? frequency,
       String? address,
       bool fav});
 }
@@ -137,7 +129,6 @@ class __$$RadioStationImplCopyWithImpl<$Res>
     Object? name = null,
     Object? streamUrl = null,
     Object? frequency = freezed,
-    Object? frequencyType = freezed,
     Object? address = freezed,
     Object? fav = null,
   }) {
@@ -157,11 +148,7 @@ class __$$RadioStationImplCopyWithImpl<$Res>
       frequency: freezed == frequency
           ? _value.frequency
           : frequency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      frequencyType: freezed == frequencyType
-          ? _value.frequencyType
-          : frequencyType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -182,7 +169,6 @@ class _$RadioStationImpl extends _RadioStation {
       required this.name,
       required this.streamUrl,
       required this.frequency,
-      required this.frequencyType,
       required this.address,
       this.fav = false})
       : super._();
@@ -197,9 +183,7 @@ class _$RadioStationImpl extends _RadioStation {
   @override
   final String streamUrl;
   @override
-  final String? frequency;
-  @override
-  final String? frequencyType;
+  final double? frequency;
   @override
   final String? address;
   @override
@@ -208,7 +192,7 @@ class _$RadioStationImpl extends _RadioStation {
 
   @override
   String toString() {
-    return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, frequencyType: $frequencyType, address: $address, fav: $fav)';
+    return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, address: $address, fav: $fav)';
   }
 
   @override
@@ -222,16 +206,14 @@ class _$RadioStationImpl extends _RadioStation {
                 other.streamUrl == streamUrl) &&
             (identical(other.frequency, frequency) ||
                 other.frequency == frequency) &&
-            (identical(other.frequencyType, frequencyType) ||
-                other.frequencyType == frequencyType) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.fav, fav) || other.fav == fav));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, streamUrl, frequency, frequencyType, address, fav);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, streamUrl, frequency, address, fav);
 
   @JsonKey(ignore: true)
   @override
@@ -252,8 +234,7 @@ abstract class _RadioStation extends RadioStation {
       {required final String id,
       required final String name,
       required final String streamUrl,
-      required final String? frequency,
-      required final String? frequencyType,
+      required final double? frequency,
       required final String? address,
       final bool fav}) = _$RadioStationImpl;
   const _RadioStation._() : super._();
@@ -268,9 +249,7 @@ abstract class _RadioStation extends RadioStation {
   @override
   String get streamUrl;
   @override
-  String? get frequency;
-  @override
-  String? get frequencyType;
+  double? get frequency;
   @override
   String? get address;
   @override

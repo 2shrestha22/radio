@@ -15,8 +15,7 @@ class RadioStation with _$RadioStation {
     required String id,
     required String name,
     required String streamUrl,
-    required String? frequency,
-    required String? frequencyType,
+    required double? frequency,
     required String? address,
     @Default(false) bool fav,
   }) = _RadioStation;

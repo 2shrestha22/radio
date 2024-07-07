@@ -11,8 +11,7 @@ _$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       streamUrl: json['streamUrl'] as String,
-      frequency: json['frequency'] as String?,
-      frequencyType: json['frequencyType'] as String?,
+      frequency: (json['frequency'] as num?)?.toDouble(),
       address: json['address'] as String?,
       fav: json['fav'] as bool? ?? false,
     );
@@ -23,7 +22,6 @@ Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
       'name': instance.name,
       'streamUrl': instance.streamUrl,
       'frequency': instance.frequency,
-      'frequencyType': instance.frequencyType,
       'address': instance.address,
       'fav': instance.fav,
     };
