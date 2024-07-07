@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       title: 'Flutter Demo',
       routerConfig: _router,
       debugShowCheckedModeBanner: false,
-      theme: appTheme,
+      theme: appTheme(context),
     );
   }
 }

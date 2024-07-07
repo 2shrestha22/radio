@@ -97,7 +97,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                               backgroundColor:
                                   Theme.of(context).scaffoldBackgroundColor,
                               surfaceTintColor: Colors.transparent,
-                              flexibleSpace: SearchField(
+                              centerTitle: true,
+                              titleSpacing: 0,
+                              title: SearchField(
                                 focusNode: focusNode,
                                 textEditingController: textEditingController,
                               ),
@@ -169,12 +171,13 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: TextField(
         focusNode: focusNode,
         controller: textEditingController,
         decoration: InputDecoration(
           hintText: 'Search',
+          prefixIcon: const Icon(LucideIcons.search),
           suffixIcon: Consumer(
             builder: (context, ref, child) {
               final isNotEmpty = ref.watch(
