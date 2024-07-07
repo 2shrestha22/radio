@@ -1,4 +1,3 @@
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 
 class StationLogo extends StatelessWidget {
@@ -12,14 +11,14 @@ class StationLogo extends StatelessWidget {
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.hardEdge,
       child: path != null
-          ? ExtendedImage.asset(
+          ? Image.asset(
               path!,
               height: 70,
               width: 70,
               cacheHeight: 140,
               cacheWidth: 140,
             )
-          : ExtendedImage.asset(
+          : Image.asset(
               'assets/images/radio-512.png',
               height: 70,
               width: 70,
