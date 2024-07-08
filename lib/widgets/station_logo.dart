@@ -19,7 +19,7 @@ class StationLogo extends StatelessWidget {
               cacheWidth: 140,
             )
           : Image.asset(
-              'assets/images/radio-512.png',
+              'assets/images/radio-np.png',
               height: 70,
               width: 70,
               cacheHeight: 140,

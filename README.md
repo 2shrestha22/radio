@@ -1,6 +1,6 @@
 # Nepali Radio
 
-<img src="assets/images/radio-512.png" width="100">
+<img src="assets/images/radio-np.png" width="120">
 
 A free and open source online radio app that provides access to all Nepali radio stations with a convenient favorite feature to save your preferred stations.
 
