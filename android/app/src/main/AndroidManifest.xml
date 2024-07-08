@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
     <application
         android:usesCleartextTraffic="true"
-        android:label="radio"
+        android:label="Radio NP"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
