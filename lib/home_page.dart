@@ -37,7 +37,7 @@ class _HomePageState extends ConsumerState<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nepali Radio'),
+        title: const Text('Radio NP'),
         surfaceTintColor: Colors.transparent,
       ),
       resizeToAvoidBottomInset: false,
