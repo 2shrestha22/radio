@@ -26,7 +26,7 @@ class StationListView extends StatelessWidget {
     return SliverPadding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       sliver: SliverList.separated(
-        separatorBuilder: (context, index) => const Divider(),
+        separatorBuilder: (context, index) => const Divider(height: 0),
         itemCount: stations.length,
         itemBuilder: (context, index) {
           final theme = Theme.of(context);
@@ -34,7 +34,7 @@ class StationListView extends StatelessWidget {
           return InkWell(
             onTap: () => onTap(station),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 children: [
                   StationLogo(station.logoPath),
