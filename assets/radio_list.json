@@ -2,7 +2,7 @@
     {
         "id": "Y_OOEauq-U3AB9GcRyuee",
         "name": "Ujyaalo Radio Network",
-        "streamUrl": "https://radio-streaming-serv-np.hamropatro.com:8000/radio.mp3",
+        "streamUrl": "https://stream.zeno.fm/yesqm08xq1duv",
         "frequency": 90.0,
         "address": "Ujyaalo Ghar (Behind Central Zoo), Lalitpur - 4, Shanti Chowk, Jawalakhel"
     },
@@ -14,18 +14,39 @@
         "address": "Subidhanagar,Tinkune, Kathmandu, Nepal"
     },
     {
-        "id": "XIQtxSR27snR6vkvJD2Al",
-        "name": "Kalika FM",
-        "streamUrl": "http://kalika-stream.softnep.com:7740",
-        "frequency": 95.2,
-        "address": " Bharatpur-10, Chitwan"
-    },
-    {
         "id": "63DAluhRgl-PcYeixk5eY",
         "name": "Radio Nepal",
         "streamUrl": "http://202.45.144.110:8000/stream",
         "frequency": 100.0,
         "address": "Kathmandu, Nepal"
+    },
+    {
+        "id": "KfKe5QlSGPSMjNS6j4OwC",
+        "name": "BBC World Service English",
+        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_vlow/ak/bbc_world_service_news_internet.m3u8",
+        "frequency": null,
+        "address": "London, UK"
+    },
+    {
+        "id": "8tR2HH2NMt-h-pyog459v",
+        "name": "BBC Nepali",
+        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_nepali_radio.m3u8",
+        "frequency": 103.0,
+        "address": "Kathmandu, Nepal"
+    },
+    {
+        "id": "E_k0M6NUzwIBU4i6is8Bz",
+        "name": "Image FM",
+        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8020/radio.mp3",
+        "frequency": 97.9,
+        "address": "Kathmandu, Nepal"
+    },
+    {
+        "id": "XIQtxSR27snR6vkvJD2Al",
+        "name": "Kalika FM",
+        "streamUrl": "http://kalika-stream.softnep.com:7740",
+        "frequency": 95.2,
+        "address": " Bharatpur-10, Chitwan"
     },
     {
         "id": "hJ2I94Z16tp5n9OmAxva0",
@@ -49,13 +70,6 @@
         "address": "Basantapur, Madi, Chitwan, Nepal"
     },
     {
-        "id": "E_k0M6NUzwIBU4i6is8Bz",
-        "name": "Image FM",
-        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8020/radio.mp3",
-        "frequency": 97.9,
-        "address": "Kathmandu, Nepal"
-    },
-    {
         "id": "WL4IaKwba1BpHxWdjZvuW",
         "name": "Radio Candid",
         "streamUrl": "https://radio-stream-relay-np.hamropatro.com/radio/8030/radio.mp3",
@@ -67,20 +81,6 @@
         "name": "Image News",
         "streamUrl": "https://radio-stream-relay-np.hamropatro.com/radio/8050/radio.mp3",
         "frequency": 103.6,
-        "address": "Kathmandu, Nepal"
-    },
-    {
-        "id": "KfKe5QlSGPSMjNS6j4OwC",
-        "name": "BBC World Service English",
-        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_vlow/ak/bbc_world_service_news_internet.m3u8",
-        "frequency": null,
-        "address": "London, UK"
-    },
-    {
-        "id": "8tR2HH2NMt-h-pyog459v",
-        "name": "BBC Nepali",
-        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_nepali_radio.m3u8",
-        "frequency": 103.0,
         "address": "Kathmandu, Nepal"
     },
     {
