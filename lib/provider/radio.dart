@@ -26,6 +26,7 @@ class Radio extends _$Radio {
     ref.onDispose(() {
       _playerStateSubscription?.cancel();
       _icyMetadataSubscription?.cancel();
+      _audioPlayer.dispose();
     });
 
     _listenUpdates();
