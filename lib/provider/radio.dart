@@ -35,7 +35,9 @@ class Radio extends _$Radio {
 
   /// Focus a station and start playing.
   Future<void> setFocusedStation(RadioStation station) async {
-    if (state.station == station && !_needUrlReset) return;
+    if (state.station == station && _audioPlayer.playing && !_needUrlReset) {
+      return;
+    }
 
     state = state.copyWith(station: station);
 
