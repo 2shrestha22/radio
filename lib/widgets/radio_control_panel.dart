@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
@@ -35,9 +36,9 @@ class RadioControlPanel extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
-            mainAxisSize: MainAxisSize.min,
             children: [
               StationLogo(radioState.station!.logoPath),
+              const GutterTiny(),
               DefaultTextStyle(
                 style: Theme.of(context).textTheme.bodySmall!,
                 child: Builder(
@@ -51,6 +52,7 @@ class RadioControlPanel extends ConsumerWidget {
               ),
             ],
           ),
+          const Gutter(),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -82,16 +84,15 @@ class RadioControlPanel extends ConsumerWidget {
                   height: 70,
                   child: AnimatedSwitcher(
                     duration: animationDuration,
-                    child: radioState.processingState == ProcessingState.loading
-                        ? const Loader()
-                        : ButtonBar(
-                            alignment: MainAxisAlignment.center,
-                            children: [
-                              // const ShadButton.outline(
-                              //   size: ShadButtonSize.icon,
-                              //   icon: Icon(LucideIcons.skipBack),
-                              // ),
-                              Builder(
+                    child: ButtonBar(
+                      alignment: MainAxisAlignment.center,
+                      children: [
+                        radioState.processingState == ProcessingState.loading
+                            ? const SizedBox.square(
+                                dimension: 48,
+                                child: Loader(),
+                              )
+                            : Builder(
                                 builder: (context) {
                                   return IconButton(
                                     icon: AnimatedSwitcher(
@@ -120,12 +121,14 @@ class RadioControlPanel extends ConsumerWidget {
                                   );
                                 },
                               ),
-                              // const ShadButton.outline(
-                              //   size: ShadButtonSize.icon,
-                              //   icon: Icon(LucideIcons.skipForward),
-                              // ),
-                            ],
-                          ),
+                        IconButton(
+                          icon: const Icon(LucideIcons.square),
+                          onPressed: () async {
+                            await ref.read(radioProvider.notifier).stop();
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

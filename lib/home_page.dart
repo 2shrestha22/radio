@@ -71,13 +71,13 @@ class _HomePageState extends ConsumerState<HomePage> {
                                       .setFocusedStation(station);
                                 },
                                 onFavTap: (station) async {
-                                  final shouldRemove = await showDialog(
+                                  final shouldRemove = await showDialog<bool?>(
                                     context: context,
                                     builder: (context) =>
                                         RemoveFavDialog(station: station),
                                   );
 
-                                  if (shouldRemove) {
+                                  if (shouldRemove ?? false) {
                                     ref
                                         .read(stationsProvider.notifier)
                                         .toggleFav(station.id);
@@ -170,7 +170,7 @@ class SearchField extends StatelessWidget {
     return SizedBox(
       height: kToolbarHeight,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
         child: TextField(
           focusNode: focusNode,
           controller: textEditingController,
