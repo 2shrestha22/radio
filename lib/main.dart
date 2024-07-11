@@ -8,6 +8,8 @@ import 'package:radio/radio_station.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await loadStations();
+
   await Future.wait([
     JustAudioBackground.init(
       androidNotificationChannelId: 'np.com.sargam.radio.channel.audio',
@@ -15,7 +17,6 @@ Future<void> main() async {
       androidNotificationOngoing: true,
     ),
     SharedPref.init(),
-    loadStations(),
   ]);
 
   runApp(const ProviderScope(child: App()));
