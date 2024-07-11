@@ -12,10 +12,10 @@ Future<void> main() async {
 
   await Future.wait([
     JustAudioBackground.init(
-      androidNotificationChannelId: 'np.com.sargam.radio.channel.audio',
-      androidNotificationChannelName: 'Internet Radio',
-      androidNotificationOngoing: true,
-    ),
+        androidNotificationChannelId: 'np.com.sargam.radio.channel.audio',
+        androidNotificationChannelName: 'Internet Radio',
+        androidNotificationOngoing: true,
+        androidNotificationIcon: "drawable/ic_notification"),
     SharedPref.init(),
   ]);
 
