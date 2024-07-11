@@ -35,13 +35,6 @@
         "address": "Kathmandu, Nepal"
     },
     {
-        "id": "E_k0M6NUzwIBU4i6is8Bz",
-        "name": "Image FM",
-        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8020/radio.mp3",
-        "frequency": 97.9,
-        "address": "Kathmandu, Nepal"
-    },
-    {
         "id": "XIQtxSR27snR6vkvJD2Al",
         "name": "Kalika FM",
         "streamUrl": "http://kalika-stream.softnep.com:7740",
@@ -54,6 +47,13 @@
         "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8010/radio.mp3",
         "frequency": 99.1,
         "address": "Baneshwor Height Pipalbot Marga, Kathmandu, Nepal"
+    },
+    {
+        "id": "E_k0M6NUzwIBU4i6is8Bz",
+        "name": "Image FM",
+        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8020/radio.mp3",
+        "frequency": 97.9,
+        "address": "Kathmandu, Nepal"
     },
     {
         "id": "rlPmocaRrVIWIH1tG3H6l",
@@ -128,9 +128,10 @@
     {
         "id": "MDWPpV0SVpL9orCbeQL7K",
         "name": "Citizen FM",
-        "streamUrl": "http://streaming.hamropatro.com:8609",
+        "streamUrl": "https://streaming.webhostnepal.com:7032/;",
         "frequency": 97.5,
-        "address": "MI Complex, Jamal, Kathmandu"
+        "address": "MI Complex, Jamal, Kathmandu",
+        "disabled": true
     },
     {
         "id": "6g5aK_OCZNmsr2OfE88-P",
