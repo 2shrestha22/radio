@@ -121,11 +121,18 @@ class RadioControlPanel extends ConsumerWidget {
                                   );
                                 },
                               ),
-                        IconButton(
-                          icon: const Icon(LucideIcons.square),
-                          onPressed: () async {
-                            await ref.read(radioProvider.notifier).stop();
-                          },
+                        AnimatedOpacity(
+                          duration: animationDuration,
+                          opacity:
+                              radioState.processingState == ProcessingState.idle
+                                  ? 0
+                                  : 1,
+                          child: IconButton(
+                            icon: const Icon(LucideIcons.square),
+                            onPressed: () async {
+                              await ref.read(radioProvider.notifier).stop();
+                            },
+                          ),
                         ),
                       ],
                     ),
