@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'radio_station.freezed.dart';
 part 'radio_station.g.dart';
 
@@ -20,7 +21,8 @@ class RadioStation with _$RadioStation {
     @Default(false) bool fav,
   }) = _RadioStation;
 
-  String? get logoPath => 'assets/logo/$id';
+  String get imageUrl =>
+      'https://cdn.jsdelivr.net/gh/2shrestha22/radio/assets/logo/$id';
 
   factory RadioStation.fromJson(Map<String, dynamic> json) =>
       _$RadioStationFromJson(json);

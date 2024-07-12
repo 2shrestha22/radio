@@ -37,7 +37,7 @@ class RadioControlPanel extends ConsumerWidget {
         children: [
           Column(
             children: [
-              StationLogo(radioState.station!.logoPath),
+              StationLogo(radioState.station!.imageUrl),
               const GutterTiny(),
               DefaultTextStyle(
                 style: Theme.of(context).textTheme.bodySmall!,
