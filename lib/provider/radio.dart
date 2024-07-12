@@ -52,7 +52,7 @@ class Radio extends _$Radio {
             id: station.id,
             title: station.name,
             duration: Duration.zero,
-            artUri: Uri.tryParse(station.logoPath ?? ''),
+            artUri: Uri.tryParse(station.imageUrl),
           ),
         ),
       );

@@ -37,7 +37,7 @@ class StationListView extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: Row(
                 children: [
-                  StationLogo(station.logoPath),
+                  StationLogo(station.imageUrl),
                   const GutterTiny(),
                   Expanded(
                     child: Column(
