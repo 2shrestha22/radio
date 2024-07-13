@@ -50,6 +50,7 @@ dependencies:
   shared_preferences: ^2.2.3
   json_annotation: ^4.9.0
   google_fonts: ^6.2.1
+  extended_image: ^8.2.1
 
 
 dev_dependencies:
