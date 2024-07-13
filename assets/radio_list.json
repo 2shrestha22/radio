@@ -9,35 +9,35 @@
     {
         "id": "PpdCGSEQ44Ox4uLzlgcin",
         "name": "Radio Kantipur",
-        "streamUrl": "http://broadcast.radiokantipur.com:7248/stream.mp3",
+        "streamUrl": "https://radio-broadcast.ekantipur.com/stream",
         "frequency": 96.1,
         "address": "Subidhanagar,Tinkune, Kathmandu, Nepal"
     },
     {
         "id": "63DAluhRgl-PcYeixk5eY",
         "name": "Radio Nepal",
-        "streamUrl": "http://202.45.144.110:8000/stream",
+        "streamUrl": "https://stream1.radionepal.gov.np/live",
         "frequency": 100.0,
         "address": "Kathmandu, Nepal"
     },
     {
         "id": "KfKe5QlSGPSMjNS6j4OwC",
         "name": "BBC World Service English",
-        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_vlow/ak/bbc_world_service_news_internet.m3u8",
+        "streamUrl": "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_vlow/ak/bbc_world_service_news_internet.m3u8",
         "frequency": null,
         "address": "London, UK"
     },
     {
         "id": "8tR2HH2NMt-h-pyog459v",
         "name": "BBC Nepali",
-        "streamUrl": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_nepali_radio.m3u8",
+        "streamUrl": "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_nepali_radio.m3u8",
         "frequency": 103.0,
         "address": "Kathmandu, Nepal"
     },
     {
         "id": "XIQtxSR27snR6vkvJD2Al",
         "name": "Kalika FM",
-        "streamUrl": "http://kalika-stream.softnep.com:7740",
+        "streamUrl": "https://streaming.softnep.net:10828/;stream.nsv&type=mp3&volume=70",
         "frequency": 95.2,
         "address": " Bharatpur-10, Chitwan"
     },
@@ -65,7 +65,7 @@
     {
         "id": "p0qy74VnrANpCmab4YJ_i",
         "name": "Swadesh FM",
-        "streamUrl": "http://streaming.hamropatro.com:8653",
+        "streamUrl": "https://stream-43.zeno.fm/xm2babvnephvv",
         "frequency": 93.2,
         "address": "Basantapur, Madi, Chitwan, Nepal"
     },
