@@ -1,0 +1,115 @@
+name: Build and Release
+
+# on: 
+#   push:
+#     tags:
+#     - 'v*'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version-file: pubspec.yaml
+
+      - run: flutter --version
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Run Build Runner
+        run: dart run build_runner build -d
+
+      # - name: Build Split APK
+      #   run: flutter build apk --split-per-abi --build-number ${{ github.run_number }}
+
+      # - name: Upload Artifacts - APK
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: android-apks
+      #     path: build/app/outputs/flutter-apk/*.apk
+
+      # - name: Build App Bundle
+      #   run: flutter build appbundle --build-number ${{ github.run_number }}
+
+      # - name: Upload Artifacts - App Bundle
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: android-appbundle
+      #     path: build/app/outputs/bundle/release/*.aab
+      
+      - name: Build Web
+        run: flutter build web --build-number ${{ github.run_number }}
+
+      - name: Upload Artifacts - App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web/
+
+      
+
+  # release:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: write
+
+  #   steps:
+  #     - name: Clone Repository
+  #       uses: actions/checkout@v4
+
+  #     - name: Download Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: android-apks
+
+  #     - name: Create Release
+  #       uses: ncipollo/release-action@v1
+  #       with:
+  #         artifacts: "*.apk"
+
+  release-web:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: web-build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+
+  # WIP
+  # play-store:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Clone Repository
+  #       uses: actions/checkout@v4
+
+  #     - name: Download Artifacts
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: android-appbundle
