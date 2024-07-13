@@ -29,23 +29,29 @@ jobs:
 
       - name: Build App Bundle
         run: flutter build appbundle --build-number ${{ github.run_number }}
-
-      - name: Build Split APK
-        run: flutter build apk --split-per-abi --build-number ${{ github.run_number }}
-
-      - name: Upload Artifacts - APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: android-apks
-          path: build/app/outputs/flutter-apk/*.apk
-
       - name: Upload Artifacts - App Bundle
         uses: actions/upload-artifact@v4
         with:
           name: android-appbundle
           path: build/app/outputs/bundle/release/*.aab
 
-  release:
+      - name: Build Split APK
+        run: flutter build apk --split-per-abi --build-number ${{ github.run_number }}
+      - name: Upload Artifacts - APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apks
+          path: build/app/outputs/flutter-apk/*.apk
+
+      - name: Build Web
+        run: flutter build web --build-number ${{ github.run_number }}
+      - name: Upload Artifacts - App Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-build
+          path: build/web/
+
+  release-github:
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -64,6 +70,28 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "*.apk"
+
+
+  release-web:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: web-build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
 
   # WIP
   # play-store:
