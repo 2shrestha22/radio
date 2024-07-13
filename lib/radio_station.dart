@@ -22,7 +22,7 @@ class RadioStation with _$RadioStation {
   }) = _RadioStation;
 
   String get imageUrl =>
-      'https://cdn.jsdelivr.net/gh/2shrestha22/radio/assets/logo/$id';
+      'https://cdn.jsdelivr.net/gh/2shrestha22/radio/assets/logo/$id/.jpg';
 
   factory RadioStation.fromJson(Map<String, dynamic> json) =>
       _$RadioStationFromJson(json);
