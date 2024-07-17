@@ -4,6 +4,7 @@ on:
   push:
     tags:
     - 'v*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,8 +25,10 @@ jobs:
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Run Build Runner
-        run: dart run build_runner build -d
+      - name: Setup KeyStore
+        run: |
+          echo $KEYSTORE_FILE_BASE64 | base64 --decode > ./android/keystore.jks
+          echo $KEY_PROPERTIES_BASE64 | base64 --decode > ./android/key.properties
 
       - name: Build App Bundle
         run: flutter build appbundle --build-number ${{ github.run_number }}
@@ -92,17 +95,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
-
-  # WIP
-  # play-store:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - name: Clone Repository
-  #       uses: actions/checkout@v4
-
-  #     - name: Download Artifacts
-  #       uses: actions/download-artifact@v4
-  #       with:
-  #         name: android-appbundle
