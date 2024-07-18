@@ -1,11 +1,11 @@
 {
-    "name": "radio",
-    "short_name": "radio",
+    "name": "Radio NP - Nepali Radio",
+    "short_name": "Radio NP",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Open Source Online Nepali Radio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
