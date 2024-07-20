@@ -3,3 +3,5 @@ dependency_overrides:
     git:
       url: git@github.com:2shrestha22/just_audio_media_kit.git
       ref: invalid-range-error
+  # just_audio_media_kit:
+  #   path: ../packages/just_audio_media_kit

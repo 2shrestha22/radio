@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
+import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/widgets/station_logo.dart';
@@ -35,7 +35,7 @@ class RadioControlPanel extends ConsumerWidget {
                 style: Theme.of(context).textTheme.bodySmall!,
                 child: Builder(
                   builder: (context) {
-                    if (radioState.isPlaying && radioState.bitRate != null) {
+                    if (radioState.bitRate != null) {
                       return Text(formatBitrate(radioState.bitRate!));
                     }
                     return const Text('-- Kbps');
@@ -61,7 +61,7 @@ class RadioControlPanel extends ConsumerWidget {
                   style: Theme.of(context).textTheme.bodySmall!,
                   child: Builder(
                     builder: (context) {
-                      if (radioState.isPlaying && radioState.title != null) {
+                      if (radioState.title != null) {
                         return Text(
                           radioState.title!,
                           maxLines: 1,
@@ -72,63 +72,56 @@ class RadioControlPanel extends ConsumerWidget {
                     },
                   ),
                 ),
-                SizedBox(
-                  height: 70,
-                  child: AnimatedSwitcher(
-                    duration: animationDuration,
-                    child: ButtonBar(
-                      alignment: MainAxisAlignment.center,
-                      children: [
-                        radioState.processingState == ProcessingState.loading
-                            ? const SizedBox.square(
-                                dimension: 48,
-                                child: Loader(),
-                              )
-                            : Builder(
-                                builder: (context) {
-                                  return IconButton(
-                                    icon: AnimatedSwitcher(
-                                      duration: animationDuration,
-                                      child: switch (radioState.isPlaying) {
-                                        true => const Icon(
-                                            key: Key('pause'),
-                                            LucideIcons.pause),
-                                        false => const Icon(
-                                            key: Key('play'),
-                                            LucideIcons.play,
-                                          ),
-                                      },
-                                    ),
-                                    onPressed: () async {
-                                      if (radioState.isPlaying) {
-                                        await ref
-                                            .read(radioProvider.notifier)
-                                            .pause();
-                                      } else {
-                                        await ref
-                                            .read(radioProvider.notifier)
-                                            .play();
-                                      }
-                                    },
-                                  );
-                                },
-                              ),
-                        AnimatedOpacity(
-                          duration: animationDuration,
-                          opacity:
-                              radioState.processingState == ProcessingState.idle
-                                  ? 0
-                                  : 1,
-                          child: IconButton(
-                            icon: const Icon(LucideIcons.square),
-                            onPressed: () async {
-                              await ref.read(radioProvider.notifier).stop();
-                            },
+                ButtonBar(
+                  alignment: MainAxisAlignment.center,
+                  children: [
+                    AnimatedSwitcher(
+                      duration: animationDuration,
+                      // transitionBuilder fixes
+                      // https://github.com/flutter/flutter/issues/121336
+                      transitionBuilder: (
+                        Widget child,
+                        Animation<double> animation,
+                      ) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: child,
+                        );
+                      },
+                      child: switch (radioState.streamingState) {
+                        StreamingState.buffering => IconButton(
+                            key: const ValueKey('loader-icon'),
+                            icon: const Loader(),
+                            disabledColor: Theme.of(context).iconTheme.color,
+                            onPressed: null,
                           ),
-                        ),
-                      ],
+                        StreamingState.playing => IconButton(
+                            key: const ValueKey('pause-button'),
+                            onPressed: () async {
+                              await ref.read(radioProvider.notifier).pause();
+                            },
+                            icon: const Icon(LucideIcons.pause),
+                          ),
+                        null => IconButton(
+                            key: const ValueKey('play-button'),
+                            onPressed: () async {
+                              await ref.read(radioProvider.notifier).play();
+                            },
+                            icon: const Icon(LucideIcons.play),
+                          )
+                      },
                     ),
-                  ),
+                    AnimatedOpacity(
+                      duration: animationDuration,
+                      opacity: radioState.playerState.isRunning ? 1 : 0,
+                      child: IconButton(
+                        icon: const Icon(LucideIcons.square),
+                        onPressed: () async {
+                          await ref.read(radioProvider.notifier).stop();
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

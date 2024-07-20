@@ -17,8 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RadioState {
   RadioStation? get station => throw _privateConstructorUsedError;
-  ProcessingState get processingState => throw _privateConstructorUsedError;
-  bool get isPlaying => throw _privateConstructorUsedError;
+  RadioPlayerState get playerState => throw _privateConstructorUsedError;
+
+  /// It will be null if [playerState] is not started or paused.
+  StreamingState? get streamingState => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   int? get bitRate => throw _privateConstructorUsedError;
   Object? get error => throw _privateConstructorUsedError;
@@ -36,8 +38,8 @@ abstract class $RadioStateCopyWith<$Res> {
   @useResult
   $Res call(
       {RadioStation? station,
-      ProcessingState processingState,
-      bool isPlaying,
+      RadioPlayerState playerState,
+      StreamingState? streamingState,
       String? title,
       int? bitRate,
       Object? error});
@@ -59,8 +61,8 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
   @override
   $Res call({
     Object? station = freezed,
-    Object? processingState = null,
-    Object? isPlaying = null,
+    Object? playerState = null,
+    Object? streamingState = freezed,
     Object? title = freezed,
     Object? bitRate = freezed,
     Object? error = freezed,
@@ -70,14 +72,14 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
               as RadioStation?,
-      processingState: null == processingState
-          ? _value.processingState
-          : processingState // ignore: cast_nullable_to_non_nullable
-              as ProcessingState,
-      isPlaying: null == isPlaying
-          ? _value.isPlaying
-          : isPlaying // ignore: cast_nullable_to_non_nullable
-              as bool,
+      playerState: null == playerState
+          ? _value.playerState
+          : playerState // ignore: cast_nullable_to_non_nullable
+              as RadioPlayerState,
+      streamingState: freezed == streamingState
+          ? _value.streamingState
+          : streamingState // ignore: cast_nullable_to_non_nullable
+              as StreamingState?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -113,8 +115,8 @@ abstract class _$$RadioStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {RadioStation? station,
-      ProcessingState processingState,
-      bool isPlaying,
+      RadioPlayerState playerState,
+      StreamingState? streamingState,
       String? title,
       int? bitRate,
       Object? error});
@@ -135,8 +137,8 @@ class __$$RadioStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? station = freezed,
-    Object? processingState = null,
-    Object? isPlaying = null,
+    Object? playerState = null,
+    Object? streamingState = freezed,
     Object? title = freezed,
     Object? bitRate = freezed,
     Object? error = freezed,
@@ -146,14 +148,14 @@ class __$$RadioStateImplCopyWithImpl<$Res>
           ? _value.station
           : station // ignore: cast_nullable_to_non_nullable
               as RadioStation?,
-      processingState: null == processingState
-          ? _value.processingState
-          : processingState // ignore: cast_nullable_to_non_nullable
-              as ProcessingState,
-      isPlaying: null == isPlaying
-          ? _value.isPlaying
-          : isPlaying // ignore: cast_nullable_to_non_nullable
-              as bool,
+      playerState: null == playerState
+          ? _value.playerState
+          : playerState // ignore: cast_nullable_to_non_nullable
+              as RadioPlayerState,
+      streamingState: freezed == streamingState
+          ? _value.streamingState
+          : streamingState // ignore: cast_nullable_to_non_nullable
+              as StreamingState?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -172,8 +174,8 @@ class __$$RadioStateImplCopyWithImpl<$Res>
 class _$RadioStateImpl implements _RadioState {
   const _$RadioStateImpl(
       {this.station,
-      this.processingState = ProcessingState.idle,
-      this.isPlaying = false,
+      this.playerState = RadioPlayerState.idle,
+      this.streamingState,
       this.title,
       this.bitRate,
       this.error});
@@ -182,10 +184,11 @@ class _$RadioStateImpl implements _RadioState {
   final RadioStation? station;
   @override
   @JsonKey()
-  final ProcessingState processingState;
+  final RadioPlayerState playerState;
+
+  /// It will be null if [playerState] is not started or paused.
   @override
-  @JsonKey()
-  final bool isPlaying;
+  final StreamingState? streamingState;
   @override
   final String? title;
   @override
@@ -195,7 +198,7 @@ class _$RadioStateImpl implements _RadioState {
 
   @override
   String toString() {
-    return 'RadioState(station: $station, processingState: $processingState, isPlaying: $isPlaying, title: $title, bitRate: $bitRate, error: $error)';
+    return 'RadioState(station: $station, playerState: $playerState, streamingState: $streamingState, title: $title, bitRate: $bitRate, error: $error)';
   }
 
   @override
@@ -204,18 +207,24 @@ class _$RadioStateImpl implements _RadioState {
         (other.runtimeType == runtimeType &&
             other is _$RadioStateImpl &&
             (identical(other.station, station) || other.station == station) &&
-            (identical(other.processingState, processingState) ||
-                other.processingState == processingState) &&
-            (identical(other.isPlaying, isPlaying) ||
-                other.isPlaying == isPlaying) &&
+            (identical(other.playerState, playerState) ||
+                other.playerState == playerState) &&
+            (identical(other.streamingState, streamingState) ||
+                other.streamingState == streamingState) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.bitRate, bitRate) || other.bitRate == bitRate) &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, station, processingState,
-      isPlaying, title, bitRate, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(
+      runtimeType,
+      station,
+      playerState,
+      streamingState,
+      title,
+      bitRate,
+      const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -227,8 +236,8 @@ class _$RadioStateImpl implements _RadioState {
 abstract class _RadioState implements RadioState {
   const factory _RadioState(
       {final RadioStation? station,
-      final ProcessingState processingState,
-      final bool isPlaying,
+      final RadioPlayerState playerState,
+      final StreamingState? streamingState,
       final String? title,
       final int? bitRate,
       final Object? error}) = _$RadioStateImpl;
@@ -236,9 +245,11 @@ abstract class _RadioState implements RadioState {
   @override
   RadioStation? get station;
   @override
-  ProcessingState get processingState;
+  RadioPlayerState get playerState;
   @override
-  bool get isPlaying;
+
+  /// It will be null if [playerState] is not started or paused.
+  StreamingState? get streamingState;
   @override
   String? get title;
   @override
