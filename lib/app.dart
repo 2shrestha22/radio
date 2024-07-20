@@ -13,7 +13,7 @@ class App extends StatelessWidget {
     return MaterialApp.router(
       title: 'Radio NP',
       routerConfig: _router,
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
       theme: appTheme(context),
     );
   }
