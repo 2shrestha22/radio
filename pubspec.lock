@@ -555,10 +555,11 @@ packages:
   just_audio_media_kit:
     dependency: "direct main"
     description:
-      name: just_audio_media_kit
-      sha256: "7f57d317fafa04cb3e70b924e8f632ffb7eca7a97a369e1e44738ed89fbd5da1"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: invalid-range-error
+      resolved-ref: "823fcef7f40ab252ede073d48eedcb14908118bc"
+      url: "git@github.com:2shrestha22/just_audio_media_kit.git"
+    source: git
     version: "2.0.5"
   just_audio_platform_interface:
     dependency: transitive
