@@ -39,12 +39,12 @@
         "name": "Kalika FM",
         "streamUrl": "https://streaming.softnep.net:10828/;stream.nsv&type=mp3&volume=70",
         "frequency": 95.2,
-        "address": " Bharatpur-10, Chitwan"
+        "address": "Bharatpur-10, Chitwan"
     },
     {
         "id": "hJ2I94Z16tp5n9OmAxva0",
         "name": "Nepali Radio Network",
-        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8010/radio.mp3",
+        "streamUrl": "https://astream.nepalipatro.com.np:8239/index.html",
         "frequency": 99.1,
         "address": "Baneshwor Height Pipalbot Marga, Kathmandu, Nepal"
     },
@@ -58,7 +58,7 @@
     {
         "id": "rlPmocaRrVIWIH1tG3H6l",
         "name": "Radio Audio",
-        "streamUrl": "https://radio-stream-relay-us.hamropatro.com/radio/8040/radio.mp3",
+        "streamUrl": "https://stream-161.zeno.fm/2w81t82wx3duv",
         "frequency": 106.3,
         "address": "Comedy Height Narayaneshor Marg-10, Baneshwor KTM"
     },
@@ -107,20 +107,20 @@
     {
         "id": "I1Jug5DZ_H02zOkR_vTJb",
         "name": "Synergy FM",
-        "streamUrl": "http://streaming.hamropatro.com:8399",
+        "streamUrl": "https://live.itech.host:3880/stream",
         "frequency": 91.6,
         "address": "Bharatpur-10 Chitwan"
     },
     {
         "id": "-f9nyHjiHr1hhgEgGde-U",
-        "name": "Vijaya FM 101.6 MHz",
-        "streamUrl": "http://streaming.hamropatro.com:8383",
+        "name": "Vijaya FM",
+        "streamUrl": "https://live.itech.host:3320/stream",
         "frequency": 101.6,
         "address": "Gaindakot-8, Nawalparasi, Nepal"
     },
     {
         "id": "d1PMbBlcy71dyFmIUSBMK",
-        "name": "Radio Janata ",
+        "name": "Radio Janata",
         "streamUrl": "http://streaming.hamropatro.com:8895",
         "frequency": 89.1,
         "address": "Janata Network Minbhawan Kathmandu, Nepal"
@@ -130,15 +130,14 @@
         "name": "Citizen FM",
         "streamUrl": "https://streaming.webhostnepal.com:7032/;",
         "frequency": 97.5,
-        "address": "MI Complex, Jamal, Kathmandu",
-        "disabled": true
+        "address": "MI Complex, Jamal, Kathmandu"
     },
     {
         "id": "6g5aK_OCZNmsr2OfE88-P",
-        "name": "Music City",
+        "name": "Music City - Nonstop Music",
         "streamUrl": "http://streaming.hamropatro.com:8739",
         "frequency": null,
-        "address": "Nonstop Music"
+        "address": null
     },
     {
         "id": "hzQLwASZSbR9xc_zT0tMh",
