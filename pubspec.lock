@@ -557,7 +557,7 @@ packages:
     description:
       path: "."
       ref: invalid-range-error
-      resolved-ref: "823fcef7f40ab252ede073d48eedcb14908118bc"
+      resolved-ref: "9d1b2e7d6b3db3e7397acba79d9f557e2e065bbe"
       url: "git@github.com:2shrestha22/just_audio_media_kit.git"
     source: git
     version: "2.0.5"
@@ -834,7 +834,7 @@ packages:
     source: hosted
     version: "2.3.10"
   rxdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: rxdart
       sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
