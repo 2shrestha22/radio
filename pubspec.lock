@@ -556,8 +556,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: invalid-range-error
-      resolved-ref: "9d1b2e7d6b3db3e7397acba79d9f557e2e065bbe"
+      ref: radio-np
+      resolved-ref: "689d845e8879299ae095bb7025dd8c3bed2bcf6b"
       url: "git@github.com:2shrestha22/just_audio_media_kit.git"
     source: git
     version: "2.0.5"
