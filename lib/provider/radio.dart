@@ -1,8 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 
-// import 'package:just_audio/just_audio.dart';
 // import 'package:just_audio_background/just_audio_background.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:radio/radio_station.dart';
@@ -24,6 +25,13 @@ class Radio extends _$Radio {
       _audioPlayer.dispose();
     });
 
+    if (kDebugMode) {
+      AudioLogger.logLevel = AudioLogLevel.info;
+    }
+    _audioPlayer.positionUpdater = TimerPositionUpdater(
+      interval: const Duration(milliseconds: 100),
+      getPosition: _audioPlayer.getCurrentPosition,
+    );
     _listenUpdates();
     return const RadioState();
   }
@@ -33,17 +41,26 @@ class Radio extends _$Radio {
     if (state.station == station && _audioPlayer.state == PlayerState.playing) {
       return;
     }
-    state = state.copyWith(station: station);
+    state = state.copyWith(
+      station: station,
+      streamingState: StreamingState.buffering,
+    );
     try {
       // not resuming instead playing live stream
       await _audioPlayer.play(UrlSource(station.streamUrl));
     } catch (e) {
       state = state.copyWith(error: e);
+      await _audioPlayer.release();
     }
   }
 
   /// Play focused station.
   Future<void> play() async {
+    state = state.copyWith(streamingState: StreamingState.buffering);
+
+    if (Platform.isAndroid && state.station != null) {
+      await _audioPlayer.play(UrlSource(state.station!.streamUrl));
+    }
     await _audioPlayer.resume();
   }
 
@@ -52,7 +69,8 @@ class Radio extends _$Radio {
     await _audioPlayer.pause();
   }
 
-  Future<void> stop() => _audioPlayer.stop();
+  // release all resource when stopping
+  Future<void> stop() => _audioPlayer.release();
 
   void _listenUpdates() {
     _audioPlayer.onPlayerStateChanged.listen(
@@ -64,6 +82,7 @@ class Radio extends _$Radio {
                 ? StreamingState.playing
                 : state.streamingState,
           );
+          return;
         }
 
         if (event == PlayerState.paused) {
@@ -71,6 +90,7 @@ class Radio extends _$Radio {
             playerState: RadioPlayerState.paused,
             streamingState: null,
           );
+          return;
         }
 
         if (event == PlayerState.stopped) {
@@ -78,57 +98,35 @@ class Radio extends _$Radio {
             playerState: RadioPlayerState.stopped,
             streamingState: null,
           );
+          return;
         }
+        state = state.copyWith(streamingState: null);
       },
     ).addTo(_subscription);
 
-    _audioPlayer.eventStream.listen(
-      (event) {
-        print(event);
-      },
-    );
-
-    // _audioPlayer.playerStateStream.listen(
-    //   (event) {
-    //     StreamingState? getStreamingState() {
-    //       if (event.playing && event.processingState == ProcessingState.ready) {
-    //         return StreamingState.playing;
-    //       }
-    //       if (event.processingState == ProcessingState.buffering ||
-    //           event.processingState == ProcessingState.loading) {
-    //         return StreamingState.buffering;
-    //       }
-    //       return null;
-    //     }
-
-    //     RadioPlayerState getPlayerState() {
-    //       if (!event.playing && event.processingState == ProcessingState.idle) {
-    //         return RadioPlayerState.stopped;
-    //       }
-
-    //       if (!event.playing &&
-    //           event.processingState == ProcessingState.ready) {
-    //         return RadioPlayerState.paused;
-    //       }
-
-    //       return RadioPlayerState.started;
-    //     }
-
-    //     state = state.copyWith(
-    //       playerState: getPlayerState(),
-    //       streamingState: getStreamingState(),
-    //     );
-    //   },
-    // ).addTo(_subscription);
-
-    // _audioPlayer.icyMetadataStream.listen(
-    //   (event) {
-    //     state = state.copyWith(
-    //       bitRate: event?.headers?.bitrate,
-    //       title: event?.info?.title,
-    //     );
-    //   },
-    // ).addTo(_subscription);
+    // listens if player position is updating or not.
+    _audioPlayer.onPositionChanged
+        .map((_) => true) // Map to true indicating position is updating
+        .mergeWith([
+          // Emits false if position hasn't changed for more than 1 second
+          _audioPlayer.onPositionChanged
+              .debounceTime(const Duration(milliseconds: 150))
+              .map((_) => false)
+        ])
+        .map((event) {
+          if (_audioPlayer.state == PlayerState.playing) {
+            return event ? StreamingState.playing : StreamingState.buffering;
+          } else {
+            return null;
+          }
+        })
+        .distinct()
+        .listen(
+          (event) {
+            state = state.copyWith(streamingState: event);
+          },
+        )
+        .addTo(_subscription);
   }
 
   void resetEffect() {
