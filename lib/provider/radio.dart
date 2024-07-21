@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'dart:developer';
 
-import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+// import 'package:just_audio/just_audio.dart';
+// import 'package:just_audio_background/just_audio_background.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:radio/radio_station.dart';
@@ -15,12 +15,7 @@ part 'radio.g.dart';
 class Radio extends _$Radio {
   final _subscription = CompositeSubscription();
 
-  late final _audioPlayer = AudioPlayer();
-
-  // Internal variables
-  /// After error setting url this field is true. Then when trying to play
-  /// radio again we need to reset the url to focused station.
-  bool _needUrlReset = false;
+  final _audioPlayer = AudioPlayer();
 
   @override
   RadioState build() {
@@ -35,45 +30,21 @@ class Radio extends _$Radio {
 
   /// Focus a station and start playing.
   Future<void> setFocusedStation(RadioStation station) async {
-    if (state.station == station && _audioPlayer.playing && !_needUrlReset) {
+    if (state.station == station && _audioPlayer.state == PlayerState.playing) {
       return;
     }
-
     state = state.copyWith(station: station);
-
     try {
-      if (_audioPlayer.playing) {
-        await _audioPlayer.stop();
-      }
-      await _audioPlayer.setAudioSource(
-        AudioSource.uri(
-          Uri.parse(station.streamUrl),
-          tag: MediaItem(
-            id: station.id,
-            title: station.name,
-            duration: Duration.zero,
-            artUri: Uri.tryParse(station.imageUrl),
-          ),
-        ),
-      );
-      unawaited(_audioPlayer.play());
-      _needUrlReset = false;
-    } on PlayerInterruptedException catch (e) {
-      log(e.toString());
+      // not resuming instead playing live stream
+      await _audioPlayer.play(UrlSource(station.streamUrl));
     } catch (e) {
-      _needUrlReset = true;
       state = state.copyWith(error: e);
     }
   }
 
   /// Play focused station.
   Future<void> play() async {
-    if (_needUrlReset) {
-      // resetting stream url.
-      await setFocusedStation(state.station!);
-    } else {
-      unawaited(_audioPlayer.play());
-    }
+    await _audioPlayer.resume();
   }
 
   // Pause focused station.
@@ -84,47 +55,80 @@ class Radio extends _$Radio {
   Future<void> stop() => _audioPlayer.stop();
 
   void _listenUpdates() {
-    _audioPlayer.playerStateStream.listen(
+    _audioPlayer.onPlayerStateChanged.listen(
       (event) {
-        StreamingState? getStreamingState() {
-          if (event.playing && event.processingState == ProcessingState.ready) {
-            return StreamingState.playing;
-          }
-          if (event.processingState == ProcessingState.buffering ||
-              event.processingState == ProcessingState.loading) {
-            return StreamingState.buffering;
-          }
-          return null;
+        if (event == PlayerState.playing) {
+          state = state.copyWith(
+            playerState: RadioPlayerState.started,
+            streamingState: event == PlayerState.playing
+                ? StreamingState.playing
+                : state.streamingState,
+          );
         }
 
-        RadioPlayerState getPlayerState() {
-          if (!event.playing && event.processingState == ProcessingState.idle) {
-            return RadioPlayerState.stopped;
-          }
-
-          if (!event.playing &&
-              event.processingState == ProcessingState.ready) {
-            return RadioPlayerState.paused;
-          }
-
-          return RadioPlayerState.started;
+        if (event == PlayerState.paused) {
+          state = state.copyWith(
+            playerState: RadioPlayerState.paused,
+            streamingState: null,
+          );
         }
 
-        state = state.copyWith(
-          playerState: getPlayerState(),
-          streamingState: getStreamingState(),
-        );
+        if (event == PlayerState.stopped) {
+          state = state.copyWith(
+            playerState: RadioPlayerState.stopped,
+            streamingState: null,
+          );
+        }
       },
     ).addTo(_subscription);
 
-    _audioPlayer.icyMetadataStream.listen(
+    _audioPlayer.eventStream.listen(
       (event) {
-        state = state.copyWith(
-          bitRate: event?.headers?.bitrate,
-          title: event?.info?.title,
-        );
+        print(event);
       },
-    ).addTo(_subscription);
+    );
+
+    // _audioPlayer.playerStateStream.listen(
+    //   (event) {
+    //     StreamingState? getStreamingState() {
+    //       if (event.playing && event.processingState == ProcessingState.ready) {
+    //         return StreamingState.playing;
+    //       }
+    //       if (event.processingState == ProcessingState.buffering ||
+    //           event.processingState == ProcessingState.loading) {
+    //         return StreamingState.buffering;
+    //       }
+    //       return null;
+    //     }
+
+    //     RadioPlayerState getPlayerState() {
+    //       if (!event.playing && event.processingState == ProcessingState.idle) {
+    //         return RadioPlayerState.stopped;
+    //       }
+
+    //       if (!event.playing &&
+    //           event.processingState == ProcessingState.ready) {
+    //         return RadioPlayerState.paused;
+    //       }
+
+    //       return RadioPlayerState.started;
+    //     }
+
+    //     state = state.copyWith(
+    //       playerState: getPlayerState(),
+    //       streamingState: getStreamingState(),
+    //     );
+    //   },
+    // ).addTo(_subscription);
+
+    // _audioPlayer.icyMetadataStream.listen(
+    //   (event) {
+    //     state = state.copyWith(
+    //       bitRate: event?.headers?.bitrate,
+    //       title: event?.info?.title,
+    //     );
+    //   },
+    // ).addTo(_subscription);
   }
 
   void resetEffect() {
