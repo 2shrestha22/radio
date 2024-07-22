@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:just_audio_media_kit/just_audio_media_kit.dart';
@@ -21,4 +24,10 @@ Future<void> main() async {
   ]);
 
   runApp(const ProviderScope(child: App()));
+}
+
+Future<void> loadStations() async {
+  final data = await rootBundle.loadString("assets/radio_list.json");
+  allRadioStations =
+      (jsonDecode(data) as List).map((e) => RadioStation.fromJson(e)).toList();
 }

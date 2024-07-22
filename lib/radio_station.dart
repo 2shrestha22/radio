@@ -1,8 +1,3 @@
-// ignore_for_file: invalid_annotation_target
-
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'radio_station.freezed.dart';
@@ -27,14 +22,14 @@ class RadioStation with _$RadioStation {
   factory RadioStation.fromJson(Map<String, dynamic> json) =>
       _$RadioStationFromJson(json);
 
-  String getFreqString() =>
-      frequency != null ? '$frequency MHz' : 'Online Radio';
+  String getFreqString() {
+    if (frequency == null) return 'Online Radio';
+    // 90.0 -> 90
+    // 91.8 -> 92.8
+    final freq = frequency! % 1 == 0 ? frequency!.toInt() : frequency;
+
+    return '$freq MHz';
+  }
 }
 
 List<RadioStation> allRadioStations = [];
-
-Future<void> loadStations() async {
-  final data = await rootBundle.loadString("assets/radio_list.json");
-  allRadioStations =
-      (jsonDecode(data) as List).map((e) => RadioStation.fromJson(e)).toList();
-}
