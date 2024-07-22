@@ -28,13 +28,13 @@ class RadioControlPanel extends ConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
-            children: [
-              StationLogo(radioState.station!.imageUrl),
-              const GutterTiny(),
-              DefaultTextStyle(
-                style: Theme.of(context).textTheme.bodySmall!,
-                child: Builder(
+          DefaultTextStyle(
+            style: Theme.of(context).textTheme.bodySmall!,
+            child: Column(
+              children: [
+                StationLogo(radioState.station!.imageUrl),
+                const GutterTiny(),
+                Builder(
                   builder: (context) {
                     if (radioState.bitRate != null) {
                       return Text(formatBitrate(radioState.bitRate!));
@@ -42,8 +42,8 @@ class RadioControlPanel extends ConsumerWidget {
                     return const Text('-- Kbps');
                   },
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           const Gutter(),
           Expanded(
@@ -60,17 +60,25 @@ class RadioControlPanel extends ConsumerWidget {
                 ),
                 DefaultTextStyle(
                   style: Theme.of(context).textTheme.bodySmall!,
-                  child: Builder(
-                    builder: (context) {
-                      if (radioState.title != null) {
-                        return Text(
-                          radioState.title!,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        );
-                      }
-                      return const Text('');
-                    },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(radioState.station!.getFreqString()),
+                      Flexible(
+                        child: Builder(
+                          builder: (context) {
+                            if (radioState.title != null) {
+                              return Text(
+                                ' | ${radioState.title!}',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              );
+                            }
+                            return const Text('');
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 ButtonBar(
