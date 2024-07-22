@@ -4,8 +4,8 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/const.dart';
 import 'package:radio/provider/favorite_stations.dart';
 import 'package:radio/provider/radio.dart';
-import 'package:radio/provider/station_search.dart';
 import 'package:radio/provider/search_input.dart';
+import 'package:radio/provider/station_search.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/radio_station.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
@@ -50,8 +50,21 @@ class _HomePageState extends ConsumerState<HomePage> {
             ),
             child: Column(
               children: [
-                const TabBar(
-                  tabs: [Tab(text: 'Favorite'), Tab(text: 'Browse')],
+                TabBar(
+                  labelStyle: Theme.of(context)
+                      .textTheme
+                      .titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                  tabs: const [
+                    Tab(
+                      text: 'Favorite',
+                      icon: Icon(LucideIcons.heart),
+                    ),
+                    Tab(
+                      text: 'Browse',
+                      icon: Icon(LucideIcons.listMusic),
+                    ),
+                  ],
                 ),
                 Expanded(
                   child: TabBarView(
