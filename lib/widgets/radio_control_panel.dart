@@ -6,6 +6,7 @@ import 'package:radio/const.dart';
 import 'package:radio/loader.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/widgets/station_logo.dart';
 
@@ -111,16 +112,37 @@ class RadioControlPanel extends ConsumerWidget {
                           )
                       },
                     ),
-                    AnimatedOpacity(
-                      duration: animationDuration,
-                      opacity: radioState.playerState.isRunning ? 1 : 0,
-                      child: IconButton(
-                        icon: const Icon(LucideIcons.square),
-                        onPressed: () async {
-                          await ref.read(radioProvider.notifier).stop();
+                    IconButton(
+                      icon: const Icon(LucideIcons.square),
+                      onPressed: radioState.playerState.isRunning
+                          ? () async {
+                              await ref.read(radioProvider.notifier).stop();
+                            }
+                          : null,
+                    ),
+                    if (radioState.station != null)
+                      Consumer(
+                        builder: (context, ref, child) {
+                          final station = ref.watch(stationsProvider);
+                          return IconButton(
+                            onPressed: () => ref
+                                .read(stationsProvider.notifier)
+                                .toggleFav(radioState.station!.id),
+                            icon: switch (station
+                                .firstWhere(
+                                  (e) => e.id == radioState.station!.id,
+                                )
+                                .fav) {
+                              true => const Icon(
+                                  Icons.favorite,
+                                  key: ValueKey('true'),
+                                  color: Colors.red,
+                                ),
+                              false => const Icon(Icons.favorite_outline),
+                            },
+                          );
                         },
                       ),
-                    ),
                   ],
                 ),
               ],
