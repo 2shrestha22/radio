@@ -4,8 +4,11 @@
 
 Radio NP is a free and open source online radio app that provides access to all Nepali radio stations with a convenient favorite feature to save your preferred stations.
 
-## Download
-[GitHub Releases](https://github.com/2shrestha22/radio/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/2shrestha22/radio)](https://github.com/2shrestha22/radio/releases/latest)
+
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+    alt="Get it on Google Play"
+    height="80">](https://play.google.com/store/apps/details?id=np.com.sargam.radio)
 
 ## Screenshots
 
