@@ -87,7 +87,7 @@ class Radio extends _$Radio {
     _audioPlayer.playerStateStream.listen(
       (event) {
         StreamingState? getStreamingState() {
-          if (event.playing && event.processingState == ProcessingState.ready) {
+          if (event.playing) {
             return StreamingState.playing;
           }
           if (event.processingState == ProcessingState.buffering ||
