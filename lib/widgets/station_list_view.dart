@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:radio/radio_station.dart';
+import 'package:radio/models/radio_station.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class StationListView extends StatelessWidget {

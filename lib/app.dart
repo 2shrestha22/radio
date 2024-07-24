@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:radio/home_page.dart';
+import 'package:radio/pages/home_page.dart';
 import 'package:radio/theme/theme.dart';
 
 part '_router.dart';

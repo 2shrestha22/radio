@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:radio/const.dart';
+import 'package:radio/const/const.dart';
+import 'package:radio/models/radio_station.dart';
 import 'package:radio/provider/favorite_stations.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/search_input.dart';
 import 'package:radio/provider/station_search.dart';
 import 'package:radio/provider/stations.dart';
-import 'package:radio/radio_station.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 import 'package:radio/widgets/station_list_view.dart';
 
