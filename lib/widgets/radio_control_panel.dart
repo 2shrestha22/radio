@@ -17,7 +17,7 @@ class RadioControlPanel extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final radioState = ref.watch(radioProvider);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: const BorderRadius.only(

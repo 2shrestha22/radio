@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adaptive_scaffold/flutter_adaptive_scaffold.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:radio/const/const.dart';
@@ -22,6 +23,8 @@ class _HomePageState extends ConsumerState<HomePage> {
   late final TextEditingController textEditingController;
   final focusNode = FocusNode();
 
+  int _selectedTab = 0;
+
   @override
   void initState() {
     super.initState();
@@ -35,135 +38,166 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Radio NP'),
-        surfaceTintColor: Colors.transparent,
-      ),
-      resizeToAvoidBottomInset: false,
-      body: DefaultTabController(
-        length: 2,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 640,
-            ),
-            child: Column(
-              children: [
-                TabBar(
-                  labelStyle: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                  tabs: const [
-                    Tab(
-                      text: 'Favorite',
-                      icon: Icon(LucideIcons.heart),
-                    ),
-                    Tab(
-                      text: 'Browse',
-                      icon: Icon(LucideIcons.listMusic),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: TabBarView(
-                    children: [
-                      CustomScrollView(
-                        slivers: [
-                          Consumer(
-                            builder: (context, ref, child) {
-                              return StationListView(
-                                stations: ref.watch(favoriteStationsProvider),
-                                onTap: (station) async {
-                                  ScaffoldMessenger.of(context)
-                                      .hideCurrentSnackBar();
-                                  focusNode.unfocus();
-                                  return ref
-                                      .read(radioProvider.notifier)
-                                      .setFocusedStation(station);
-                                },
-                                onFavTap: (station) async {
-                                  final shouldRemove = await showDialog<bool?>(
-                                    context: context,
-                                    builder: (context) =>
-                                        RemoveFavDialog(station: station),
-                                  );
-
-                                  if (shouldRemove ?? false) {
-                                    ref
-                                        .read(stationsProvider.notifier)
-                                        .toggleFav(station.id);
-                                  }
-                                },
-                              );
-                            },
-                          ),
-                        ],
+    return AdaptiveScaffold(
+      useDrawer: false,
+      selectedIndex: _selectedTab,
+      onSelectedIndexChange: (int index) {
+        setState(() {
+          _selectedTab = index;
+        });
+      },
+      destinations: const <NavigationDestination>[
+        NavigationDestination(
+          icon: Icon(LucideIcons.heart),
+          label: 'Favourite',
+        ),
+        NavigationDestination(
+          icon: Icon(LucideIcons.listMusic),
+          label: 'Browse',
+        ),
+      ],
+      body: (context) {
+        return Column(
+          children: [
+            Expanded(
+              child: IndexedStack(
+                index: _selectedTab,
+                children: [
+                  CustomScrollView(
+                    slivers: [
+                      SliverAppBar(
+                        pinned: true,
+                        floating: true,
+                        surfaceTintColor: Colors.transparent,
+                        backgroundColor:
+                            Theme.of(context).scaffoldBackgroundColor,
+                        title: const Text('Radio NP'),
                       ),
-                      CustomScrollView(
-                        slivers: [
-                          SliverAppBar(
-                            floating: true,
-                            backgroundColor:
-                                Theme.of(context).scaffoldBackgroundColor,
-                            surfaceTintColor: Colors.transparent,
-                            centerTitle: true,
-                            titleSpacing: 0,
-                            title: SearchField(
-                              focusNode: focusNode,
-                              textEditingController: textEditingController,
-                            ),
-                          ),
-                          Consumer(
-                            builder: (context, ref, child) {
-                              return StationListView(
-                                stations: ref.watch(stationSearchProvider),
-                                onTap: (station) async {
-                                  ScaffoldMessenger.of(context)
-                                      .hideCurrentSnackBar();
-                                  focusNode.unfocus();
-                                  return ref
-                                      .read(radioProvider.notifier)
-                                      .setFocusedStation(station);
-                                },
-                                onFavTap: (station) {
-                                  ref
-                                      .read(stationsProvider.notifier)
-                                      .toggleFav(station.id);
-                                },
-                              );
+                      Consumer(
+                        builder: (context, ref, child) {
+                          return StationListView(
+                            stations: ref.watch(favoriteStationsProvider),
+                            onTap: (station) async {
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
+                              focusNode.unfocus();
+                              return ref
+                                  .read(radioProvider.notifier)
+                                  .setFocusedStation(station);
                             },
-                          ),
-                        ],
+                            onFavTap: (station) async {
+                              final shouldRemove = await showDialog<bool?>(
+                                context: context,
+                                builder: (context) =>
+                                    RemoveFavDialog(station: station),
+                              );
+
+                              if (shouldRemove ?? false) {
+                                ref
+                                    .read(stationsProvider.notifier)
+                                    .toggleFav(station.id);
+                              }
+                            },
+                          );
+                        },
                       ),
                     ],
                   ),
-                ),
-                Consumer(
-                  builder: (context, ref, child) {
-                    ref.listen(
-                      radioProvider,
-                      (previous, next) {
-                        if (previous?.error != next.error) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(next.error.toString())));
-                        }
-                      },
-                    );
-
-                    final radioState = ref.watch(radioProvider);
-                    if (radioState.station == null) {
-                      return const SizedBox.shrink();
-                    }
-                    return const RadioControlPanel();
-                  },
-                ),
-              ],
+                  CustomScrollView(
+                    slivers: [
+                      SliverAppBar(
+                        pinned: true,
+                        floating: true,
+                        surfaceTintColor: Colors.transparent,
+                        backgroundColor:
+                            Theme.of(context).scaffoldBackgroundColor,
+                        title: const Text('Radio NP'),
+                        bottom: PreferredSize(
+                          preferredSize: const Size.fromHeight(60),
+                          child: SearchField(
+                            focusNode: focusNode,
+                            textEditingController: textEditingController,
+                          ),
+                        ),
+                      ),
+                      Consumer(
+                        builder: (context, ref, child) {
+                          return StationListView(
+                            stations: ref.watch(stationSearchProvider),
+                            onTap: (station) async {
+                              ScaffoldMessenger.of(context)
+                                  .hideCurrentSnackBar();
+                              focusNode.unfocus();
+                              return ref
+                                  .read(radioProvider.notifier)
+                                  .setFocusedStation(station);
+                            },
+                            onFavTap: (station) {
+                              ref
+                                  .read(stationsProvider.notifier)
+                                  .toggleFav(station.id);
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ),
-      ),
+            Consumer(
+              builder: (context, ref, child) {
+                ref.listen(
+                  radioProvider,
+                  (previous, next) {
+                    if (previous?.error != next.error) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(next.error.toString())));
+                    }
+                  },
+                );
+
+                final radioState = ref.watch(radioProvider);
+                if (radioState.station == null) {
+                  return const SizedBox.shrink();
+                }
+                return const RadioControlPanel();
+              },
+            ),
+          ],
+        );
+
+        // return DefaultTabController(
+        //   length: 2,
+        //   child: Center(
+        //     child: ConstrainedBox(
+        //       constraints: const BoxConstraints(
+        //         maxWidth: 640,
+        //       ),
+        //       child: Column(
+        //         children: [
+        //           TabBar(
+        //             labelStyle: Theme.of(context)
+        //                 .textTheme
+        //                 .titleMedium
+        //                 ?.copyWith(fontWeight: FontWeight.bold),
+        //             tabs: const [
+        //               Tab(
+        //                 text: 'Favorite',
+        //                 icon: Icon(LucideIcons.heart),
+        //               ),
+        //               Tab(
+        //                 text: 'Browse',
+        //                 icon: Icon(LucideIcons.listMusic),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // );
+      },
     );
   }
 }
