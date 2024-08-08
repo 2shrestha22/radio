@@ -8,9 +8,13 @@ import 'package:just_audio_media_kit/just_audio_media_kit.dart';
 import 'package:radio/app.dart';
 import 'package:radio/radio_station.dart';
 import 'package:radio/shared_pref.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  setPathUrlStrategy();
+
   JustAudioMediaKit.ensureInitialized();
 
   await loadStations();
