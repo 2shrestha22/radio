@@ -140,24 +140,26 @@ class _HomePageState extends ConsumerState<HomePage> {
                     ],
                   ),
                 ),
-                Consumer(
-                  builder: (context, ref, child) {
-                    ref.listen(
-                      radioProvider,
-                      (previous, next) {
-                        if (previous?.error != next.error) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(next.error.toString())));
-                        }
-                      },
-                    );
+                SafeArea(
+                  child: Consumer(
+                    builder: (context, ref, child) {
+                      ref.listen(
+                        radioProvider,
+                        (previous, next) {
+                          if (previous?.error != next.error) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text(next.error.toString())));
+                          }
+                        },
+                      );
 
-                    final radioState = ref.watch(radioProvider);
-                    if (radioState.station == null) {
-                      return const SizedBox.shrink();
-                    }
-                    return const RadioControlPanel();
-                  },
+                      final radioState = ref.watch(radioProvider);
+                      if (radioState.station == null) {
+                        return const SizedBox.shrink();
+                      }
+                      return const RadioControlPanel();
+                    },
+                  ),
                 ),
               ],
             ),
