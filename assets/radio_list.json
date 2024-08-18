@@ -360,7 +360,8 @@
         "name": "Radio Ramaroshan",
         "streamUrl": "http://216.55.141.189:8621/;",
         "frequency": 92.0,
-        "address": "Achham"
+        "address": "Achham",
+        "province": 7
     },
     {
         "id": "LbG6D9eqAk7R85B1khBti",
@@ -451,7 +452,8 @@
         "name": "Dinesh FM 93.8 Mhz",
         "streamUrl": "https://live.itech.host:3985/stream",
         "frequency": 93.8,
-        "address": "Dhangadhi, Kailali"
+        "address": "Dhangadhi, Kailali",
+        "province": 7
     },
     {
         "id": "XvDPsa1K1HHAsuecm2TqU",
@@ -466,7 +468,8 @@
         "name": "Radio Dhangadhi",
         "streamUrl": "http://216.55.141.189:8713/;",
         "frequency": 90.5,
-        "address": "Dhangadhi, Kailali, Nepal"
+        "address": "Dhangadhi, Kailali, Nepal",
+        "province": 7
     },
     {
         "id": "E44hS4cQ3MMajpSrh-TJF",
@@ -610,7 +613,8 @@
         "name": "Radio Amargadhi",
         "streamUrl": "http://live.itechnepal.com:8922/live",
         "frequency": 97.4,
-        "address": "Amargadhi-5, Dadeldhura"
+        "address": "Amargadhi-5, Dadeldhura",
+        "province": 7
     },
     {
         "id": "bHooWnUz9-ZEX_Iam8bp4",
@@ -655,7 +659,8 @@
         "name": "Tikapur FM",
         "streamUrl": "https://live.itech.host:9519/live",
         "frequency": 101.0,
-        "address": "Tikapur 9/B Multiple Campus Road"
+        "address": "Tikapur 9/B Multiple Campus Road",
+        "province": 7
     },
     {
         "id": "DBeiUztuOfcWyY2MnlVD2",
@@ -741,7 +746,8 @@
         "name": "Afno FM",
         "streamUrl": "https://streaming.softnep.net:10969/;",
         "frequency": 104.8,
-        "address": "Amargadhi 5, Amargadhi Killa, Dadeldhura"
+        "address": "Amargadhi 5, Amargadhi Killa, Dadeldhura",
+        "province": 7
     },
     {
         "id": "6Xqk8OTTlD3Oc_65ZjGHi",
@@ -842,7 +848,8 @@
         "name": "Darchula FM",
         "streamUrl": "https://streaming.softnep.net:10951/;",
         "frequency": 90.0,
-        "address": "Khalanga-5, Darchula"
+        "address": "Khalanga-5, Darchula",
+        "province": 7
     },
     {
         "id": "2vprwzDXqjfdbQWmVYG-N",
@@ -865,7 +872,8 @@
         "name": "Radio Koseli FM",
         "streamUrl": "http://streaming.softnep.net:8149/;",
         "frequency": 97.0,
-        "address": "Bartagoriya-2, Sadakpur, Kailali"
+        "address": "Bartagoriya-2, Sadakpur, Kailali",
+        "province": 7
     },
     {
         "id": "wAFDh7pAVqGD3lOiMqMYk",
@@ -1038,14 +1046,16 @@
         "name": "Radio Janamukhi",
         "streamUrl": "http://streaming.hamropatro.com:8301/;",
         "frequency": 97.0,
-        "address": "Chainpur, Bajhang"
+        "address": "Chainpur, Bajhang",
+        "province": 7
     },
     {
         "id": "yck3mCu_RGGZu2uZSL9nI",
         "name": "Radio Seven Star",
         "streamUrl": "http://streaming.softnep.net:8177/;",
         "frequency": 99.2,
-        "address": "Patan Municipality-8, Khodpe, Baitadi"
+        "address": "Patan Municipality-8, Khodpe, Baitadi",
+        "province": 7
     },
     {
         "id": "YDG1c7F7Lpx9I0NvNsqYN",
@@ -1206,7 +1216,8 @@
         "name": "Radio Janapriya ",
         "streamUrl": "http://live.itech.host:8792/stream",
         "frequency": 102.4,
-        "address": "Saphebagar, Achham"
+        "address": "Saphebagar, Achham",
+        "province": 7
     },
     {
         "id": "hFP_PP5NrUJDqHRgKgWGH",
@@ -1245,6 +1256,7 @@
         "streamUrl": "https://stream-41.zeno.fm/r6teyggpq7zuv?zs=TIoXQy1gREyY9Y54-eqJMw",
         "frequency": 96.5,
         "address": "Kolti, Bajura",
+        "province": 7,
         "disabled": true
     },
     {
@@ -1291,7 +1303,8 @@
         "name": "Radio Namaste",
         "streamUrl": "http://live.itech.host:8338/stream?mp3",
         "frequency": 96.5,
-        "address": "Tikapur-1, Kailali"
+        "address": "Tikapur-1, Kailali",
+        "province": 7
     },
     {
         "id": "o_A6Z9kYuzKX5899TiXFH",
@@ -1360,7 +1373,8 @@
         "name": "Saipal FM",
         "streamUrl": "http://streaming.softnep.net:8165",
         "frequency": 100.6,
-        "address": "Chainpur, Bajhang, Nepal"
+        "address": "Chainpur, Bajhang, Nepal",
+        "province": 7
     },
     {
         "id": "gZoIDcEVt-BNYHMR0b3jx",
@@ -1381,7 +1395,8 @@
         "name": "Radio Paschim Today",
         "streamUrl": "https://live.itech.host:3240/stream",
         "frequency": 88.8,
-        "address": "Kailali, Dhangadhi-1, Behind Chaulani Departmental Store, Nepal, Dhangadhi, Nepal"
+        "address": "Kailali, Dhangadhi-1, Behind Chaulani Departmental Store, Nepal, Dhangadhi, Nepal",
+        "province": 7
     },
     {
         "id": "fkXEYM7Kh0i0HNqzLzTW8",
@@ -1618,7 +1633,8 @@
         "name": "Radio Bajura",
         "streamUrl": "http://streaming.softnep.net:8105",
         "frequency": 104.0,
-        "address": "Martadi, Bajura"
+        "address": "Martadi, Bajura",
+        "province": 7
     },
     {
         "id": "AhOfN9XwY_4a6wANjIOQZ",
@@ -1662,7 +1678,8 @@
         "name": "Radio Sanfebagar",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 101.0,
-        "address": "Sanfebagar Achham, Nepal"
+        "address": "Sanfebagar Achham, Nepal",
+        "province": 7
     },
     {
         "id": "qRlDjNRUd96EH7-mCT3th",
@@ -1740,7 +1757,8 @@
         "name": "Kites FM",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 91.8,
-        "address": "Tikapur, Kailali"
+        "address": "Tikapur, Kailali",
+        "province": 7
     },
     {
         "id": "SNHz9PgWoJJaUqv8GJ2sJ",
@@ -1800,14 +1818,16 @@
         "name": "Radio Paschim Awaj",
         "streamUrl": "https://live.itech.host:3230/stream",
         "frequency": 104.7,
-        "address": "Lamki chuha, Kailali, Ph no. 91 540130"
+        "address": "Lamki chuha, Kailali",
+        "province": 7
     },
     {
         "id": "2SwNodcIwTTIQYyv4Tyyu",
         "name": "Radio Society FM",
         "streamUrl": "http://live.itech.host:1680/stream",
         "frequency": 89.0,
-        "address": "Mangalsen, Achham"
+        "address": "Mangalsen, Achham",
+        "province": 7
     },
     {
         "id": "rid9b-kawZKKDGnNmILUt",
@@ -1964,14 +1984,16 @@
         "name": "Radio Ghanteshwor",
         "streamUrl": "https://canada1.reliastream.com/proxy/narendra?mp=/stream",
         "frequency": null,
-        "address": "Budar, Doti "
+        "address": "Budar, Doti",
+        "province": 7
     },
     {
         "id": "4HEAyP78tNJkzwgL9XiPu",
         "name": "Hamro malika FM",
         "streamUrl": "http://streaming.hamropatro.com:8112",
         "frequency": 99.0,
-        "address": "Lamki Chua-1, kailali "
+        "address": "Lamki Chua-1, Kailali",
+        "province": 7
     },
     {
         "id": "QJyIzOc0XLeJxXCl4G6Ze",
@@ -2121,7 +2143,8 @@
         "name": "Radio Paurakhi",
         "streamUrl": "https://live.itech.host:8903/stream?type=.mp3",
         "frequency": 90.4,
-        "address": "Thapathali, Bajura"
+        "address": "Thapathali, Bajura",
+        "province": 7
     },
     {
         "id": "DKLQ2By3SQ7BtolYXy4WD",
@@ -2206,7 +2229,8 @@
         "name": "Radio Rastriya",
         "streamUrl": "http://centova1.toofancom.com:4753",
         "frequency": 89.8,
-        "address": "Kanchanpur"
+        "address": "Kanchanpur",
+        "province": 7
     },
     {
         "id": "thGXhMqv_DyooFzgxkCIM",
@@ -2289,7 +2313,8 @@
         "name": "Shaileshwori FM",
         "streamUrl": "https://live.itech.host:8273/stream",
         "frequency": 105.9,
-        "address": "Dipayal Silgadhi Municipality-6, Silgadhi Doti Nepal"
+        "address": "Dipayal Silgadhi Municipality-6, Silgadhi, Nepal",
+        "province": 7
     },
     {
         "id": "p9f_YlMo19oXbplaym7dj",
@@ -2546,7 +2571,8 @@
         "name": "NepalBodh",
         "streamUrl": "http://streaming.softnep.net:8241/",
         "frequency": null,
-        "address": "Beldandi - 01, Kanchanpur"
+        "address": "Beldandi - 01, Kanchanpur",
+        "province": 7
     },
     {
         "id": "uI9iDzENe7o2tnpmUjc5Q",
@@ -2638,7 +2664,8 @@
         "name": "Radio Manko Majheri",
         "streamUrl": "http://live.itech.host:2620/stream",
         "frequency": 91.0,
-        "address": "Ghodaghodi Municipality- 10, Pahalmanpur Kailali sudur paschim  Pradesh"
+        "address": "Ghodaghodi Municipality- 10, Pahalmanpur Kailali",
+        "province": 7
     },
     {
         "id": "HbBA8bMFoXO9NeMikeMCk",
@@ -2707,7 +2734,8 @@
         "name": "Jayaprithvi FM",
         "streamUrl": "https://streaming.softnep.net:10824/;",
         "frequency": 96.3,
-        "address": "jayaprithvi municipality -10 Chainpur, Bajhang"
+        "address": "jayaprithvi municipality -10 Chainpur, Bajhang",
+        "province": 7
     },
     {
         "id": "dPFdZh3xMkhRHmIX2IVri",
@@ -2730,14 +2758,16 @@
         "name": "NB Radio Network",
         "streamUrl": "https://streaming.softnep.net:10877/;",
         "frequency": null,
-        "address": " Beldandi - 01, Kanchanpur"
+        "address": " Beldandi - 01, Kanchanpur",
+        "province": 7
     },
     {
         "id": "-SIjub787tzJOo7FFnSBM",
         "name": "Radio Kanchanpur",
         "streamUrl": "http://live.itechnepal.com:8294/stream",
         "frequency": 90.2,
-        "address": "Mahendranagar -4, Kanchanpur"
+        "address": "Mahendranagar -4, Kanchanpur",
+        "province": 7
     },
     {
         "id": "-xkU5s2nTFfDIvl7jdMH7",
@@ -2844,7 +2874,8 @@
         "name": "Radio Badimalika",
         "streamUrl": "https://live.itech.host:4755/stream",
         "frequency": 95.2,
-        "address": "Trinbeni- 7, Bajura"
+        "address": "Trinbeni- 7, Bajura",
+        "province": 7
     },
     {
         "id": "s7tgvXGRP-DYlxSde8ZVZ",
@@ -2874,28 +2905,32 @@
         "name": "Radio Lipulek",
         "streamUrl": "http://216.55.141.189:8321",
         "frequency": 99.6,
-        "address": " Shailyashikhar-6, Panebaj Darchula"
+        "address": " Shailyashikhar-6, Panebaj Darchula",
+        "province": 7
     },
     {
         "id": "ORhIrB3CIZ51de3ofD0aF",
         "name": "Radio Ganatantra Aawaj",
         "streamUrl": "https://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 102.7,
-        "address": " Bungal-4, Bizgada Bajhang"
+        "address": " Bungal-4, Bizgada Bajhang",
+        "province": 7
     },
     {
         "id": "d4Rcry-arayJV5FO9Rsqf",
         "name": "Radio Baitadi",
         "streamUrl": "http://95.217.153.73:8044/;",
         "frequency": 95.4,
-        "address": "Dashrathchand-2, Dehimandau Baitadi"
+        "address": "Dashrathchand-2, Dehimandau Baitadi",
+        "province": 7
     },
     {
         "id": "oEo4Cm7l-DaugUSu7J-Wf",
         "name": "Radio Active FM",
         "streamUrl": "http://95.217.153.73:8042/;",
         "frequency": 97.2,
-        "address": "Dhangadi-2, Dhangadhi, Kailali"
+        "address": "Dhangadi-2, Dhangadhi, Kailali",
+        "province": 7
     },
     {
         "id": "4tCz_fxUOArJnSTfxwqqx",
@@ -2926,7 +2961,8 @@
         "name": "Radio Melauli",
         "streamUrl": "https://streaming.webhostnepal.com/8014/stream",
         "frequency": null,
-        "address": "Melauli-1, Baitadi"
+        "address": "Melauli-1, Baitadi",
+        "province": 7
     },
     {
         "id": "qYCQhHDgj0c8H4Own4aTb",
@@ -2971,7 +3007,8 @@
         "name": "Radio Prabhu FM",
         "streamUrl": "http://streaming.hamropatro.com:8805",
         "frequency": 102.6,
-        "address": "Shuklaphanta 10 kanchanpur Nepal"
+        "address": "Shuklaphanta 10 kanchanpur Nepal",
+        "province": 7
     },
     {
         "id": "t8ZD_fVRyDqBlYCOHuqgB",
@@ -2994,14 +3031,16 @@
         "name": "Radio Kamalbazar",
         "streamUrl": "http://streaming.hamropatro.com:8172",
         "frequency": 92.3,
-        "address": "Kamalbazar, Achham"
+        "address": "Kamalbazar, Achham",
+        "province": 7
     },
     {
         "id": "qlysFYRrcuNZcmKSkx8TP",
         "name": "Radio Sudur Sanchar",
         "streamUrl": "http://streaming.hamropatro.com:8010",
         "frequency": 106.5,
-        "address": "Belauri, Kanchanpur Nepal"
+        "address": "Belauri, Kanchanpur Nepal",
+        "province": 7
     },
     {
         "id": "HrCg_BYnWZkHMSMqovBW9",
@@ -3145,7 +3184,8 @@
         "name": "Radio Naya Nepal FM",
         "streamUrl": "https://live.itech.host:8585/stream",
         "frequency": 104.5,
-        "address": "Darchula Nepal"
+        "address": "Darchula Nepal",
+        "province": 7
     },
     {
         "id": "kRyl4jPz_pf3vLEkcl1TZ",
@@ -3325,7 +3365,8 @@
         "name": "Radio Shimbhunath",
         "streamUrl": "https://live.itech.host:3905/stream",
         "frequency": 104.9,
-        "address": "Budinanda Municipality Kolti,2 Bajura"
+        "address": "Budinanda Municipality Kolti,2 Bajura",
+        "province": 7
     },
     {
         "id": "kWqeGS7Sl_4sBn7fNJyNO",
@@ -3385,7 +3426,8 @@
         "name": "Radio KBM",
         "streamUrl": "http://streaming.hamropatro.com:8869",
         "frequency": 107.3,
-        "address": "Kamalbazar Municipality .2 Achham Nepal"
+        "address": "Kamalbazar Municipality .2 Achham Nepal",
+        "province": 7
     },
     {
         "id": "Cr_DokmABucGJdfDcupgY",
@@ -3671,7 +3713,8 @@
         "name": "Shuklaphanta FM ",
         "streamUrl": "https://streaming.webhostnepal.com/8010/stream",
         "frequency": 99.4,
-        "address": "Mahendranagar , Kanchanpur Nepal "
+        "address": "Mahendranagar , Kanchanpur Nepal ",
+        "province": 7
     },
     {
         "id": "3TvELuBI81yl3CCNMKRCY",
@@ -3694,7 +3737,8 @@
         "name": "Radio Bajhang",
         "streamUrl": "http://streaming.hamropatro.com:8691",
         "frequency": 91.0,
-        "address": "Jayaprithvi municipality 10 , Chainpur Bajhang"
+        "address": "Jayaprithvi municipality 10 , Chainpur Bajhang",
+        "province": 7
     },
     {
         "id": "tJLvCWbLxfGSUEs_OiVuf",
@@ -3725,21 +3769,24 @@
         "name": "Radio Belauri",
         "streamUrl": "https://live.itech.host:9035/stream",
         "frequency": 105.0,
-        "address": "Belauri - 06, Campus Road, Kanchanpur, Nepal"
+        "address": "Belauri - 06, Campus Road, Kanchanpur, Nepal",
+        "province": 7
     },
     {
         "id": "gVy68mvHm84EPMQxKsyUr",
         "name": "Radio Ninglashaini FM",
         "streamUrl": "http://streaming.softnep.net:8179",
         "frequency": 94.0,
-        "address": "Dashrathchand Municipality-1, Milan Chowk Baitadi"
+        "address": "Dashrathchand Municipality-1, Milan Chowk Baitadi",
+        "province": 7
     },
     {
         "id": "s2EmUcWDk0Ob_1iyPdkV-",
         "name": "Radio Sudoorawaz",
         "streamUrl": "https://live.itech.host:8639/stream",
         "frequency": 95.0,
-        "address": "Amargadhi - 5, BIddhut Road, Dadeldhura"
+        "address": "Amargadhi - 5, BIddhut Road, Dadeldhura",
+        "province": 7
     },
     {
         "id": "BSXvhBV8k3NxESzRg9qpr",
@@ -3761,7 +3808,8 @@
         "name": "Kathariya Online Radio",
         "streamUrl": "https://stream.zeno.fm/6fdk6gyrhm8uv",
         "frequency": null,
-        "address": "Bardagoriya Rural Municipality-6, Kotatulsipur Kailali, Sudurpashchim"
+        "address": "Bardagoriya Rural Municipality-6, Kotatulsipur Kailali, Sudurpashchim",
+        "province": 7
     },
     {
         "id": "P1Yq3d9f-eFqnjfB7UN5I",
@@ -4030,7 +4078,8 @@
         "name": "Radio Kailali",
         "streamUrl": "http://streaming.softnep.net:8267",
         "frequency": 103.7,
-        "address": " Sukhad, Kailali,"
+        "address": " Sukhad, Kailali,",
+        "province": 7
     },
     {
         "id": "J4xDqltsgqyd6wrcWq3HQ",
@@ -4147,7 +4196,8 @@
         "name": "Radio Sunaulo FM",
         "streamUrl": "http://streaming.hamropatro.com:8034",
         "frequency": 105.6,
-        "address": "Main Road Masuriya ,Kailali"
+        "address": "Main Road Masuriya ,Kailali",
+        "province": 7
     },
     {
         "id": "J6S85tHCz-pgnxVDad-O1",
@@ -4186,7 +4236,8 @@
         "name": "Radio Tikapur",
         "streamUrl": "https://live.itech.host:9519/live",
         "frequency": 101.0,
-        "address": "Tikapur Municipality 01, Sanchargram Tikapur, Kailali Tel : 091-560625, 091-561255 Email: tikapurfm101@gmail.com"
+        "address": "Tikapur Municipality 01, Sanchargram Tikapur, Kailali Tel",
+        "province": 7
     },
     {
         "id": "Olh3MTnlTvIrXHDZSymJN",
@@ -4277,7 +4328,8 @@
         "name": "Radio Panchadewal",
         "streamUrl": "http://streaming.hamropatro.com:8511",
         "frequency": 88.6,
-        "address": "Binayak, Achham"
+        "address": "Binayak, Achham",
+        "province": 7
     },
     {
         "id": "Fe8u31fW9nxvyCnL-VcK9",
@@ -4423,7 +4475,8 @@
         "name": "Radio KMC",
         "streamUrl": "https://streaming.webhostnepal.com/8024/stream",
         "frequency": 104.6,
-        "address": "Dhangadhi Sub -metropolitan, 06 Kailali"
+        "address": "Dhangadhi Sub -metropolitan, 06 Kailali",
+        "province": 7
     },
     {
         "id": "YykERnzIjms97wZpM9pSc",
@@ -4453,14 +4506,16 @@
         "name": "Radio Api FM",
         "streamUrl": "http://streaming.hamropatro.com:5503",
         "frequency": 88.0,
-        "address": "Budhinanda municipality 01- Kolti, Bajura Nepal"
+        "address": "Budhinanda municipality 01- Kolti, Bajura Nepal",
+        "province": 7
     },
     {
         "id": "yw8KZkiWZZCVNe_XM9uby",
         "name": "Radio Lokdarpan",
         "streamUrl": "https://streaming.webhostnepal.com/8036/stream",
         "frequency": 94.6,
-        "address": "Chaupata-5, Lekam Rural Municipality Darchula"
+        "address": "Chaupata-5, Lekam Rural Municipality Darchula",
+        "province": 7
     },
     {
         "id": "Yr6Gh85ayyU08ozxP__qh",
@@ -4491,7 +4546,8 @@
         "name": "Radio Ghodaghodi FM",
         "streamUrl": "http://streaming.hamropatro.com:5523",
         "frequency": 88.3,
-        "address": "Ghodaghodi Municipality-1 Sukhad Kailali"
+        "address": "Ghodaghodi Municipality-1 Sukhad Kailali",
+        "province": 7
     },
     {
         "id": "Lyry5_Sps-dc3btVipwbi",
