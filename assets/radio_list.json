@@ -4,21 +4,24 @@
         "name": "Ujyaalo Radio Network",
         "streamUrl": "https://astream.nepalipatro.com.np:8194/index.html",
         "frequency": 90.0,
-        "address": "Ujyaalo Ghar (Behind Central Zoo), Lalitpur - 4, Shanti Chowk, Jawalakhel"
+        "address": "Ujyaalo Ghar (Behind Central Zoo), Lalitpur - 4, Shanti Chowk, Jawalakhel",
+        "province": 3
     },
     {
         "id": "PpdCGSEQ44Ox4uLzlgcin",
         "name": "Radio Kantipur",
         "streamUrl": "https://radio-broadcast.ekantipur.com/stream",
         "frequency": 96.1,
-        "address": "Subidhanagar,Tinkune, Kathmandu, Nepal"
+        "address": "Subidhanagar,Tinkune, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "63DAluhRgl-PcYeixk5eY",
         "name": "Radio Nepal",
         "streamUrl": "https://stream1.radionepal.gov.np/live",
         "frequency": 100.0,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "KfKe5QlSGPSMjNS6j4OwC",
@@ -32,7 +35,8 @@
         "name": "BBC Nepali",
         "streamUrl": "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_nepali_radio.m3u8",
         "frequency": 103.0,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "XIQtxSR27snR6vkvJD2Al",
@@ -46,7 +50,8 @@
         "name": "Nepali Radio Network",
         "streamUrl": "https://astream.nepalipatro.com.np:8239/index.html",
         "frequency": 99.1,
-        "address": "Baneshwor Height Pipalbot Marga, Kathmandu, Nepal"
+        "address": "Baneshwor Height Pipalbot Marga, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "E_k0M6NUzwIBU4i6is8Bz",
@@ -74,21 +79,24 @@
         "name": "Radio Candid",
         "streamUrl": "https://radio-stream-relay-np.hamropatro.com/radio/8030/radio.mp3",
         "frequency": 92.7,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "oJtKkBrW6ZxwZ6mpOQa-d",
         "name": "Image News",
         "streamUrl": "https://radio-stream-relay-np.hamropatro.com/radio/8050/radio.mp3",
         "frequency": 103.6,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "gmJrziudHDkXK1NYJg11K",
         "name": "Hits FM",
         "streamUrl": "https://usa15.fastcast4u.com/proxy/hitsfm912?mp=/1",
         "frequency": 91.2,
-        "address": "New Baneshwar, Kathmandu, Nepal"
+        "address": "New Baneshwar, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "XoF2YnA5lSASjlAKxAxVA",
@@ -123,14 +131,16 @@
         "name": "Radio Janata",
         "streamUrl": "http://streaming.hamropatro.com:8895",
         "frequency": 89.1,
-        "address": "Janata Network Minbhawan Kathmandu, Nepal"
+        "address": "Janata Network Minbhawan Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "MDWPpV0SVpL9orCbeQL7K",
         "name": "Citizen FM",
         "streamUrl": "https://streaming.webhostnepal.com:7032/;",
         "frequency": 97.5,
-        "address": "MI Complex, Jamal, Kathmandu"
+        "address": "MI Complex, Jamal, Kathmandu",
+        "province": 3
     },
     {
         "id": "6g5aK_OCZNmsr2OfE88-P",
@@ -151,14 +161,16 @@
         "name": "Radio Kathmandu",
         "streamUrl": "http://216.55.141.189:8088/;",
         "frequency": 92.1,
-        "address": "Chabahil, Kathmandu, Nepal"
+        "address": "Chabahil, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "w-xqQkq10wg-Fyxshi5C4",
         "name": "Nepaliko Radio",
         "streamUrl": "http://95.217.153.73:9888/",
         "frequency": 88.8,
-        "address": "Koteshwor, Kathmandu, Nepal"
+        "address": "Koteshwor, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "HifZP7rq51i4QJvlFClTn",
@@ -172,7 +184,8 @@
         "name": "Radio Thaha Sanchar FM (Kathmandu)",
         "streamUrl": "http://streaming.softnep.net:8025",
         "frequency": 99.4,
-        "address": "Babarmahal, Kathmandu"
+        "address": "Babarmahal, Kathmandu",
+        "province": 3
     },
     {
         "id": "oUwFc8m6AJjILdz2lMWAI",
@@ -186,28 +199,32 @@
         "name": "FM Adhyatma Jyoti",
         "streamUrl": "http://streaming.hamropatro.com:8074",
         "frequency": 104.8,
-        "address": "Dillibazar, Kathmandu"
+        "address": "Dillibazar, Kathmandu",
+        "province": 3
     },
     {
         "id": "HXI4zAYGRAgGDVWrJLNR-",
         "name": "Nepal FM Network",
         "streamUrl": "http://streaming.hamropatro.com:8230",
         "frequency": 91.8,
-        "address": "Kathmandu -14, Lampati"
+        "address": "Kathmandu -14, Lampati",
+        "province": 3
     },
     {
         "id": "jJpIBkFuwV23IRPOF_Zip",
         "name": "Radio City",
         "streamUrl": "https://onlineradio.websoftitnepal.com/8036/stream",
         "frequency": 98.8,
-        "address": "Maijubahal, Kathmandu, Nepal"
+        "address": "Maijubahal, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "7937eooqXAT_2U436bJ2v",
         "name": "Classic FM",
         "streamUrl": "http://streaming.hamropatro.com:8783",
         "frequency": 101.2,
-        "address": "Jawalakhel, Lalitpur, Kathmandu"
+        "address": "Jawalakhel, Lalitpur, Kathmandu",
+        "province": 3
     },
     {
         "id": "0DwOEiB58ckJufbE8LM-K",
@@ -242,7 +259,8 @@
         "name": "Antenna Foundation Nepal",
         "streamUrl": "http://streaming.hamropatro.com:8290",
         "frequency": null,
-        "address": "Kathmandu, Nepal,"
+        "address": "Kathmandu, Nepal,",
+        "province": 3
     },
     {
         "id": "VRBjPy-wHobyYrlrswY2h",
@@ -277,7 +295,8 @@
         "name": "Radio Nagarik",
         "streamUrl": "http://streaming.hamropatro.com:8789/",
         "frequency": 96.5,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "YWiaE-BtVZgE-FRWn7YIj",
@@ -396,7 +415,8 @@
         "name": "24 Online Radio",
         "streamUrl": "http://streaming.hamropatro.com:8553",
         "frequency": null,
-        "address": "Onair Nepal Pvt. Ltd., Kalikasthan, Kathmandu"
+        "address": "Onair Nepal Pvt. Ltd., Kalikasthan, Kathmandu",
+        "province": 3
     },
     {
         "id": "4oIQ5G54eNW5nYt9SLHTg",
@@ -431,7 +451,8 @@
         "name": "Khozee Radio",
         "streamUrl": "http://streaming.hamropatro.com:8060/;",
         "frequency": null,
-        "address": "New Baneshwor, Kathmandu, Nepal"
+        "address": "New Baneshwor, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "K_VyHWE3NoLx0HXDELLlI",
@@ -543,14 +564,16 @@
         "name": "Radio Deshantar",
         "streamUrl": "http://streaming.hamropatro.com:8136/;",
         "frequency": 100.3,
-        "address": "Anamnagar, Kathmandu"
+        "address": "Anamnagar, Kathmandu",
+        "province": 3
     },
     {
         "id": "Owyt9eYS1zmT0Rq41donH",
         "name": "Kool FM ",
         "streamUrl": "https://streaming.softnep.net:10944/;",
         "frequency": 90.3,
-        "address": "Bhotahity-30, Kathmandu"
+        "address": "Bhotahity-30, Kathmandu",
+        "province": 3
     },
     {
         "id": "nQVKiopZioZ28P0Bsg97t",
@@ -718,7 +741,8 @@
         "name": "Metro Traffic FM",
         "streamUrl": "https://centova1.toofancom.com/proxy/trafficradio?mp=/stream",
         "frequency": 95.5,
-        "address": "Metropolitan Traffic Police, Ramshahpath, Kathmandu"
+        "address": "Metropolitan Traffic Police, Ramshahpath, Kathmandu",
+        "province": 3
     },
     {
         "id": "P8XRs5DoaNUlbyvQX2pwj",
@@ -824,7 +848,8 @@
         "name": "Radio Harpal",
         "streamUrl": "https://online.net.np/8040/stream",
         "frequency": 90.9,
-        "address": "Tokha, Kathmandu"
+        "address": "Tokha, Kathmandu",
+        "province": 3
     },
     {
         "id": "m69vOKT0_zxNERjIK8sEy",
@@ -887,7 +912,8 @@
         "name": "Newa FM",
         "streamUrl": "http://streaming.hamropatro.com:8835/;",
         "frequency": 106.6,
-        "address": "Kirtipur-2, Kathmandu"
+        "address": "Kirtipur-2, Kathmandu",
+        "province": 3
     },
     {
         "id": "bMvuiIRwaz1ydEZrc3d4v",
@@ -1420,7 +1446,8 @@
         "name": "Radio Upatyaka",
         "streamUrl": "https://online.net.np/8042/stream",
         "frequency": 87.6,
-        "address": "Tripureshwor, Kathmandu, Nepal"
+        "address": "Tripureshwor, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "qRF7mBPMWCz658zCcWb_P",
@@ -1448,7 +1475,8 @@
         "name": "Radio Himalaya",
         "streamUrl": "https://live.itech.host/himalayaradio",
         "frequency": null,
-        "address": "Bagbazar, Kathmandu, Nepal"
+        "address": "Bagbazar, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "BDErWXYruI9X5SgG_zsts",
@@ -1546,7 +1574,8 @@
         "name": "Times FM",
         "streamUrl": "http://streaming.hamropatro.com:8663",
         "frequency": 90.6,
-        "address": "Chabahil, Kathmandu"
+        "address": "Chabahil, Kathmandu",
+        "province": 3
     },
     {
         "id": "LuyELZWQQyHov6c_nlAWq",
@@ -1623,7 +1652,8 @@
         "name": "Music Joy Radio",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": null,
-        "address": "Kuleshwor, Kathmandu Ph:+977-9818389695"
+        "address": "Kuleshwor, Kathmandu",
+        "province": 3
     },
     {
         "id": "i0w44_MpVXQ8HWQqr7hH6",
@@ -2036,7 +2066,8 @@
         "name": "Radio Artha Sarokar",
         "streamUrl": "http://live.itech.host:2430/stream?mp3",
         "frequency": null,
-        "address": "Koteshwor, Kathmandu, Nepal"
+        "address": "Koteshwor, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "bv_rdhw2m6XLpBKclAGG5",
@@ -2225,7 +2256,8 @@
         "name": "Radio Derby",
         "streamUrl": "https://centova1.toofancom.com/proxy/radioderby?mp=/stream",
         "frequency": null,
-        "address": "Kathmandu, Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "0HgmhM0kxZBflpplik_iH",
@@ -2428,7 +2460,8 @@
         "name": "Radio Swabhiman",
         "streamUrl": "https://ec1.everestcast.host:1225/stream?type=.mp3",
         "frequency": null,
-        "address": " Gokarneshwor Municipality-7, Kathmandu Mobile No : 9841989873"
+        "address": " Gokarneshwor Municipality-7, Kathmandu",
+        "province": 3
     },
     {
         "id": "MG9LsKGJNy68mg6f9iqGv",
@@ -2757,7 +2790,8 @@
         "name": "Radio Comedy Champion",
         "streamUrl": "https://online.net.np/8042/stream",
         "frequency": null,
-        "address": "Kathmandu ,Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "3IwkA3fVsnqlkmKGWwJwv",
@@ -2806,7 +2840,8 @@
         "name": "Broad FM",
         "streamUrl": "http://streaming.hamropatro.com:8142",
         "frequency": 94.9,
-        "address": "Mid Baneshwor-31, Kathmandu"
+        "address": "Mid Baneshwor-31, Kathmandu",
+        "province": 3
     },
     {
         "id": "QtC9xr2cupW4SkVIf_MiK",
@@ -2911,7 +2946,8 @@
         "name": "Metro Fm",
         "streamUrl": "http://216.55.141.189:8134",
         "frequency": 94.6,
-        "address": " BhrikutiMandap Rastriya SavaGriha Kathmandu Nepal"
+        "address": " BhrikutiMandap Rastriya SavaGriha, Kathmandu",
+        "province": 3
     },
     {
         "id": "Lbpw8ZG83rw_kR_dMaLx4",
@@ -2946,7 +2982,8 @@
         "name": "Janata Radio",
         "streamUrl": "http://live.itech.host:1970/;?type=http%26nocache=1571378684",
         "frequency": null,
-        "address": "Kathmandu ,Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "DyLfGXwuezuQsxvI-_zw4",
@@ -2960,7 +2997,8 @@
         "name": "Janata Samaj Radio Network",
         "streamUrl": "http://streaming.hamropatro.com:8635",
         "frequency": null,
-        "address": "New Baneshwor, Kathmandu"
+        "address": "New Baneshwor, Kathmandu",
+        "province": 3
     },
     {
         "id": "N8H44CjeEv_56y5A96dUi",
@@ -2988,7 +3026,8 @@
         "name": "Radio Samakhabar",
         "streamUrl": "https://stream.zeno.fm/nsxexttokuhvv",
         "frequency": null,
-        "address": "Kathmandu Metropolitan City-29, Anamnagar, Nepal"
+        "address": "Kathmandu Metropolitan City-29, Anamnagar, Nepal",
+        "province": 3
     },
     {
         "id": "dTrVntaZqD-IWXigKOH9h",
@@ -3023,7 +3062,8 @@
         "name": "Radio Aaha",
         "streamUrl": "https://live.itech.host:4060/stream",
         "frequency": 104.5,
-        "address": "Dillibazzar, Kathmandu"
+        "address": "Dillibazzar, Kathmandu",
+        "province": 3
     },
     {
         "id": "CvLB_P6CzdsrJL6ut8kF-",
@@ -3072,7 +3112,8 @@
         "name": "Online FM",
         "streamUrl": "https://stream.zeno.fm/0cu4ikikynntv",
         "frequency": null,
-        "address": "Kathmandu,Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "vfv8pKK4PvqIWEMSVg1tu",
@@ -3205,7 +3246,8 @@
         "name": "Nepal Network",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": null,
-        "address": "Kathmandu Nepal"
+        "address": "Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "5l5MpWtw_8fXJh7zwApuC",
@@ -3471,7 +3513,8 @@
         "name": "Radio Shweta Shardul",
         "streamUrl": "https://live.itech.host:1210/stream",
         "frequency": 93.6,
-        "address": "New Baneshwor, Kathmandu, Nepal"
+        "address": "New Baneshwor, Kathmandu, Nepal",
+        "province": 3
     },
     {
         "id": "koAy4GKaPwgoYNKecJ-Tc",
@@ -3492,14 +3535,16 @@
         "name": "BP Bichar Radio",
         "streamUrl": "https://radio-streaming-serv.hamropatro.com:8140/radio.mp3",
         "frequency": null,
-        "address": "BP Bichar Network Banshidhar Marg, Chandol Kathmandu-4, Bagmati"
+        "address": "BP Bichar Network Banshidhar Marg, Chandol Kathmandu-4, Bagmati",
+        "province": 3
     },
     {
         "id": "cCluCbEnNG6IlC84fUBEL",
         "name": "Radio Mirmire",
         "streamUrl": "http://streaming.hamropatro.com:8232",
         "frequency": 89.4,
-        "address": "Anamnagar, Kathmandu Nepal"
+        "address": "Anamnagar, Kathmandu Nepal",
+        "province": 3
     },
     {
         "id": "o81pljI1gZp3vgwb7U7eS",
@@ -3562,7 +3607,8 @@
         "name": "Radio Indreni",
         "streamUrl": "http://streaming.hamropatro.com:8519",
         "frequency": null,
-        "address": "Kathmandu Nepal"
+        "address": "Kathmandu Nepal",
+        "province": 3
     },
     {
         "id": "N3rBrzu2z5FDbqae3g6DL",
