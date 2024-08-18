@@ -252,7 +252,8 @@
         "name": "Radio Bheri  FM 98.6 & 102.7 MHz",
         "streamUrl": "http://streaming.hamropatro.com:8313",
         "frequency": 98.6,
-        "address": "Birendranagar-7, Surkhet"
+        "address": "Birendranagar-7, Surkhet",
+        "province": 6
     },
     {
         "id": "LM_enGAagFchyHlVaBzzL",
@@ -503,7 +504,8 @@
         "name": "Jagaran FM",
         "streamUrl": "https://streaming.webhostnepal.com/8046/stream",
         "frequency": 90.8,
-        "address": "Birendranagar, Surkhet, Nepal"
+        "address": "Birendranagar, Surkhet, Nepal",
+        "province": 6
     },
     {
         "id": "1BdjpH6pUNhRLNTnMnQCw",
@@ -531,7 +533,8 @@
         "name": "Pradesh FM",
         "streamUrl": "http://streaming.hamropatro.com:8491",
         "frequency": 105.0,
-        "address": "Birendranagar-6, Surkhet"
+        "address": "Birendranagar-6, Surkhet",
+        "province": 6
     },
     {
         "id": "7f2AGuq_q9NKQa2VQU0lA",
@@ -714,7 +717,8 @@
         "name": "Radio Sarada",
         "streamUrl": "http://live.itech.host:9443/stream?mp3",
         "frequency": 99.2,
-        "address": "Khalanga, Salyan"
+        "address": "Khalanga, Salyan",
+        "province": 6
     },
     {
         "id": "-x93ef8AKzKGYpPdFFdD4",
@@ -987,7 +991,7 @@
         "streamUrl": "http://streaming.softnep.net:8063/;",
         "frequency": 90.4,
         "address": "Rukum, Nepal",
-        "province": 5
+        "province": 6
     },
     {
         "id": "FDCvSAZdzKPJyeYxz-2H-",
@@ -1264,7 +1268,8 @@
         "name": "Dullu FM",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 101.5,
-        "address": "Dullu, Dailekh"
+        "address": "Dullu, Dailekh",
+        "province": 6
     },
     {
         "id": "8C2jAk8hrjZKeGVlP7-gY",
@@ -1671,7 +1676,8 @@
         "name": "Radio Chankheli",
         "streamUrl": "http://streaming.softnep.net:8071",
         "frequency": 98.8,
-        "address": "Khandachakra Municipility, Manma-1, Kalikot, Karnali"
+        "address": "Khandachakra Municipility, Manma-1, Kalikot, Karnali",
+        "province": 6
     },
     {
         "id": "XUufh0RWEzzvLNp95VQjB",
@@ -1878,7 +1884,8 @@
         "name": "Radio Hamro Paila FM",
         "streamUrl": "https://live.itech.host:8719/stream",
         "frequency": 91.6,
-        "address": "Khalanga,Jajarkot"
+        "address": "Khalanga,Jajarkot",
+        "province": 6
     },
     {
         "id": "9zaaKxF1L3MjgioABn5OP",
@@ -1893,7 +1900,8 @@
         "name": "Radio Jajarkot",
         "streamUrl": "https://live.itech.host:2360/stream",
         "frequency": 105.6,
-        "address": "Bheri Municipality-3, Jajarkot"
+        "address": "Bheri Municipality-3, Jajarkot",
+        "province": 6
     },
     {
         "id": "mAvgtkvjJAPcFjcPIioRg",
@@ -1916,7 +1924,8 @@
         "name": "Radio Karnali FM Jumla",
         "streamUrl": "http://216.55.141.189:8773",
         "frequency": 105.2,
-        "address": "Jumla, Karnali, Nepal"
+        "address": "Jumla, Karnali, Nepal",
+        "province": 6
     },
     {
         "id": "lSDiFz5y_ZYp2BAr_0FpX",
@@ -2081,14 +2090,16 @@
         "name": "Radio Kapurkot FM",
         "streamUrl": "http://streaming.hamropatro.com:8493",
         "frequency": 106.1,
-        "address": "Salyan, Kapurkot, Nepal"
+        "address": "Salyan, Kapurkot, Nepal",
+        "province": 6
     },
     {
         "id": "pYP7nHuZvDJZ5REarGcoL",
         "name": "Radio Tahalka",
         "streamUrl": "http://live.itech.host:8910/stream?mp3",
         "frequency": 91.9,
-        "address": "SaNaPa-2, Khalanga, Salyan"
+        "address": "SaNaPa-2, Khalanga, Salyan",
+        "province": 6
     },
     {
         "id": "EOHV5XPYpYdwo7iOtHunn",
@@ -2473,7 +2484,7 @@
         "streamUrl": "http://streaming.softnep.net:8317",
         "frequency": 106.5,
         "address": "Sanibhaeri, Rukum",
-        "province": 5
+        "province": 6
     },
     {
         "id": "dumLiESebUDLHL0EMzfwy",
@@ -2512,7 +2523,7 @@
         "streamUrl": "http://streaming.hamropatro.com:8853",
         "frequency": 92.2,
         "address": "Sisne Gaunpalika-6, Rukumkot Rukum East",
-        "province": 5
+        "province": 6
     },
     {
         "id": "HAe0V_6NH2pWVR_UmfEWI",
@@ -2650,7 +2661,8 @@
         "name": "Radio Bheriganga",
         "streamUrl": "https://live.itech.host:8006/stream",
         "frequency": null,
-        "address": "Bheriganga Mun-12 Surkhet"
+        "address": "Bheriganga Mun-12 Surkhet",
+        "province": 6
     },
     {
         "id": "7e4xb8FhGgjajJDY-Hnsr",
@@ -2740,7 +2752,8 @@
         "name": "Radio  Aarambha",
         "streamUrl": "http://streaming.hamropatro.com:5515",
         "frequency": 97.5,
-        "address": "Gurbhakot-08, Surkhet"
+        "address": "Gurbhakot-08, Surkhet",
+        "province": 6
     },
     {
         "id": "b_jl4QV-wAaml4EmOeH8q",
@@ -2762,7 +2775,8 @@
         "name": "Radio Naya Karnali FM",
         "streamUrl": "https://live.itech.host:8501/stream",
         "frequency": 102.8,
-        "address": "Kalikot"
+        "address": "Kalikot",
+        "province": 6
     },
     {
         "id": "rUy648ruS-0r2p4KP9OR3",
@@ -2814,7 +2828,8 @@
         "name": "Bulbule FM",
         "streamUrl": "http://216.55.141.189:8573",
         "frequency": 103.4,
-        "address": "Birendranagar-9, Mangalgadhi Chowk Surkhet"
+        "address": "Birendranagar-9, Mangalgadhi Chowk Surkhet",
+        "province": 6
     },
     {
         "id": "gKjb_yXkHMk5nmDRiDrOh",
@@ -2948,7 +2963,8 @@
         "name": "Radio Jwala Fm",
         "streamUrl": "http://streaming.hamropatro.com:8801/stream",
         "frequency": 100.4,
-        "address": "Dailekh Bazar Dailekh"
+        "address": "Dailekh Bazar Dailekh",
+        "province": 6
     },
     {
         "id": "heTRSx1cMdjdzYNluuogZ",
@@ -3136,7 +3152,8 @@
         "name": "Radio Hamro Samabeshi",
         "streamUrl": "http://streaming.hamropatro.com:8833",
         "frequency": 98.3,
-        "address": "Jambukandh Dailekh"
+        "address": "Jambukandh Dailekh",
+        "province": 6
     },
     {
         "id": "-u1e1tAWJ-L6TxVGZKatw",
@@ -3181,21 +3198,24 @@
         "name": "BG FM",
         "streamUrl": "http://streaming.hamropatro.com:8080",
         "frequency": 93.6,
-        "address": "Bheriganga,09 Jahare Bazar Surkhet - Onair Studio : Gurbhakot, 04 Dadadap Surkhet"
+        "address": "Bheriganga,09 Jahare Bazar Surkhet - Onair Studio : Gurbhakot, 04 Dadadap Surkhet",
+        "province": 6
     },
     {
         "id": "KGHEQ9x2Hurhb4K_93v-_",
         "name": "Radio Dadadara",
         "streamUrl": "http://streaming.hamropatro.com:8683",
         "frequency": 104.0,
-        "address": "Panchapuri 5, Babiyachaur, Surkhet"
+        "address": "Panchapuri 5, Babiyachaur, Surkhet",
+        "province": 6
     },
     {
         "id": "RgjND9aNiETlV7lpcL_Pa",
         "name": "Online Radio Rangin",
         "streamUrl": "http://stream.zeno.fm/6fdza6c95zhvv",
         "frequency": null,
-        "address": "Khairawang Media House Pvt.Ltd. Bagchaur Municipality-2, Salyan"
+        "address": "Khairawang Media House Pvt.Ltd. Bagchaur Municipality-2, Salyan",
+        "province": 6
     },
     {
         "id": "IaDni_XNqqIGUBU3yrYd0",
@@ -3380,7 +3400,8 @@
         "name": "Radio Sajha Aawaj",
         "streamUrl": "https://live.itech.host:2580/stream",
         "frequency": 90.9,
-        "address": "khandachakra Municipality 1 Manma Kalikot"
+        "address": "khandachakra Municipality 1 Manma Kalikot",
+        "province": 6
     },
     {
         "id": "aE0bNpG9i7Tgu7pwVFSqY",
@@ -3548,7 +3569,8 @@
         "name": "Radio Shreenagar FM",
         "streamUrl": "http://streaming.hamropatro.com:8599",
         "frequency": 102.0,
-        "address": "Shreenagar Humla Nepal"
+        "address": "Shreenagar Humla Nepal",
+        "province": 6
     },
     {
         "id": "hgWcA0Ea6ltjAKaekYY2o",
@@ -3761,7 +3783,8 @@
         "name": "Dolpa FM",
         "streamUrl": "https://live.itech.host:8337/stream",
         "frequency": 101.4,
-        "address": "Thulibheri Municiplity 3 Dunai, Dolpa"
+        "address": "Thulibheri Municiplity 3 Dunai, Dolpa",
+        "province": 6
     },
     {
         "id": "Uoc79_xg2JQmwiDlkd7q-",
@@ -3798,7 +3821,8 @@
         "name": "Radio Tila Aawaj",
         "streamUrl": "https://stream.zeno.fm/yowpdmuxurrvv",
         "frequency": 106.7,
-        "address": "Khandachakra Municipality -03 Tadi Kalikot"
+        "address": "Khandachakra Municipality -03 Tadi Kalikot",
+        "province": 6
     },
     {
         "id": "aRYDKNk6vuypgVkJNduOO",
@@ -3958,7 +3982,8 @@
         "name": "Radio Khalanga",
         "streamUrl": "https://live.itech.host:8314/stream",
         "frequency": 107.6,
-        "address": "Bheri Nagarpalika- 3, Jajarkot"
+        "address": "Bheri Nagarpalika- 3, Jajarkot",
+        "province": 6
     },
     {
         "id": "SjlzG__PXI-fROCSqnjA2",
@@ -3997,7 +4022,8 @@
         "name": "Dhurbatara FM",
         "streamUrl": "https://live.itech.host:8839/stream",
         "frequency": 89.8,
-        "address": "Narayan Nagarpalika 1 Dailekh Nepal"
+        "address": "Narayan Nagarpalika 1 Dailekh Nepal",
+        "province": 6
     },
     {
         "id": "FO1zXnhE-cQuVrczlGPgF",
@@ -4035,7 +4061,8 @@
         "name": "Radio Prithivi FM",
         "streamUrl": "https://live.itech.host:2145/stream",
         "frequency": 102.2,
-        "address": " Kushe Rural Municipality , Jajarkot, Nepal"
+        "address": " Kushe Rural Municipality , Jajarkot, Nepal",
+        "province": 6
     },
     {
         "id": "ugVeNEKN80cf7U82O-z8O",
@@ -4050,7 +4077,8 @@
         "name": "Mudkechula FM",
         "streamUrl": "http://streaming.hamropatro.com:8875",
         "frequency": 93.5,
-        "address": "Mudkechula gaunpalika Dolpa, Nepal"
+        "address": "Mudkechula gaunpalika Dolpa, Nepal",
+        "province": 6
     },
     {
         "id": "eNkelk3OF7KTr5ydmvxF1",
@@ -4080,7 +4108,8 @@
         "name": "Radio Madhyapahad",
         "streamUrl": "http://streaming.hamropatro.com:8815",
         "frequency": 88.2,
-        "address": "Bagchaur Municipality, Salyan"
+        "address": "Bagchaur Municipality, Salyan",
+        "province": 6
     },
     {
         "id": "Jxp88fLWlcqCsRipHfFkd",
@@ -4141,7 +4170,8 @@
         "name": "Radio Surkhet",
         "streamUrl": "https://live.itech.host:3830/stream",
         "frequency": 90.2,
-        "address": " Birendranagar - Surkhet"
+        "address": " Birendranagar - Surkhet",
+        "province": 6
     },
     {
         "id": "8UdOMoA2eudMk2zvahs6_",
@@ -4194,7 +4224,8 @@
         "name": "Radio Sannitriveni",
         "streamUrl": "http://streaming.hamropatro.com:8058",
         "frequency": 97.1,
-        "address": "Sannitriveni Rural Municipality,Kalikot Nepal"
+        "address": "Sannitriveni Rural Municipality,Kalikot Nepal",
+        "province": 6
     },
     {
         "id": "JBhiyrEsh0XkCQ9GvZKwQ",
@@ -4275,14 +4306,16 @@
         "name": "Radio Nalagad",
         "streamUrl": "http://streaming.hamropatro.com:9001",
         "frequency": 96.9,
-        "address": "Nalagaad Municipality,04- Jajarkot Nepal "
+        "address": "Nalagaad Municipality,04- Jajarkot Nepal ",
+        "province": 6
     },
     {
         "id": "nP-Sb2df8R3gRXwirfreM",
         "name": "Radio Shubhakalika FM",
         "streamUrl": "http://streaming.hamropatro.com:8100",
         "frequency": 99.1,
-        "address": "Shubhakalika rural municipality 05, Kalikot "
+        "address": "Shubhakalika rural municipality 05, Kalikot ",
+        "province": 6
     },
     {
         "id": "4oMo8EfT66mSEBi0Dxey1",
