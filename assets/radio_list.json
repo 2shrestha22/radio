@@ -310,7 +310,8 @@
         "name": "Everest FM",
         "streamUrl": "https://live.itech.host:5005/stream",
         "frequency": 93.0,
-        "address": "Pokhara, Kaski"
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "Zl-axkaydGRY6_yHBBpoP",
@@ -411,7 +412,8 @@
         "name": "Radio Didibahini",
         "streamUrl": "http://live.itech.host:8326/stream",
         "frequency": 95.2,
-        "address": "Kusma, Parbat"
+        "address": "Kusma, Parbat",
+        "province": 4
     },
     {
         "id": "X6YekIVXUR_c0qtOpHQTI",
@@ -679,7 +681,8 @@
         "name": "Mero Sathi FM",
         "streamUrl": "http://streaming.hamropatro.com:8571/;",
         "frequency": 107.2,
-        "address": "Aanbookhaireni, Tanahun"
+        "address": "Aanbookhaireni, Tanahun",
+        "province": 4
     },
     {
         "id": "OsDo0rlOCKTd-WW74TJkv",
@@ -747,7 +750,8 @@
         "name": "Shuklagandaki FM",
         "streamUrl": "https://live.itech.host:7137/stream",
         "frequency": 97.6,
-        "address": "Shuklagandaki-4, Tanahun"
+        "address": "Shuklagandaki-4, Tanahun",
+        "province": 4
     },
     {
         "id": "qmkn8Isf6nHsAI7N8Nej9",
@@ -761,7 +765,8 @@
         "name": "Damauli FM",
         "streamUrl": "http://streaming.hamropatro.com:8529/;",
         "frequency": 94.2,
-        "address": "Balmandir Line, Byas - 2, Damauli, Tanahun, Gandaki Pradesh"
+        "address": "Balmandir Line, Byas - 2, Damauli, Tanahun, Gandaki Pradesh",
+        "province": 4
     },
     {
         "id": "_XXXD7nmxFGbmTQMN77Jb",
@@ -888,14 +893,16 @@
         "name": "Radio Bihani",
         "streamUrl": "http://streaming.softnep.net:8061/;",
         "frequency": 89.0,
-        "address": "Bareng, Baglung"
+        "address": "Bareng, Baglung",
+        "province": 4
     },
     {
         "id": "WY2auAGQzxcnbRhrN4OPf",
         "name": "Radio Chhimkeshwori",
         "streamUrl": "http://streaming.hamropatro.com:8487/;",
         "frequency": 106.2,
-        "address": "Bandipur-1, Tanahun"
+        "address": "Bandipur-1, Tanahun",
+        "province": 4
     },
     {
         "id": "U8jSIK_zpC7zdxO0ygXyn",
@@ -1149,7 +1156,8 @@
         "name": "Bhanu FM",
         "streamUrl": "http://streaming.softnep.net:8211/;",
         "frequency": 106.9,
-        "address": "Myagde, Tanahun"
+        "address": "Myagde, Tanahun",
+        "province": 4
     },
     {
         "id": "O1C8Ga_bugp9u3S315SDp",
@@ -1356,7 +1364,8 @@
         "name": "Apostle FM",
         "streamUrl": "http://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 102.6,
-        "address": "Kaski, Pokhara "
+        "address": "Kaski, Pokhara ",
+        "province": 4
     },
     {
         "id": "iexiwpSUsgNY8K7g75DXN",
@@ -1370,14 +1379,16 @@
         "name": "Choice FM",
         "streamUrl": "http://streaming.hamropatro.com:8256",
         "frequency": 90.4,
-        "address": "Gorkha-Nepal"
+        "address": "Gorkha-Nepal",
+        "province": 4
     },
     {
         "id": "MRyK_cgN99boJj8GgPsb3",
         "name": "Radio Marsyangdi",
         "streamUrl": "https://live.itech.host:9125/stream",
         "frequency": 95.0,
-        "address": "Besishahar-2, Tamu Sangrahalaya bawan, Lamjung"
+        "address": "Besishahar-2, Tamu Sangrahalaya bawan, Lamjung",
+        "province": 4
     },
     {
         "id": "erBSYPbtBJ_7e8Vv83sF-",
@@ -1444,7 +1455,8 @@
         "name": "Radio Lamjung",
         "streamUrl": "https://live.itech.host:8951/stream",
         "frequency": 91.8,
-        "address": "Beshisahaar, Lamjung"
+        "address": "Beshisahaar, Lamjung",
+        "province": 4
     },
     {
         "id": "HqZ3YD91D7xCNyBXZdwKO",
@@ -1491,7 +1503,8 @@
         "name": "Nawalpur FM",
         "streamUrl": "http://streaming.hamropatro.com:8292",
         "frequency": 104.7,
-        "address": "Kawasoti, Nawalparasi"
+        "address": "Kawasoti, Nawalparasi",
+        "province": 4
     },
     {
         "id": "65n9GFh7vEISQc1ZYTEuV",
@@ -1639,7 +1652,8 @@
         "name": "Radio Sarathi",
         "streamUrl": "http://streaming.hamropatro.com:8469",
         "frequency": 107.4,
-        "address": "Kharbang, Baglung"
+        "address": "Kharbang, Baglung",
+        "province": 4
     },
     {
         "id": "xn7-UplacOWYe3DtTku4Z",
@@ -1712,14 +1726,16 @@
         "name": "Machhapuchhre FM",
         "streamUrl": "https://live.itech.host:2680/stream",
         "frequency": 91.0,
-        "address": "Pokhara, Kaski"
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "Ug5Z9L4OfU4h9I_Aj0_j4",
         "name": "Radio Kushum",
         "streamUrl": "http://streaming.hamropatro.com:8056",
         "frequency": 90.0,
-        "address": "Kusma, Parbat"
+        "address": "Kusma, Parbat",
+        "province": 4
     },
     {
         "id": "skDbFCAwjSGuJ-HoSqy3L",
@@ -1777,7 +1793,8 @@
         "name": "Radio Sarangi (Pokhara)",
         "streamUrl": "https://streaming.softnep.net:10982/;stream.nsv&type=mp3&volume=70",
         "frequency": 101.3,
-        "address": "Pokhara, Kaski "
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "grp4t5UfjPt4HfPltN97o",
@@ -1875,7 +1892,8 @@
         "name": "Radio Burtibang",
         "streamUrl": "http://streaming.hamropatro.com:8016/",
         "frequency": 95.6,
-        "address": "Burtibang, Baglung"
+        "address": "Burtibang, Baglung",
+        "province": 4
     },
     {
         "id": "C6jpwtbEambf_oRAN7dIC",
@@ -2057,7 +2075,8 @@
         "name": "Radio Lekhnath",
         "streamUrl": "https://streaming.softnep.net:10848/;stream.nsv&type=mp3",
         "frequency": 106.6,
-        "address": "Pokhara metropolitan, 26 sundaribazar kaski, Nepal"
+        "address": "Pokhara metropolitan, 26 sundaribazar kaski, Nepal",
+        "province": 4
     },
     {
         "id": "44zVbJxHwKFEb6O4jougD",
@@ -2087,7 +2106,8 @@
         "name": "Radio Sambridha Nepal",
         "streamUrl": "http://streaming.hamropatro.com:8879",
         "frequency": 92.0,
-        "address": "kusma,Parbat"
+        "address": "kusma, Parbat",
+        "province": 4
     },
     {
         "id": "lF1bJNV95zluaFVzmLWX8",
@@ -2117,7 +2137,8 @@
         "name": "Radio Chapakot",
         "streamUrl": "http://live.itech.host:2320/stream",
         "frequency": 91.6,
-        "address": "Chapakot-4, Syangja, Nepal"
+        "address": "Chapakot-4, Syangja, Nepal",
+        "province": 4
     },
     {
         "id": "AaaYA7Vtj7u1Pc8japmIh",
@@ -2169,7 +2190,8 @@
         "name": "Galkot FM",
         "streamUrl": "http://live.itech.host:1260/stream?type=.mp3",
         "frequency": 102.4,
-        "address": "Galkot-3, Baglung"
+        "address": "Galkot-3, Baglung",
+        "province": 4
     },
     {
         "id": "7Cd1McH03h5fwaXOcZAkX",
@@ -2197,7 +2219,8 @@
         "name": "24 Asal Sathi Radio",
         "streamUrl": "http://streaming.hamropatro.com:4156",
         "frequency": 98.9,
-        "address": "Pokhara, Kaski"
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "HAU6ZqH5gj6suGDlIuqf3",
@@ -2249,7 +2272,8 @@
         "name": "3 Angels Community Radio",
         "streamUrl": "http://streaming.hamropatro.com:8234",
         "frequency": 94.6,
-        "address": "Pokhara, Kaski"
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "LWj98jJiMplH-_KM7nKyb",
@@ -2308,7 +2332,8 @@
         "name": "Radio Devghat",
         "streamUrl": "http://streaming.hamropatro.com:8855",
         "frequency": 102.6,
-        "address": "Devghat-5, Tanahun"
+        "address": "Devghat-5, Tanahun",
+        "province": 4
     },
     {
         "id": "E9aOupi2gDSu6YDJmgDKj",
@@ -2353,7 +2378,8 @@
         "name": "Radio Chautari",
         "streamUrl": "https://live.itech.host:9388/stream",
         "frequency": 91.4,
-        "address": "Besisahar-8, Narayansthan Chowk, Lamjung"
+        "address": "Besisahar-8, Narayansthan Chowk, Lamjung",
+        "province": 4
     },
     {
         "id": "kyP0So3UoiQmCRM_dMnV9",
@@ -2375,7 +2401,8 @@
         "name": "Happy FM",
         "streamUrl": "http://streaming.softnep.net:8263/",
         "frequency": 103.8,
-        "address": "Devchuli-13,Daldale,Nawalpur"
+        "address": "Devchuli-13,Daldale, Nawalpur",
+        "province": 4
     },
     {
         "id": "b9vGf6LY98NoVdhNrHkSD",
@@ -2495,7 +2522,8 @@
         "name": "Radio Kaski 96.5",
         "streamUrl": "http://streaming.hamropatro.com:8495",
         "frequency": 96.5,
-        "address": "New Road - 8 , Pokhara"
+        "address": "New Road - 8, Pokhara",
+        "province": 4
     },
     {
         "id": "mLEuR_ibya1TkpWi9dfOI",
@@ -2753,7 +2781,7 @@
         "name": "Radio Mission",
         "streamUrl": "http://centova1.toofancom.com:4163",
         "frequency": 105.3,
-        "address": "Nawalpur, Sindhupalchok",
+        "address": "Indrawati -5, Sindhupalchowk",
         "province": 3
     },
     {
@@ -2812,7 +2840,8 @@
         "name": "Nsanchar Online Radio",
         "streamUrl": "https://stream.zeno.fm/uyo4dbsay4cuv",
         "frequency": null,
-        "address": "Kawasoti-3, Nawalpur"
+        "address": "Kawasoti-3, Nawalpur",
+        "province": 4
     },
     {
         "id": "uLFjNtwaB6-ARsk0JF_wl",
@@ -2989,7 +3018,8 @@
         "name": "Radio Galkot",
         "streamUrl": "https://live.itech.host:1270/stream",
         "frequency": 102.4,
-        "address": "Galkot Municipality-03, Galkot Baglung"
+        "address": "Galkot Municipality-03, Galkot Baglung",
+        "province": 4
     },
     {
         "id": "TT19OCswfBCPImaIYbvUi",
@@ -3036,7 +3066,8 @@
         "name": "Radio Sambridha Nepal (Nesdo Fm)",
         "streamUrl": "http://streaming.hamropatro.com:8897",
         "frequency": 92.6,
-        "address": "Birauta-17,Damside Marga,  Kaski Pokhara "
+        "address": "Birauta-17,Damside Marga,  Kaski Pokhara ",
+        "province": 4
     },
     {
         "id": "DevVS80Ebd--JYu7XoQeZ",
@@ -3244,7 +3275,8 @@
         "name": "Shubheksha FM",
         "streamUrl": "http://216.55.141.189:8086",
         "frequency": 96.6,
-        "address": "Jaimini Municipality - 1 Kushmisera, Baglung"
+        "address": "Jaimini Municipality - 1 Kushmisera, Baglung",
+        "province": 4
     },
     {
         "id": "34RdePV5v0G4C8XYilIp8",
@@ -3369,7 +3401,8 @@
         "name": "ARK FM",
         "streamUrl": "http://stream.zeno.fm/sxr8kkycjseuv",
         "frequency": null,
-        "address": "Pokhara, Kaski"
+        "address": "Pokhara, Kaski",
+        "province": 4
     },
     {
         "id": "JK_6d_HSKZAdMh2XZhRO4",
@@ -3473,7 +3506,8 @@
         "name": "Galyang FM",
         "streamUrl": "https://live.itech.host:9107/stream",
         "frequency": 92.2,
-        "address": "Galyang, Syangja, Gandaki Pradesh. Tel: 063461040"
+        "address": "Galyang, Syangja, Gandaki Pradesh",
+        "province": 4
     },
     {
         "id": "ytvquClSmQXa9TrbBc0oJ",
@@ -3627,7 +3661,8 @@
         "name": "Radio Syangja",
         "streamUrl": "https://live.itech.host:8891/stream",
         "frequency": 89.6,
-        "address": "Putali Bazar -1, Syangja, Nepal"
+        "address": "Putali Bazar -1, Syangja, Nepal",
+        "province": 4
     },
     {
         "id": "3nWUaIxlOchENwVE73kmJ",
@@ -3715,7 +3750,8 @@
         "name": "Myagdikali FM 88.2 Mhz",
         "streamUrl": "http://streaming.hamropatro.com:8539",
         "frequency": 88.2,
-        "address": "Beni Nagarpalika 07- Myagdi, Nepal"
+        "address": "Beni Nagarpalika 07- Myagdi, Nepal",
+        "province": 4
     },
     {
         "id": "Vzq7ySvuvs3zqvcIAhREU",
@@ -3980,7 +4016,8 @@
         "name": "Radio Saligram",
         "streamUrl": "http://streaming.hamropatro.com:8254",
         "frequency": 100.6,
-        "address": "Kushma, Municipality 12 Parbat"
+        "address": "Kushma, Municipality 12 Parbat",
+        "province": 4
     },
     {
         "id": "aGeoKzfhmegR2_XCKOKpH",
@@ -4008,7 +4045,8 @@
         "name": "Radio Dhorbarahi",
         "streamUrl": "https://live.itech.host:9496/stream",
         "frequency": 103.8,
-        "address": "Shuklagandaki-4, Dulegaunda, Tanahun"
+        "address": "Shuklagandaki-4, Dulegaunda, Tanahun",
+        "province": 4
     },
     {
         "id": "Rn8ksC083reSjaZ85zOmV",
@@ -4083,7 +4121,8 @@
         "name": "Radio Paschim Pokhara",
         "streamUrl": "http://streaming.hamropatro.com:8012",
         "frequency": 107.9,
-        "address": "Pokhara 25/14 Kaski Nepal"
+        "address": "Pokhara 25/14 Kaski Nepal",
+        "province": 4
     },
     {
         "id": "_OuDbnz-bS69RibBvo2Lt",
@@ -4105,7 +4144,8 @@
         "name": "Manakamana FM",
         "streamUrl": "http://streaming.hamropatro.com:8200",
         "frequency": 98.7,
-        "address": "Gorkha, Manakamana"
+        "address": "Gorkha, Manakamana",
+        "province": 4
     },
     {
         "id": "K-A-SIJv3jAn-KNG_4XkX",
@@ -4168,7 +4208,8 @@
         "name": "Radio Bhotewodar",
         "streamUrl": "http://streaming.hamropatro.com:8381",
         "frequency": 90.8,
-        "address": "Sundarbajar Municipality -09, Lamjung Nepal"
+        "address": "Sundarbajar Municipality -09, Lamjung Nepal",
+        "province": 4
     },
     {
         "id": "TyXGtIyra9HsfKD_067SF",
@@ -4213,14 +4254,16 @@
         "name": "Syangja Radio",
         "streamUrl": "https://stream-151.zeno.fm/bx7t5muk8k8uv?zs",
         "frequency": null,
-        "address": "Putalibazar Syangja, Nepal"
+        "address": "Putalibazar Syangja, Nepal",
+        "province": 4
     },
     {
         "id": "wrlzl6aPAGcWw-6EIPSds",
         "name": "Panchase FM",
         "streamUrl": "http://streaming.hamropatro.com:8825",
         "frequency": 102.8,
-        "address": "Kusma ,Parbat Nepal"
+        "address": "Kusma ,Parbat Nepal",
+        "province": 4
     },
     {
         "id": "IZUEq6tWVVEoeRqzzP8le",
