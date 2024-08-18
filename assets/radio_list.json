@@ -638,7 +638,8 @@
         "name": "Grace FM",
         "streamUrl": "https://live.itech.host:9418/stream",
         "frequency": 107.6,
-        "address": "Suryabinayak, Bhaktapur"
+        "address": "Suryabinayak, Bhaktapur",
+        "province": 3
     },
     {
         "id": "x0zqqRLXVuumcfBMV3e6G",
@@ -694,7 +695,8 @@
         "name": "Bhaktapur FM",
         "streamUrl": "http://streaming.softnep.net:8309/;",
         "frequency": 105.4,
-        "address": "Itachhen-15, Bhaktapur"
+        "address": "Itachhen-15, Bhaktapur",
+        "province": 3
     },
     {
         "id": "ZrFBTfDd9XWrrZ3_RnqbC",
@@ -950,7 +952,8 @@
         "name": "Radio Top Town",
         "streamUrl": "http://live.itech.host:4630/stream",
         "frequency": 107.0,
-        "address": "Suryabinayak, Bhaktapur, Nepal"
+        "address": "Suryabinayak, Bhaktapur, Nepal",
+        "province": 3
     },
     {
         "id": "9YRG_Qvpz6hMG68P2Y613",
@@ -1407,7 +1410,8 @@
         "name": "Radio Jana  Sanchar",
         "streamUrl": "https://online.net.np/8116/stream",
         "frequency": 107.9,
-        "address": "Kamalbinayak-4, Bhaktapur,"
+        "address": "Kamalbinayak-4, Bhaktapur,",
+        "province": 3
     },
     {
         "id": "Qmq2V5W26Lm9DZElzjz4D",
@@ -4151,7 +4155,8 @@
         "name": "Shikhar FM",
         "streamUrl": "http://streaming.hamropatro.com:5525",
         "frequency": 102.7,
-        "address": "Changunarayan 08, Bhaktapur"
+        "address": "Changunarayan 08, Bhaktapur",
+        "province": 3
     },
     {
         "id": "Wi8MmoX7_WEx88Aixqlec",
