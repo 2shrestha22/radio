@@ -103,7 +103,8 @@
         "name": "Radio Sagarmatha",
         "streamUrl": "http://216.55.141.189:8004",
         "frequency": 102.4,
-        "address": "Lalitpur, Nepal"
+        "address": "Lalitpur, Nepal",
+        "province": 3
     },
     {
         "id": "fjdlTdyDb17-suIFY-a6V",
@@ -629,7 +630,8 @@
         "name": "ACORAB",
         "streamUrl": "http://streaming.softnep.net:8009/;",
         "frequency": null,
-        "address": "Lalitpur, Nepal"
+        "address": "Lalitpur, Nepal",
+        "province": 3
     },
     {
         "id": "25FL4A2WXLxfCaynWkmJY",
@@ -1348,7 +1350,8 @@
         "name": "Headlines & Music FM",
         "streamUrl": "https://stream.zeno.fm/nsxexttokuhvv",
         "frequency": 97.2,
-        "address": "Pulchowk, Lalitpur, Nepal"
+        "address": "Pulchowk, Lalitpur, Nepal",
+        "province": 3
     },
     {
         "id": "zSHXgtbLGeBw5YOf_33cZ",
@@ -3593,7 +3596,8 @@
         "name": "Kingdom Voice FM",
         "streamUrl": "https://live.itech.host:1380/stream",
         "frequency": 102.1,
-        "address": "Lalitpur Metropolitan City Ward No.14 Lalitpur"
+        "address": "Lalitpur Metropolitan City Ward No.14 Lalitpur",
+        "province": 3
     },
     {
         "id": "n3GZpSowSOrHbYjedvV6h",
