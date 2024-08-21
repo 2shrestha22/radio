@@ -14,6 +14,7 @@ class RadioStation with _$RadioStation {
     required double? frequency,
     required String? address,
     @Default(false) bool fav,
+    int? province,
   }) = _RadioStation;
 
   String get imageUrl =>
