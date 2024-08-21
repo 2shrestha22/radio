@@ -26,6 +26,7 @@ mixin _$RadioStation {
   double? get frequency => throw _privateConstructorUsedError;
   String? get address => throw _privateConstructorUsedError;
   bool get fav => throw _privateConstructorUsedError;
+  int? get province => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +46,8 @@ abstract class $RadioStationCopyWith<$Res> {
       String streamUrl,
       double? frequency,
       String? address,
-      bool fav});
+      bool fav,
+      int? province});
 }
 
 /// @nodoc
@@ -67,6 +69,7 @@ class _$RadioStationCopyWithImpl<$Res, $Val extends RadioStation>
     Object? frequency = freezed,
     Object? address = freezed,
     Object? fav = null,
+    Object? province = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -93,6 +96,10 @@ class _$RadioStationCopyWithImpl<$Res, $Val extends RadioStation>
           ? _value.fav
           : fav // ignore: cast_nullable_to_non_nullable
               as bool,
+      province: freezed == province
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -111,7 +118,8 @@ abstract class _$$RadioStationImplCopyWith<$Res>
       String streamUrl,
       double? frequency,
       String? address,
-      bool fav});
+      bool fav,
+      int? province});
 }
 
 /// @nodoc
@@ -131,6 +139,7 @@ class __$$RadioStationImplCopyWithImpl<$Res>
     Object? frequency = freezed,
     Object? address = freezed,
     Object? fav = null,
+    Object? province = freezed,
   }) {
     return _then(_$RadioStationImpl(
       id: null == id
@@ -157,6 +166,10 @@ class __$$RadioStationImplCopyWithImpl<$Res>
           ? _value.fav
           : fav // ignore: cast_nullable_to_non_nullable
               as bool,
+      province: freezed == province
+          ? _value.province
+          : province // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -170,7 +183,8 @@ class _$RadioStationImpl extends _RadioStation {
       required this.streamUrl,
       required this.frequency,
       required this.address,
-      this.fav = false})
+      this.fav = false,
+      this.province})
       : super._();
 
   factory _$RadioStationImpl.fromJson(Map<String, dynamic> json) =>
@@ -189,10 +203,12 @@ class _$RadioStationImpl extends _RadioStation {
   @override
   @JsonKey()
   final bool fav;
+  @override
+  final int? province;
 
   @override
   String toString() {
-    return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, address: $address, fav: $fav)';
+    return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, address: $address, fav: $fav, province: $province)';
   }
 
   @override
@@ -207,13 +223,15 @@ class _$RadioStationImpl extends _RadioStation {
             (identical(other.frequency, frequency) ||
                 other.frequency == frequency) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.fav, fav) || other.fav == fav));
+            (identical(other.fav, fav) || other.fav == fav) &&
+            (identical(other.province, province) ||
+                other.province == province));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, streamUrl, frequency, address, fav);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, streamUrl, frequency, address, fav, province);
 
   @JsonKey(ignore: true)
   @override
@@ -236,7 +254,8 @@ abstract class _RadioStation extends RadioStation {
       required final String streamUrl,
       required final double? frequency,
       required final String? address,
-      final bool fav}) = _$RadioStationImpl;
+      final bool fav,
+      final int? province}) = _$RadioStationImpl;
   const _RadioStation._() : super._();
 
   factory _RadioStation.fromJson(Map<String, dynamic> json) =
@@ -254,6 +273,8 @@ abstract class _RadioStation extends RadioStation {
   String? get address;
   @override
   bool get fav;
+  @override
+  int? get province;
   @override
   @JsonKey(ignore: true)
   _$$RadioStationImplCopyWith<_$RadioStationImpl> get copyWith =>

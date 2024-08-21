@@ -14,6 +14,7 @@ _$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
       frequency: (json['frequency'] as num?)?.toDouble(),
       address: json['address'] as String?,
       fav: json['fav'] as bool? ?? false,
+      province: (json['province'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
       'frequency': instance.frequency,
       'address': instance.address,
       'fav': instance.fav,
+      'province': instance.province,
     };

@@ -8,6 +8,7 @@ import 'package:radio/provider/search_input.dart';
 import 'package:radio/provider/station_search.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/radio_station.dart';
+import 'package:radio/screens/home/browse_view.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 import 'package:radio/widgets/station_list_view.dart';
 
@@ -18,7 +19,8 @@ class HomePage extends ConsumerStatefulWidget {
   ConsumerState<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _HomePageState extends ConsumerState<HomePage>
+    with AutomaticKeepAliveClientMixin {
   late final TextEditingController textEditingController;
   final focusNode = FocusNode();
 
@@ -35,6 +37,7 @@ class _HomePageState extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Radio NP'),
@@ -42,7 +45,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       ),
       resizeToAvoidBottomInset: false,
       body: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(
@@ -63,6 +66,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                     Tab(
                       text: 'Browse',
                       icon: Icon(LucideIcons.listMusic),
+                    ),
+                    Tab(
+                      text: 'Search',
+                      icon: Icon(LucideIcons.search),
                     ),
                   ],
                 ),
@@ -101,6 +108,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                           ),
                         ],
                       ),
+                      const BrowseView(),
                       CustomScrollView(
                         slivers: [
                           SliverAppBar(
@@ -168,6 +176,9 @@ class _HomePageState extends ConsumerState<HomePage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 class SearchField extends StatelessWidget {

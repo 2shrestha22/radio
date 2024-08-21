@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:radio/shared_pref.dart';
 import 'package:radio/radio_station.dart';
+import 'package:radio/shared_pref.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'stations.g.dart';
@@ -11,13 +11,14 @@ class Stations extends _$Stations {
   @override
   List<RadioStation> build() {
     final favIds = SharedPref.fav;
-    return [
+    final stations = [
       for (final station in allRadioStations)
         if (favIds.contains(station.id))
           station.copyWith(fav: true)
         else
           station
     ];
+    return stations;
   }
 
   /// toggle favorite
