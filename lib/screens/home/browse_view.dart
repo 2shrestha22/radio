@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:radio/models/province.dart';
 import 'package:radio/provider/province_controller.dart';
+import 'package:radio/widgets/station_list_view.dart';
 
 class BrowseView extends ConsumerWidget {
   const BrowseView({super.key});
@@ -60,18 +61,10 @@ class _ExpansionWidgetState extends State<ExpansionWidget> {
         ),
       ),
       sliver: expanded
-          ? SliverList.builder(
-              itemCount: widget.province.stations.length,
-              itemBuilder: (context, index) {
-                final item = widget.province.stations[index];
-
-                return ListTile(
-                  leading: CircleAvatar(
-                    child: Text("$index"),
-                  ),
-                  title: Text(item.name),
-                );
-              },
+          ? StationListView(
+              onTap: (station) {},
+              stations: widget.province.stations,
+              onFavTap: (station) {},
             )
           : null,
     );
