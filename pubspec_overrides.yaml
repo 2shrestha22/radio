@@ -3,5 +3,9 @@ dependency_overrides:
     git:
       url: https://github.com/2shrestha22/just_audio_media_kit.git
       ref: radio-np
-  # just_audio_media_kit:
-  #   path: ../packages/just_audio_media_kit
+
+  audio_service_web:
+    git:
+      url: https://github.com/ali2236/audio_service.git
+      ref: web
+      path: audio_service_web

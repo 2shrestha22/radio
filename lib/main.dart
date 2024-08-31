@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio_background/just_audio_background.dart';
-import 'package:just_audio_media_kit/just_audio_media_kit.dart';
 import 'package:radio/app.dart';
 import 'package:radio/models/radio_station.dart';
 import 'package:radio/utils/shared_pref.dart';
@@ -15,7 +14,7 @@ Future<void> main() async {
 
   setPathUrlStrategy();
 
-  JustAudioMediaKit.ensureInitialized();
+  // JustAudioMediaKit.ensureInitialized();
 
   await loadStations();
   await Future.wait([
