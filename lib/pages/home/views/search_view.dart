@@ -34,6 +34,7 @@ class _SearchViewState extends ConsumerState<SearchView> {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+          automaticallyImplyLeading: false,
           floating: true,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           surfaceTintColor: Colors.transparent,

@@ -5,6 +5,8 @@ import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:radio/models/province.dart';
 import 'package:radio/pages/home/widgets/station_list_view.dart';
 import 'package:radio/provider/province_controller.dart';
+import 'package:radio/provider/radio.dart';
+import 'package:radio/provider/stations.dart';
 
 class BrowseView extends ConsumerWidget {
   const BrowseView({super.key});
@@ -19,15 +21,15 @@ class BrowseView extends ConsumerWidget {
   }
 }
 
-class _ExpansionWidget extends StatefulWidget {
+class _ExpansionWidget extends ConsumerStatefulWidget {
   const _ExpansionWidget({required this.province});
   final Province province;
 
   @override
-  State<_ExpansionWidget> createState() => _ExpansionWidgetState();
+  ConsumerState<_ExpansionWidget> createState() => _ExpansionWidgetState();
 }
 
-class _ExpansionWidgetState extends State<_ExpansionWidget> {
+class _ExpansionWidgetState extends ConsumerState<_ExpansionWidget> {
   bool expanded = false;
 
   @override
@@ -58,9 +60,16 @@ class _ExpansionWidgetState extends State<_ExpansionWidget> {
       ),
       sliver: expanded
           ? StationListView(
-              onTap: (station) {},
               stations: widget.province.stations,
-              onFavTap: (station) {},
+              onTap: (station) async {
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                return ref
+                    .read(radioProvider.notifier)
+                    .setFocusedStation(station);
+              },
+              onFavTap: (station) async {
+                ref.read(stationsProvider.notifier).toggleFav(station.id);
+              },
             )
           : null,
     );
