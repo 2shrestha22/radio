@@ -19,4 +19,4 @@ echo "Extracting flutter..."
 tar -xf flutter.tar.xz
 
 flutter/bin/flutter doctor;
-flutter/bin/flutter build web;
+flutter/bin/flutter build web --wasm;
