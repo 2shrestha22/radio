@@ -3,9 +3,9 @@ import 'dart:developer';
 
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
+import 'package:radio/models/radio_station.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
-import 'package:radio/radio_station.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 

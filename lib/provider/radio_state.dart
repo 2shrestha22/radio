@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:radio/models/radio_station.dart';
 import 'package:radio/provider/player_state.dart';
-import 'package:radio/radio_station.dart';
 
 part 'radio_state.freezed.dart';
 

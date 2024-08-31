@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:radio/const.dart';
-import 'package:radio/loader.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
+import 'package:radio/utils/const.dart';
+import 'package:radio/widgets/loader.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class RadioControlPanel extends ConsumerWidget {

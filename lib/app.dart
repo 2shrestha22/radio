@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:radio/home_page.dart';
-import 'package:radio/screens/not_found_page.dart';
-import 'package:radio/screens/privacy_policy_page.dart';
+import 'package:radio/pages/home/home_page.dart';
+import 'package:radio/pages/not_found_page.dart';
+import 'package:radio/pages/privacy_policy_page.dart';
 import 'package:radio/theme/theme.dart';
 
 part '_router.dart';
