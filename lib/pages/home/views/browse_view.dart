@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:radio/models/province.dart';
+import 'package:radio/pages/home/widgets/station_list_view.dart';
 import 'package:radio/provider/province_controller.dart';
-import 'package:radio/widgets/station_list_view.dart';
 
 class BrowseView extends ConsumerWidget {
   const BrowseView({super.key});
@@ -14,24 +14,20 @@ class BrowseView extends ConsumerWidget {
     final sectionList = ref.watch(provinceControllerProvider);
 
     return CustomScrollView(
-      slivers: [...sectionList.map((e) => ExpansionWidget(province: e))],
+      slivers: [...sectionList.map((e) => _ExpansionWidget(province: e))],
     );
   }
 }
 
-// class ExpansionItem {
-//   bool isExpanded;
-// }
-
-class ExpansionWidget extends StatefulWidget {
-  const ExpansionWidget({super.key, required this.province});
+class _ExpansionWidget extends StatefulWidget {
+  const _ExpansionWidget({required this.province});
   final Province province;
 
   @override
-  State<ExpansionWidget> createState() => _ExpansionWidgetState();
+  State<_ExpansionWidget> createState() => _ExpansionWidgetState();
 }
 
-class _ExpansionWidgetState extends State<ExpansionWidget> {
+class _ExpansionWidgetState extends State<_ExpansionWidget> {
   bool expanded = false;
 
   @override

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
-import 'package:radio/radio_station.dart';
+import 'package:radio/models/radio_station.dart';
 import 'package:radio/widgets/station_logo.dart';
 
-class StationListView extends StatelessWidget {
+class StationListView extends StatefulWidget {
   const StationListView({
     super.key,
     required this.onTap,
@@ -17,8 +17,16 @@ class StationListView extends StatelessWidget {
   final List<RadioStation> stations;
 
   @override
+  State<StationListView> createState() => _StationListViewState();
+}
+
+class _StationListViewState extends State<StationListView>
+    with AutomaticKeepAliveClientMixin {
+  @override
   Widget build(BuildContext context) {
-    if (stations.isEmpty) {
+    super.build(context);
+
+    if (widget.stations.isEmpty) {
       return const SliverFillRemaining(
         child: Icon(LucideIcons.dot),
       );
@@ -27,12 +35,12 @@ class StationListView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       sliver: SliverList.separated(
         separatorBuilder: (context, index) => const Divider(height: 0),
-        itemCount: stations.length,
+        itemCount: widget.stations.length,
         itemBuilder: (context, index) {
           final theme = Theme.of(context);
-          final station = stations.elementAt(index);
+          final station = widget.stations.elementAt(index);
           return InkWell(
-            onTap: () => onTap(station),
+            onTap: () => widget.onTap(station),
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Row(
@@ -64,7 +72,7 @@ class StationListView extends StatelessWidget {
                   ),
                   const GutterTiny(),
                   IconButton(
-                    onPressed: () => onFavTap(station),
+                    onPressed: () => widget.onFavTap(station),
                     icon: switch (station.fav) {
                       true => const Icon(
                           Icons.favorite,
@@ -82,4 +90,7 @@ class StationListView extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

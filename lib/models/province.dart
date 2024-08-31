@@ -1,6 +1,6 @@
 // part 'province.freezed.dart';
 
-import 'package:radio/radio_station.dart';
+import 'package:radio/models/radio_station.dart';
 
 sealed class Province {
   Province({required this.id, required this.name, required this.stations});
