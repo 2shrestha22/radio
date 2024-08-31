@@ -28,8 +28,12 @@ mixin _$RadioStation {
   bool get fav => throw _privateConstructorUsedError;
   int? get province => throw _privateConstructorUsedError;
 
+  /// Serializes this RadioStation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RadioStation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RadioStationCopyWith<RadioStation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,6 +64,8 @@ class _$RadioStationCopyWithImpl<$Res, $Val extends RadioStation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RadioStation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -130,6 +136,8 @@ class __$$RadioStationImplCopyWithImpl<$Res>
       _$RadioStationImpl _value, $Res Function(_$RadioStationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RadioStation
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -228,12 +236,14 @@ class _$RadioStationImpl extends _RadioStation {
                 other.province == province));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, streamUrl, frequency, address, fav, province);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RadioStation
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RadioStationImplCopyWith<_$RadioStationImpl> get copyWith =>
@@ -275,8 +285,11 @@ abstract class _RadioStation extends RadioStation {
   bool get fav;
   @override
   int? get province;
+
+  /// Create a copy of RadioStation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RadioStationImplCopyWith<_$RadioStationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

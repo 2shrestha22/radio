@@ -25,7 +25,9 @@ mixin _$RadioState {
   int? get bitRate => throw _privateConstructorUsedError;
   Object? get error => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RadioStateCopyWith<RadioState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +59,8 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +96,8 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
     ) as $Val);
   }
 
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RadioStationCopyWith<$Res>? get station {
@@ -133,6 +139,8 @@ class __$$RadioStateImplCopyWithImpl<$Res>
       _$RadioStateImpl _value, $Res Function(_$RadioStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -226,7 +234,9 @@ class _$RadioStateImpl implements _RadioState {
       bitRate,
       const DeepCollectionEquality().hash(error));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RadioStateImplCopyWith<_$RadioStateImpl> get copyWith =>
@@ -246,9 +256,9 @@ abstract class _RadioState implements RadioState {
   RadioStation? get station;
   @override
   RadioPlayerState get playerState;
-  @override
 
   /// It will be null if [playerState] is not started or paused.
+  @override
   StreamingState? get streamingState;
   @override
   String? get title;
@@ -256,8 +266,11 @@ abstract class _RadioState implements RadioState {
   int? get bitRate;
   @override
   Object? get error;
+
+  /// Create a copy of RadioState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RadioStateImplCopyWith<_$RadioStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
