@@ -62,9 +62,11 @@ class HomePage extends ConsumerWidget {
                       ref.listen(
                         radioProvider,
                         (previous, next) {
-                          if (previous?.error != next.error) {
+                          if (next.error != null &&
+                              previous?.error != next.error) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text(next.error.toString())));
+                              SnackBar(content: Text(next.error.toString())),
+                            );
                           }
                         },
                       );

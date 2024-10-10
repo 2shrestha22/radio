@@ -81,7 +81,7 @@ class RadioControlPanel extends ConsumerWidget {
                     ],
                   ),
                 ),
-                ButtonBar(
+                OverflowBar(
                   alignment: MainAxisAlignment.center,
                   children: [
                     AnimatedSwitcher(

@@ -23,7 +23,7 @@ mixin _$RadioState {
   StreamingState? get streamingState => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   int? get bitRate => throw _privateConstructorUsedError;
-  Object? get error => throw _privateConstructorUsedError;
+  RadioPlayerException? get error => throw _privateConstructorUsedError;
 
   /// Create a copy of RadioState
   /// with the given fields replaced by the non-null parameter values.
@@ -44,7 +44,7 @@ abstract class $RadioStateCopyWith<$Res> {
       StreamingState? streamingState,
       String? title,
       int? bitRate,
-      Object? error});
+      RadioPlayerException? error});
 
   $RadioStationCopyWith<$Res>? get station;
 }
@@ -92,7 +92,10 @@ class _$RadioStateCopyWithImpl<$Res, $Val extends RadioState>
           ? _value.bitRate
           : bitRate // ignore: cast_nullable_to_non_nullable
               as int?,
-      error: freezed == error ? _value.error : error,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as RadioPlayerException?,
     ) as $Val);
   }
 
@@ -125,7 +128,7 @@ abstract class _$$RadioStateImplCopyWith<$Res>
       StreamingState? streamingState,
       String? title,
       int? bitRate,
-      Object? error});
+      RadioPlayerException? error});
 
   @override
   $RadioStationCopyWith<$Res>? get station;
@@ -172,7 +175,10 @@ class __$$RadioStateImplCopyWithImpl<$Res>
           ? _value.bitRate
           : bitRate // ignore: cast_nullable_to_non_nullable
               as int?,
-      error: freezed == error ? _value.error : error,
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as RadioPlayerException?,
     ));
   }
 }
@@ -202,7 +208,7 @@ class _$RadioStateImpl implements _RadioState {
   @override
   final int? bitRate;
   @override
-  final Object? error;
+  final RadioPlayerException? error;
 
   @override
   String toString() {
@@ -221,18 +227,12 @@ class _$RadioStateImpl implements _RadioState {
                 other.streamingState == streamingState) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.bitRate, bitRate) || other.bitRate == bitRate) &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      station,
-      playerState,
-      streamingState,
-      title,
-      bitRate,
-      const DeepCollectionEquality().hash(error));
+      runtimeType, station, playerState, streamingState, title, bitRate, error);
 
   /// Create a copy of RadioState
   /// with the given fields replaced by the non-null parameter values.
@@ -250,7 +250,7 @@ abstract class _RadioState implements RadioState {
       final StreamingState? streamingState,
       final String? title,
       final int? bitRate,
-      final Object? error}) = _$RadioStateImpl;
+      final RadioPlayerException? error}) = _$RadioStateImpl;
 
   @override
   RadioStation? get station;
@@ -265,7 +265,7 @@ abstract class _RadioState implements RadioState {
   @override
   int? get bitRate;
   @override
-  Object? get error;
+  RadioPlayerException? get error;
 
   /// Create a copy of RadioState
   /// with the given fields replaced by the non-null parameter values.

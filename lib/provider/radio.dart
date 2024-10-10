@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
+import 'package:radio/exceptions/radio_player_exception.dart';
 import 'package:radio/models/radio_station.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
@@ -39,30 +40,47 @@ class Radio extends _$Radio {
       return;
     }
 
-    state = state.copyWith(station: station);
+    state = state.copyWith(
+      station: station,
+      bitRate: null,
+      error: null,
+      streamingState: StreamingState.buffering,
+      title: null,
+      playerState: RadioPlayerState.idle,
+    );
+    final playerTag = MediaItem(
+      id: station.id,
+      title: station.name,
+      duration: Duration.zero,
+      artUri: Uri.tryParse(station.imageUrl),
+    );
+    if (_audioPlayer.playing) {
+      await _audioPlayer.stop();
+    }
+
+    Uri streamUri;
+
+    if (kIsWeb) {
+      streamUri = Uri.parse(station.streamUrl).replace(scheme: 'https');
+    } else {
+      streamUri = Uri.parse(station.streamUrl).replace(scheme: 'http');
+    }
 
     try {
-      if (_audioPlayer.playing) {
-        await _audioPlayer.stop();
-      }
       await _audioPlayer.setAudioSource(
         AudioSource.uri(
-          Uri.parse(station.streamUrl),
-          tag: MediaItem(
-            id: station.id,
-            title: station.name,
-            duration: Duration.zero,
-            artUri: Uri.tryParse(station.imageUrl),
-          ),
+          streamUri,
+          tag: playerTag,
         ),
       );
       unawaited(_audioPlayer.play());
       _needUrlReset = false;
-    } on PlayerInterruptedException catch (e) {
-      log(e.toString());
-    } catch (e) {
+    } on PlayerException catch (_) {
       _needUrlReset = true;
-      state = state.copyWith(error: e);
+      state = state.copyWith(error: StationLoadException());
+    } on PlayerInterruptedException catch (_) {
+      state = state.copyWith(error: null);
+      _needUrlReset = true;
     }
   }
 
