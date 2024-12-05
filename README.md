@@ -22,3 +22,9 @@ Radio NP is a free and open source online radio app that provides access to all 
    cd radio
    fluter run
    ```
+
+## Radio Stations
+
+Some radio stations are available with https connection and some don't. For mobile app both http and https connections can play well. But for web only https connection is allowed. So http radio station will not work in web.
+
+Note: When updating `radio_list.json` pick either http or https url which works on mobile device since browser always going to use https anyway.
