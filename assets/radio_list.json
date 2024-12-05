@@ -18,7 +18,7 @@
     {
         "id": "63DAluhRgl-PcYeixk5eY",
         "name": "Radio Nepal",
-        "streamUrl": "https://stream1.radionepal.gov.np/live",
+        "streamUrl": "http://stream1.radionepal.gov.np/live",
         "frequency": 100.0,
         "address": "Kathmandu, Nepal",
         "province": 3

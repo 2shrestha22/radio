@@ -63,7 +63,7 @@ class Radio extends _$Radio {
     if (kIsWeb) {
       streamUri = Uri.parse(station.streamUrl).replace(scheme: 'https');
     } else {
-      streamUri = Uri.parse(station.streamUrl).replace(scheme: 'http');
+      streamUri = Uri.parse(station.streamUrl);
     }
 
     try {
