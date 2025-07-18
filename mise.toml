@@ -1,0 +1,5 @@
+[tools]
+flutter = "3.32.6"
+
+[hooks]
+postinstall = "yq '.tools.flutter' mise.toml | xargs -I {} yq -o=json -i '.flutter = \"{}\"' .fvmrc"
