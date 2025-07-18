@@ -6,8 +6,8 @@ part of 'radio_station.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
-    _$RadioStationImpl(
+_RadioStation _$RadioStationFromJson(Map<String, dynamic> json) =>
+    _RadioStation(
       id: json['id'] as String,
       name: json['name'] as String,
       streamUrl: json['streamUrl'] as String,
@@ -17,7 +17,7 @@ _$RadioStationImpl _$$RadioStationImplFromJson(Map<String, dynamic> json) =>
       province: (json['province'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RadioStationImplToJson(_$RadioStationImpl instance) =>
+Map<String, dynamic> _$RadioStationToJson(_RadioStation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
