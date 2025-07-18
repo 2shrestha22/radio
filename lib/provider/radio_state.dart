@@ -6,7 +6,7 @@ import 'package:radio/provider/player_state.dart';
 part 'radio_state.freezed.dart';
 
 @freezed
-class RadioState with _$RadioState {
+abstract class RadioState with _$RadioState {
   const factory RadioState({
     RadioStation? station,
     @Default(RadioPlayerState.idle) RadioPlayerState playerState,

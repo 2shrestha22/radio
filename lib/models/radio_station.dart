@@ -4,7 +4,7 @@ part 'radio_station.freezed.dart';
 part 'radio_station.g.dart';
 
 @freezed
-class RadioStation with _$RadioStation {
+abstract class RadioStation with _$RadioStation {
   const RadioStation._();
 
   const factory RadioStation({
