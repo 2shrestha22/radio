@@ -7,8 +7,8 @@ mv yq_linux_amd64 yq
 chmod +x yq
 
 # Extract flutter version
-echo "Reading flutter version from pubspec.yaml..."
-FFLUTTER_VERSION=$(./yq '.flutter' .fvmrc)
+echo "Reading flutter version from .fvmrc ..."
+FLUTTER_VERSION=$(./yq '.flutter' .fvmrc)
 echo "Flutter Version: $FLUTTER_VERSION"
 
 echo "Downloading flutter..."
