@@ -60,6 +60,7 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_sticky_header: ^0.8.0
   http: ^1.4.0
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
