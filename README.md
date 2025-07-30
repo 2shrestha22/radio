@@ -10,6 +10,8 @@ Radio NP is a free and open source online radio app that provides access to all 
     alt="Get it on Google Play"
     height="80">](https://play.google.com/store/apps/details?id=np.com.sargam.radio)
 
+iOS? Apple does not allow streaming apps unless I obtain written permission from each station, which is literally impossible for me
+
 ## Screenshots
 
 <img src="screenshots/screenshot1.png" width="300"> <img src="screenshots/screenshot2.png" width="300">
