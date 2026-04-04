@@ -14,15 +14,15 @@ const radioProvider = RadioProvider._();
 
 final class RadioProvider extends $NotifierProvider<Radio, RadioState> {
   const RadioProvider._()
-      : super(
-          from: null,
-          argument: null,
-          retry: null,
-          name: r'radioProvider',
-          isAutoDispose: true,
-          dependencies: null,
-          $allTransitiveDependencies: null,
-        );
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'radioProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
 
   @override
   String debugGetCreateSourceHash() => _$radioHash();
@@ -49,8 +49,14 @@ abstract class _$Radio extends $Notifier<RadioState> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<RadioState, RadioState>;
-    final element = ref.element as $ClassProviderElement<
-        AnyNotifier<RadioState, RadioState>, RadioState, Object?, Object?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<RadioState, RadioState>,
+              RadioState,
+              Object?,
+              Object?
+            >;
     element.handleValue(ref, created);
   }
 }

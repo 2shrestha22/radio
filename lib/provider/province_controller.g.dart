@@ -15,15 +15,15 @@ const provinceControllerProvider = ProvinceControllerProvider._();
 final class ProvinceControllerProvider
     extends $NotifierProvider<ProvinceController, List<Province>> {
   const ProvinceControllerProvider._()
-      : super(
-          from: null,
-          argument: null,
-          retry: null,
-          name: r'provinceControllerProvider',
-          isAutoDispose: true,
-          dependencies: null,
-          $allTransitiveDependencies: null,
-        );
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'provinceControllerProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
 
   @override
   String debugGetCreateSourceHash() => _$provinceControllerHash();
@@ -51,11 +51,14 @@ abstract class _$ProvinceController extends $Notifier<List<Province>> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<List<Province>, List<Province>>;
-    final element = ref.element as $ClassProviderElement<
-        AnyNotifier<List<Province>, List<Province>>,
-        List<Province>,
-        Object?,
-        Object?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<List<Province>, List<Province>>,
+              List<Province>,
+              Object?,
+              Object?
+            >;
     element.handleValue(ref, created);
   }
 }

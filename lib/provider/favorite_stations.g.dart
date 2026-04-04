@@ -15,15 +15,15 @@ const favoriteStationsProvider = FavoriteStationsProvider._();
 final class FavoriteStationsProvider
     extends $NotifierProvider<FavoriteStations, List<RadioStation>> {
   const FavoriteStationsProvider._()
-      : super(
-          from: null,
-          argument: null,
-          retry: null,
-          name: r'favoriteStationsProvider',
-          isAutoDispose: true,
-          dependencies: null,
-          $allTransitiveDependencies: null,
-        );
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'favoriteStationsProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
 
   @override
   String debugGetCreateSourceHash() => _$favoriteStationsHash();
@@ -50,11 +50,14 @@ abstract class _$FavoriteStations extends $Notifier<List<RadioStation>> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<List<RadioStation>, List<RadioStation>>;
-    final element = ref.element as $ClassProviderElement<
-        AnyNotifier<List<RadioStation>, List<RadioStation>>,
-        List<RadioStation>,
-        Object?,
-        Object?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<List<RadioStation>, List<RadioStation>>,
+              List<RadioStation>,
+              Object?,
+              Object?
+            >;
     element.handleValue(ref, created);
   }
 }

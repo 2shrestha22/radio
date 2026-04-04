@@ -14,15 +14,15 @@ const searchInputProvider = SearchInputProvider._();
 
 final class SearchInputProvider extends $NotifierProvider<SearchInput, String> {
   const SearchInputProvider._()
-      : super(
-          from: null,
-          argument: null,
-          retry: null,
-          name: r'searchInputProvider',
-          isAutoDispose: true,
-          dependencies: null,
-          $allTransitiveDependencies: null,
-        );
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'searchInputProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
 
   @override
   String debugGetCreateSourceHash() => _$searchInputHash();
@@ -49,8 +49,14 @@ abstract class _$SearchInput extends $Notifier<String> {
   void runBuild() {
     final created = build();
     final ref = this.ref as $Ref<String, String>;
-    final element = ref.element as $ClassProviderElement<
-        AnyNotifier<String, String>, String, Object?, Object?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<String, String>,
+              String,
+              Object?,
+              Object?
+            >;
     element.handleValue(ref, created);
   }
 }
