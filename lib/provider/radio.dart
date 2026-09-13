@@ -35,7 +35,6 @@ class Radio extends _$Radio {
     return const RadioState();
   }
 
-  /// Focus a station and start playing.
   Future<void> setFocusedStation(RadioStation station) async {
     if (state.station == station && _audioPlayer.playing && !_needUrlReset) {
       return;
@@ -60,7 +59,6 @@ class Radio extends _$Radio {
     }
 
     Uri streamUri;
-
     if (kIsWeb) {
       streamUri = Uri.parse(station.streamUrl).replace(scheme: 'https');
     } else {
@@ -68,9 +66,9 @@ class Radio extends _$Radio {
     }
 
     try {
-      await _audioPlayer.setAudioSource(
-        AudioSource.uri(streamUri, tag: playerTag),
-      );
+      await _audioPlayer
+          .setAudioSource(AudioSource.uri(streamUri, tag: playerTag))
+          .timeout(const Duration(seconds: 10));
       unawaited(_audioPlayer.play());
       ref.read(frequentlyPlayedProvider.notifier).recordPlay(station.id);
       _needUrlReset = false;
@@ -78,33 +76,32 @@ class Radio extends _$Radio {
       _needUrlReset = true;
       state = state.copyWith(error: StationLoadException());
     } on PlayerInterruptedException catch (_) {
-      state = state.copyWith(error: null);
       _needUrlReset = true;
+    } on TimeoutException catch (_) {
+      _needUrlReset = true;
+      state = state.copyWith(error: StationLoadException());
     }
   }
 
-  /// Play focused station.
   Future<void> play() async {
-    if (_needUrlReset) {
-      // resetting stream url.
-      await setFocusedStation(state.station!);
-    } else {
-      unawaited(_audioPlayer.play());
-    }
+    await setFocusedStation(state.station!);
   }
 
-  Future<void> stop() => _audioPlayer.stop();
+  Future<void> stop() async {
+    await _audioPlayer.stop();
+    _needUrlReset = true;
+  }
 
   void _listenUpdates() {
     _audioPlayer.playerStateStream
         .listen((event) {
           StreamingState? getStreamingState() {
-            if (event.playing) {
-              return StreamingState.playing;
-            }
             if (event.processingState == ProcessingState.buffering ||
                 event.processingState == ProcessingState.loading) {
               return StreamingState.buffering;
+            }
+            if (event.playing) {
+              return StreamingState.playing;
             }
             return null;
           }
