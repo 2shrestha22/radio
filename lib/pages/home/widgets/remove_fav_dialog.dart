@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:radio/models/radio_station.dart';
 
 class RemoveFavDialog extends StatelessWidget {
-  const RemoveFavDialog({
-    super.key,
-    required this.station,
-  });
+  const RemoveFavDialog({super.key, required this.station});
 
   final RadioStation station;
 

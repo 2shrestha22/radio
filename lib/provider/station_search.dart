@@ -10,11 +10,7 @@ part 'station_search.g.dart';
 class StationSearch extends _$StationSearch {
   final _fuzzyOptions = FuzzyOptions<RadioStation>(
     keys: [
-      WeightedKey(
-        name: 'name',
-        getter: (obj) => obj.name,
-        weight: 0.6,
-      ),
+      WeightedKey(name: 'name', getter: (obj) => obj.name, weight: 0.6),
       WeightedKey(
         name: 'frequency',
         getter: (obj) => obj.frequency?.toString() ?? '',

@@ -6,16 +6,10 @@ enum RadioPlayerState {
   /// Audio source is loaded. Player may be playing audio or buffering.
   started,
 
-  /// Audio source is loaded but the player is paused.
-  /// Audio can be buffering while paused.
-  paused,
-
   /// Player is stopped but audio source still loaded.
   stopped;
 
-  // If player not idle or stopped.
-  bool get isRunning =>
-      this == RadioPlayerState.started || this == RadioPlayerState.paused;
+  bool get isRunning => this == RadioPlayerState.started;
 }
 
 /// State of audio stream.

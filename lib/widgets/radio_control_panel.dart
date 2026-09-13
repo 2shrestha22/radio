@@ -17,7 +17,7 @@ class RadioControlPanel extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final radioState = ref.watch(radioProvider);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: const BorderRadius.only(
@@ -26,136 +26,86 @@ class RadioControlPanel extends ConsumerWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          DefaultTextStyle(
-            style: Theme.of(context).textTheme.bodySmall!,
-            child: Column(
-              children: [
-                StationLogo(radioState.station!.imageUrl),
-                const GutterTiny(),
-                Builder(
-                  builder: (context) {
-                    if (radioState.bitRate != null) {
-                      return Text(formatBitrate(radioState.bitRate!));
-                    }
-                    return const Text('-- Kbps');
-                  },
-                ),
-              ],
-            ),
-          ),
+          StationLogo(radioState.station!.imageUrl),
           const Gutter(),
           Expanded(
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   radioState.station!.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                DefaultTextStyle(
-                  style: Theme.of(context).textTheme.bodySmall!,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(radioState.station!.getFreqString()),
-                      Flexible(
-                        child: Builder(
-                          builder: (context) {
-                            if (radioState.title != null) {
-                              return Text(
-                                ' | ${radioState.title!}',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              );
-                            }
-                            return const Text('');
-                          },
-                        ),
-                      ),
-                    ],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                OverflowBar(
-                  alignment: MainAxisAlignment.center,
-                  children: [
-                    AnimatedSwitcher(
-                      duration: animationDuration,
-                      // transitionBuilder fixes
-                      // https://github.com/flutter/flutter/issues/121336
-                      transitionBuilder: (
-                        Widget child,
-                        Animation<double> animation,
-                      ) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                      child: switch (radioState.streamingState) {
-                        StreamingState.buffering => IconButton(
-                            key: const ValueKey('loader-icon'),
-                            icon: const Loader(),
-                            disabledColor: Theme.of(context).iconTheme.color,
-                            onPressed: null,
-                          ),
-                        StreamingState.playing => IconButton(
-                            key: const ValueKey('pause-button'),
-                            onPressed: () async {
-                              await ref.read(radioProvider.notifier).pause();
-                            },
-                            icon: const Icon(LucideIcons.pause),
-                          ),
-                        null => IconButton(
-                            key: const ValueKey('play-button'),
-                            onPressed: () async {
-                              await ref.read(radioProvider.notifier).play();
-                            },
-                            icon: const Icon(LucideIcons.play),
-                          )
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(LucideIcons.square),
-                      onPressed: radioState.playerState.isRunning
-                          ? () async {
-                              await ref.read(radioProvider.notifier).stop();
-                            }
-                          : null,
-                    ),
-                    if (radioState.station != null)
-                      Consumer(
-                        builder: (context, ref, child) {
-                          final station = ref.watch(stationsProvider);
-                          return IconButton(
-                            onPressed: () => ref
-                                .read(stationsProvider.notifier)
-                                .toggleFav(radioState.station!.id),
-                            icon: switch (station
-                                .firstWhere(
-                                  (e) => e.id == radioState.station!.id,
-                                )
-                                .fav) {
-                              true => const Icon(
-                                  Icons.favorite,
-                                  key: ValueKey('true'),
-                                  color: Colors.red,
-                                ),
-                              false => const Icon(Icons.favorite_outline),
-                            },
-                          );
-                        },
-                      ),
-                  ],
+                Text(
+                  radioState.bitRate != null
+                      ? '${radioState.station!.getFreqString()} · ${formatBitrate(radioState.bitRate!)}'
+                      : radioState.station!.getFreqString(),
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                Text(
+                  radioState.title ?? '',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
             ),
           ),
+          AnimatedSwitcher(
+            duration: animationDuration,
+            transitionBuilder: (Widget child, Animation<double> animation) {
+              return FadeTransition(opacity: animation, child: child);
+            },
+            child: switch (radioState.streamingState) {
+              StreamingState.buffering => IconButton(
+                key: const ValueKey('loader-icon'),
+                icon: const Loader(),
+                disabledColor: Theme.of(context).iconTheme.color,
+                onPressed: null,
+              ),
+              StreamingState.playing => IconButton(
+                key: const ValueKey('stop-button'),
+                onPressed: () async {
+                  await ref.read(radioProvider.notifier).stop();
+                },
+                icon: const Icon(LucideIcons.square),
+              ),
+              null => IconButton(
+                key: const ValueKey('play-button'),
+                onPressed: () async {
+                  await ref.read(radioProvider.notifier).play();
+                },
+                icon: const Icon(LucideIcons.play),
+              ),
+            },
+          ),
+          if (radioState.station != null)
+            Consumer(
+              builder: (context, ref, child) {
+                final station = ref.watch(stationsProvider);
+                return IconButton(
+                  onPressed: () => ref
+                      .read(stationsProvider.notifier)
+                      .toggleFav(radioState.station!.id),
+                  icon: switch (station
+                      .firstWhere((e) => e.id == radioState.station!.id)
+                      .fav) {
+                    true => const Icon(
+                      Icons.favorite,
+                      key: ValueKey('true'),
+                      color: Colors.red,
+                    ),
+                    false => const Icon(Icons.favorite_outline),
+                  },
+                );
+              },
+            ),
         ],
       ),
     );

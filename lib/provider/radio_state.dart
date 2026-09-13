@@ -11,7 +11,6 @@ abstract class RadioState with _$RadioState {
     RadioStation? station,
     @Default(RadioPlayerState.idle) RadioPlayerState playerState,
 
-    /// It will be null if [playerState] is not started or paused.
     StreamingState? streamingState,
     String? title,
     int? bitRate,

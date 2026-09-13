@@ -9,23 +9,19 @@ class NotFoundPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Radio NP'),
-      ),
+      appBar: AppBar(title: const Text('Radio NP')),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              'Page Not Found',
-              style: context.textStyles.headlineLarge,
-            ),
+            Text('Page Not Found', style: context.textStyles.headlineLarge),
             const Gutter(),
             FilledButton(
-                onPressed: () {
-                  context.go('/');
-                },
-                child: const Text('Go back'))
+              onPressed: () {
+                context.go('/');
+              },
+              child: const Text('Go back'),
+            ),
           ],
         ),
       ),

@@ -8,8 +8,10 @@ part 'favorite_stations.g.dart';
 class FavoriteStations extends _$FavoriteStations {
   @override
   List<RadioStation> build() {
-    final stations =
-        ref.watch(stationsProvider).where((element) => element.fav).toList();
+    final stations = ref
+        .watch(stationsProvider)
+        .where((element) => element.fav)
+        .toList();
 
     return stations;
   }

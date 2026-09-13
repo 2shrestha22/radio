@@ -16,7 +16,7 @@ class Stations extends _$Stations {
         if (favIds.contains(station.id))
           station.copyWith(fav: true)
         else
-          station
+          station,
     ];
     return stations;
   }
@@ -30,8 +30,9 @@ class Stations extends _$Stations {
     ];
 
     // update saved favs
-    final favStationIds =
-        state.where((element) => element.fav).map((e) => e.id);
+    final favStationIds = state
+        .where((element) => element.fav)
+        .map((e) => e.id);
     await SharedPref.updateFavorite(favStationIds.toList());
   }
 }

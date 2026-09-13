@@ -7,8 +7,8 @@ class Loader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Icon(LucideIcons.loader)
-        .animate(onPlay: (c) => c.repeat())
-        .rotate(duration: Durations.extralong4);
+    return const Icon(
+      LucideIcons.loader,
+    ).animate(onPlay: (c) => c.repeat()).rotate(duration: Durations.extralong4);
   }
 }

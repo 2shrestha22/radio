@@ -32,9 +32,7 @@ class _StationListViewState extends ConsumerState<StationListView>
     );
 
     if (widget.stations.isEmpty) {
-      return const SliverFillRemaining(
-        child: Icon(LucideIcons.dot),
-      );
+      return const SliverFillRemaining(child: Icon(LucideIcons.dot));
     }
     return SliverPadding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -65,8 +63,9 @@ class _StationListViewState extends ConsumerState<StationListView>
                             station.name,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleMedium
-                                ?.copyWith(fontWeight: FontWeight.bold),
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           Text(
                             station.getFreqString(),
@@ -85,10 +84,10 @@ class _StationListViewState extends ConsumerState<StationListView>
                       onPressed: () => widget.onFavTap(station),
                       icon: switch (station.fav) {
                         true => const Icon(
-                            Icons.favorite,
-                            key: ValueKey('true'),
-                            color: Colors.red,
-                          ),
+                          Icons.favorite,
+                          key: ValueKey('true'),
+                          color: Colors.red,
+                        ),
                         false => const Icon(Icons.favorite_outline),
                       },
                     ),

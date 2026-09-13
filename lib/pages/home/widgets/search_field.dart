@@ -29,7 +29,8 @@ class SearchField extends StatelessWidget {
             suffixIcon: Consumer(
               builder: (context, ref, child) {
                 final isNotEmpty = ref.watch(
-                    searchInputProvider.select((value) => value.isNotEmpty));
+                  searchInputProvider.select((value) => value.isNotEmpty),
+                );
                 return AnimatedOpacity(
                   opacity: isNotEmpty ? 1 : 0,
                   duration: animationDuration,

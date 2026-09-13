@@ -7,82 +7,66 @@ import 'package:radio/pages/home/views/search_view.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 
-class HomePage extends ConsumerWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Radio NP'),
-        surfaceTintColor: Colors.transparent,
-      ),
-      resizeToAvoidBottomInset: false,
-      body: DefaultTabController(
-        length: 3,
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 640,
-            ),
-            child: Column(
-              children: [
-                TabBar(
-                  labelStyle: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                  tabs: const [
-                    Tab(
-                      text: 'Favorite',
-                      icon: Icon(LucideIcons.heart),
-                    ),
-                    Tab(
-                      text: 'Browse',
-                      icon: Icon(LucideIcons.listMusic),
-                    ),
-                    Tab(
-                      text: 'Search',
-                      icon: Icon(LucideIcons.search),
-                    ),
-                  ],
-                ),
-                const Expanded(
-                  child: TabBarView(
-                    children: [
-                      FavoriteView(),
-                      BrowseView(),
-                      SearchView(),
-                    ],
-                  ),
-                ),
-                SafeArea(
-                  child: Consumer(
-                    builder: (context, ref, child) {
-                      ref.listen(
-                        radioProvider,
-                        (previous, next) {
-                          if (next.error != null &&
-                              previous?.error != next.error) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text(next.error.toString())),
-                            );
-                          }
-                        },
-                      );
+  ConsumerState<HomePage> createState() => _HomePageState();
+}
 
-                      final radioState = ref.watch(radioProvider);
-                      if (radioState.station == null) {
-                        return const SizedBox.shrink();
-                      }
-                      return const RadioControlPanel();
-                    },
-                  ),
-                ),
-              ],
-            ),
+class _HomePageState extends ConsumerState<HomePage> {
+  int _selectedIndex = 0;
+
+  static const _views = [FavoriteView(), SearchView(), BrowseView()];
+
+  @override
+  Widget build(BuildContext context) {
+    ref.listen(radioProvider, (previous, next) {
+      if (next.error != null && previous?.error != next.error) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(next.error.toString())));
+      }
+    });
+
+    final radioState = ref.watch(radioProvider);
+    final hasStation = radioState.station != null;
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Radio NP')),
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 640),
+          child: Column(
+            children: [
+              Expanded(
+                child: IndexedStack(index: _selectedIndex, children: _views),
+              ),
+              if (hasStation)
+                const SafeArea(top: false, child: RadioControlPanel()),
+            ],
           ),
         ),
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: (i) => setState(() => _selectedIndex = i),
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(LucideIcons.heart),
+            selectedIcon: Icon(Icons.favorite_rounded),
+            label: 'Favorites',
+          ),
+          NavigationDestination(
+            icon: Icon(LucideIcons.search),
+            label: 'Search',
+          ),
+          NavigationDestination(
+            icon: Icon(LucideIcons.listMusic),
+            label: 'Browse',
+          ),
+        ],
       ),
     );
   }
