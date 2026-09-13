@@ -10,11 +10,11 @@ part of 'favorite_stations.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(FavoriteStations)
-const favoriteStationsProvider = FavoriteStationsProvider._();
+final favoriteStationsProvider = FavoriteStationsProvider._();
 
 final class FavoriteStationsProvider
     extends $NotifierProvider<FavoriteStations, List<RadioStation>> {
-  const FavoriteStationsProvider._()
+  FavoriteStationsProvider._()
     : super(
         from: null,
         argument: null,
@@ -48,7 +48,6 @@ abstract class _$FavoriteStations extends $Notifier<List<RadioStation>> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<List<RadioStation>, List<RadioStation>>;
     final element =
         ref.element
@@ -58,6 +57,6 @@ abstract class _$FavoriteStations extends $Notifier<List<RadioStation>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

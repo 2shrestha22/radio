@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:fuzzy/fuzzy.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:radio/provider/frequently_played.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/widgets/station_logo.dart';
@@ -10,6 +12,92 @@ import 'package:radio/widgets/station_logo.dart';
 class StationSearchDelegate extends SearchDelegate<RadioStation?> {
   StationSearchDelegate(this.ref);
   final WidgetRef ref;
+
+  void _playAndClose(BuildContext context, RadioStation station) {
+    ref.read(radioProvider.notifier).setFocusedStation(station);
+    close(context, station);
+  }
+
+  Widget _buildStationTile(BuildContext context, RadioStation station) {
+    final theme = Theme.of(context);
+    return InkWell(
+      onTap: () => _playAndClose(context, station),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          children: [
+            StationLogo(station.imageUrl),
+            const GutterTiny(),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    station.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    station.getFreqString(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    station.address ?? '--',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+            const GutterTiny(),
+            Consumer(
+              builder: (context, ref, _) {
+                final isFav = ref.watch(
+                  stationsProvider.select(
+                    (stations) => stations.firstWhere((s) => s.id == station.id).fav,
+                  ),
+                );
+                return IconButton(
+                  onPressed: () =>
+                      ref.read(stationsProvider.notifier).toggleFav(station.id),
+                  icon: switch (isFav) {
+                    true => HugeIcon(
+                      icon: HugeIcons.strokeRoundedFavourite,
+                      color: Colors.red,
+                    ),
+                    false => HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
+                  },
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFrequentlyPlayed(BuildContext context) {
+    final frequent = ref.read(frequentlyPlayedProvider);
+    if (frequent.isEmpty) {
+      return Center(
+        child: Text(
+          'Search for a station',
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+      );
+    }
+    return ListView.separated(
+      itemCount: frequent.length,
+      separatorBuilder: (_, _) => const Divider(height: 0, indent: 8, endIndent: 8),
+      itemBuilder: (context, index) =>
+          _buildStationTile(context, frequent[index]),
+    );
+  }
 
   @override
   ThemeData appBarTheme(BuildContext context) {
@@ -69,35 +157,28 @@ class StationSearchDelegate extends SearchDelegate<RadioStation?> {
   Widget buildResults(BuildContext context) => _buildList(context);
 
   @override
-  Widget buildSuggestions(BuildContext context) => _buildList(context);
+  Widget buildSuggestions(BuildContext context) {
+    if (query.isEmpty) return _buildFrequentlyPlayed(context);
+    return _buildList(context);
+  }
 
   Widget _buildList(BuildContext context) {
     final results = _search(query);
-    if (query.isEmpty) {
-      return const SizedBox.shrink();
-    }
     if (results.isEmpty) {
-      return const Center(child: Text('No stations found'));
+      return Center(
+        child: Text(
+          'No stations found',
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+        ),
+      );
     }
     return ListView.separated(
       itemCount: results.length,
-      separatorBuilder: (_, _) => const Divider(height: 0),
-      itemBuilder: (context, index) {
-        final station = results[index];
-        return ListTile(
-          leading: StationLogo(station.imageUrl),
-          title: Text(
-            station.name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          subtitle: Text(station.getFreqString()),
-          onTap: () {
-            ref.read(radioProvider.notifier).setFocusedStation(station);
-            close(context, station);
-          },
-        );
-      },
+      separatorBuilder: (_, _) => const Divider(height: 0, indent: 8, endIndent: 8),
+      itemBuilder: (context, index) =>
+          _buildStationTile(context, results[index]),
     );
   }
 }

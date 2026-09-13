@@ -5,6 +5,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:radio/exceptions/radio_player_exception.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:radio/provider/frequently_played.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -71,6 +72,7 @@ class Radio extends _$Radio {
         AudioSource.uri(streamUri, tag: playerTag),
       );
       unawaited(_audioPlayer.play());
+      ref.read(frequentlyPlayedProvider.notifier).recordPlay(station.id);
       _needUrlReset = false;
     } on PlayerException catch (_) {
       _needUrlReset = true;

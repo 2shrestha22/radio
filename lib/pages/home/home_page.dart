@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:radio/utils/const.dart';
 import 'package:radio/pages/home/views/browse_view.dart';
 import 'package:radio/pages/home/views/favorite_view.dart';
 import 'package:radio/pages/home/widgets/station_search_delegate.dart';
@@ -39,13 +40,22 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 640),
-          child: Column(
+          child: Stack(
             children: [
-              Expanded(
-                child: IndexedStack(index: _selectedIndex, children: _views),
-              ),
+              IndexedStack(index: _selectedIndex, children: _views),
               if (hasStation)
-                const SafeArea(top: false, child: RadioControlPanel()),
+                Positioned(
+                  left: 8,
+                  right: 8,
+                  bottom: 8,
+                  child: SafeArea(
+                    top: false,
+                    child: ClipRRect(
+                      borderRadius: kBorderRadius,
+                      child: const RadioControlPanel(),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

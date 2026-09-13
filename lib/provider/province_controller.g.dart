@@ -10,11 +10,11 @@ part of 'province_controller.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(ProvinceController)
-const provinceControllerProvider = ProvinceControllerProvider._();
+final provinceControllerProvider = ProvinceControllerProvider._();
 
 final class ProvinceControllerProvider
     extends $NotifierProvider<ProvinceController, List<Province>> {
-  const ProvinceControllerProvider._()
+  ProvinceControllerProvider._()
     : super(
         from: null,
         argument: null,
@@ -49,7 +49,6 @@ abstract class _$ProvinceController extends $Notifier<List<Province>> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<List<Province>, List<Province>>;
     final element =
         ref.element
@@ -59,6 +58,6 @@ abstract class _$ProvinceController extends $Notifier<List<Province>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

@@ -23,6 +23,7 @@ class BrowseView extends ConsumerWidget {
             province: sectionList[i],
             showDivider: i < sectionList.length - 1,
           ),
+        const SliverPadding(padding: EdgeInsets.only(bottom: 100)),
       ],
     );
   }
@@ -71,7 +72,7 @@ class _ExpansionWidgetState extends ConsumerState<_ExpansionWidget> {
               ],
             ),
           ),
-              if (widget.showDivider) const Divider(height: 0),
+              if (widget.showDivider) const Divider(height: 0, indent: 16, endIndent: 16),
             ],
           ),
         ),

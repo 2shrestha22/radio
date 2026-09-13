@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'station_search.dart';
+part of 'frequently_played.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,28 +9,28 @@ part of 'station_search.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(StationSearch)
-final stationSearchProvider = StationSearchProvider._();
+@ProviderFor(FrequentlyPlayed)
+final frequentlyPlayedProvider = FrequentlyPlayedProvider._();
 
-final class StationSearchProvider
-    extends $NotifierProvider<StationSearch, List<RadioStation>> {
-  StationSearchProvider._()
+final class FrequentlyPlayedProvider
+    extends $NotifierProvider<FrequentlyPlayed, List<RadioStation>> {
+  FrequentlyPlayedProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'stationSearchProvider',
+        name: r'frequentlyPlayedProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$stationSearchHash();
+  String debugGetCreateSourceHash() => _$frequentlyPlayedHash();
 
   @$internal
   @override
-  StationSearch create() => StationSearch();
+  FrequentlyPlayed create() => FrequentlyPlayed();
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(List<RadioStation> value) {
@@ -41,9 +41,9 @@ final class StationSearchProvider
   }
 }
 
-String _$stationSearchHash() => r'bec395af7b49aaa2603ed0f223c616721dc06d50';
+String _$frequentlyPlayedHash() => r'8ba363856b68dbb0a569985895f250bd2eaf984c';
 
-abstract class _$StationSearch extends $Notifier<List<RadioStation>> {
+abstract class _$FrequentlyPlayed extends $Notifier<List<RadioStation>> {
   List<RadioStation> build();
   @$mustCallSuper
   @override
