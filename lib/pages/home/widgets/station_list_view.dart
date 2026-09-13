@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/widgets/playing_indicator.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class StationListView extends ConsumerStatefulWidget {
@@ -27,16 +29,14 @@ class _StationListViewState extends ConsumerState<StationListView>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final activeStationId = ref.watch(
-      radioProvider.select((s) => s.station?.id),
-    );
+    final radioState = ref.watch(radioProvider);
+    final activeStationId = radioState.station?.id;
+    final isPlaying = radioState.streamingState == StreamingState.playing;
 
     if (widget.stations.isEmpty) {
-      return const SliverFillRemaining(child: Icon(LucideIcons.dot));
+      return SliverFillRemaining(child: HugeIcon(icon: HugeIcons.strokeRoundedCircle, size: 8));
     }
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      sliver: SliverList.separated(
+    return SliverList.separated(
         separatorBuilder: (context, index) => const Divider(height: 0),
         itemCount: widget.stations.length,
         itemBuilder: (context, index) {
@@ -49,7 +49,9 @@ class _StationListViewState extends ConsumerState<StationListView>
               color: isActive
                   ? theme.colorScheme.primaryContainer.withValues(alpha: 0.4)
                   : Colors.transparent,
-              child: Padding(
+              child: Stack(
+                children: [
+                  Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
@@ -83,21 +85,28 @@ class _StationListViewState extends ConsumerState<StationListView>
                     IconButton(
                       onPressed: () => widget.onFavTap(station),
                       icon: switch (station.fav) {
-                        true => const Icon(
-                          Icons.favorite,
-                          key: ValueKey('true'),
+                        true => HugeIcon(
+                          icon: HugeIcons.strokeRoundedFavourite,
+                          key: const ValueKey('true'),
                           color: Colors.red,
                         ),
-                        false => const Icon(Icons.favorite_outline),
+                        false => HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
                       },
                     ),
                   ],
                 ),
               ),
+                  if (isActive && isPlaying)
+                    const Positioned(
+                      top: 8,
+                      right: 8,
+                      child: PlayingIndicator(size: 14, color: Colors.red),
+                    ),
+                ],
+              ),
             ),
           );
         },
-      ),
     );
   }
 

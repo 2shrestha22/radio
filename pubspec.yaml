@@ -39,7 +39,7 @@ dependencies:
   just_audio: ^0.10.4
   just_audio_background: ^0.0.1-beta.12
   flutter_animate: ^4.5.0
-  lucide_icons_flutter: 3.1.12 #https://github.com/vqh2602/lucide-flutter-main/issues/15
+  hugeicons: ^1.1.7
   flutter_riverpod: ^3.0.3
   riverpod_annotation: ^3.0.3
   freezed_annotation: ^3.1.0
@@ -55,6 +55,7 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_sticky_header: ^0.8.0
   http: ^1.4.0
+  phosphoricons_flutter: ^1.0.0
 
 dev_dependencies:
   flutter_test:

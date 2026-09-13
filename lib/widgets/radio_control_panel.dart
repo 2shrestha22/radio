@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/utils/const.dart';
 import 'package:radio/widgets/loader.dart';
+import 'package:radio/widgets/playing_indicator.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class RadioControlPanel extends ConsumerWidget {
@@ -48,11 +49,22 @@ class RadioControlPanel extends ConsumerWidget {
                       : radioState.station!.getFreqString(),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
-                Text(
-                  radioState.title ?? '',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodySmall,
+                Row(
+                  children: [
+                    if (radioState.streamingState == StreamingState.playing)
+                      const Padding(
+                        padding: EdgeInsets.only(right: 6),
+                        child: PlayingIndicator(size: 12, color: Colors.red),
+                      ),
+                    Expanded(
+                      child: Text(
+                        radioState.title ?? '',
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -74,14 +86,14 @@ class RadioControlPanel extends ConsumerWidget {
                 onPressed: () async {
                   await ref.read(radioProvider.notifier).stop();
                 },
-                icon: const Icon(LucideIcons.square),
+                icon: HugeIcon(icon: HugeIcons.strokeRoundedStop),
               ),
               null => IconButton(
                 key: const ValueKey('play-button'),
                 onPressed: () async {
                   await ref.read(radioProvider.notifier).play();
                 },
-                icon: const Icon(LucideIcons.play),
+                icon: HugeIcon(icon: HugeIcons.strokeRoundedPlay),
               ),
             },
           ),
@@ -96,12 +108,12 @@ class RadioControlPanel extends ConsumerWidget {
                   icon: switch (station
                       .firstWhere((e) => e.id == radioState.station!.id)
                       .fav) {
-                    true => const Icon(
-                      Icons.favorite,
-                      key: ValueKey('true'),
+                    true => HugeIcon(
+                      icon: HugeIcons.strokeRoundedFavourite,
+                      key: const ValueKey('true'),
                       color: Colors.red,
                     ),
-                    false => const Icon(Icons.favorite_outline),
+                    false => HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
                   },
                 );
               },

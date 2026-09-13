@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/provider/search_input.dart';
 import 'package:radio/utils/const.dart';
 
@@ -17,7 +17,6 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: kToolbarHeight,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
         child: TextField(
@@ -25,7 +24,10 @@ class SearchField extends StatelessWidget {
           controller: textEditingController,
           decoration: InputDecoration(
             hintText: 'Search',
-            prefixIcon: const Icon(LucideIcons.search),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(12),
+              child: HugeIcon(icon: HugeIcons.strokeRoundedSearch01),
+            ),
             suffixIcon: Consumer(
               builder: (context, ref, child) {
                 final isNotEmpty = ref.watch(
@@ -36,7 +38,7 @@ class SearchField extends StatelessWidget {
                   duration: animationDuration,
                   child: IconButton(
                     padding: EdgeInsets.zero,
-                    icon: const Icon(LucideIcons.x),
+                    icon: const Icon(Icons.close),
                     onPressed: textEditingController.clear,
                   ),
                 );

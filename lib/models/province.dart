@@ -11,7 +11,7 @@ sealed class Province {
 }
 
 class UnknownProvince extends Province {
-  UnknownProvince({required super.stations}) : super(id: -1, name: 'Unknown');
+  UnknownProvince({required super.stations}) : super(id: -1, name: 'Others');
 }
 
 class KoshiProvince extends Province {

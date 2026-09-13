@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/pages/home/views/browse_view.dart';
 import 'package:radio/pages/home/views/favorite_view.dart';
-import 'package:radio/pages/home/views/search_view.dart';
+import 'package:radio/pages/home/widgets/station_search_delegate.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 
@@ -17,7 +17,7 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   int _selectedIndex = 0;
 
-  static const _views = [FavoriteView(), SearchView(), BrowseView()];
+  static const _views = [FavoriteView(), BrowseView()];
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +33,9 @@ class _HomePageState extends ConsumerState<HomePage> {
     final hasStation = radioState.station != null;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Radio NP')),
-      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: const Text('Radio NP'),
+      ),
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 640),
@@ -49,22 +50,29 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (i) => setState(() => _selectedIndex = i),
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(LucideIcons.heart),
-            selectedIcon: Icon(Icons.favorite_rounded),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (i) {
+          if (i == 2) {
+            showSearch(context: context, delegate: StationSearchDelegate(ref));
+          } else {
+            setState(() => _selectedIndex = i);
+          }
+        },
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: const [
+          BottomNavigationBarItem(
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
             label: 'Favorites',
           ),
-          NavigationDestination(
-            icon: Icon(LucideIcons.search),
-            label: 'Search',
-          ),
-          NavigationDestination(
-            icon: Icon(LucideIcons.listMusic),
+          BottomNavigationBarItem(
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedMenuSquare),
             label: 'Browse',
+          ),
+          BottomNavigationBarItem(
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedSearch01),
+            label: 'Search',
           ),
         ],
       ),
