@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:radio/models/radio_station.dart';
 import 'package:radio/pages/home/widgets/remove_fav_dialog.dart';
 import 'package:radio/pages/home/widgets/station_list_view.dart';
-import 'package:radio/provider/favorite_stations.dart';
 import 'package:radio/provider/frequently_played.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
@@ -34,7 +33,7 @@ class FavoriteView extends StatelessWidget {
         Consumer(
           builder: (context, ref, child) {
             return StationListView(
-              stations: ref.watch(favoriteStationsProvider),
+              stations: ref.watch(stationsProvider).where((e) => e.fav).toList(),
               onTap: (station) async {
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 return ref

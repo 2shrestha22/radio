@@ -1,4 +1,3 @@
-import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -45,7 +44,7 @@ class _ExpansionWidgetState extends ConsumerState<_ExpansionWidget> {
   Widget build(BuildContext context) {
     return SliverStickyHeader(
       header: Material(
-        color: context.colors.card,
+        color: Theme.of(context).cardColor,
         child: InkWell(
           onTap: () => setState(() => expanded = !expanded),
           child: Column(
@@ -56,12 +55,12 @@ class _ExpansionWidgetState extends ConsumerState<_ExpansionWidget> {
               children: [
                 Text(
                   widget.province.name,
-                  style: context.textStyles.titleMedium.bold,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(width: 8),
                 Text(
                   '(${widget.province.stations.length})',
-                  style: context.textStyles.bodySmall,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const Spacer(),
                 AnimatedRotation(

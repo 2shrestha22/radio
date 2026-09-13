@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/provider/player_state.dart';
@@ -47,7 +46,7 @@ class RadioControlPanel extends ConsumerWidget {
           child: Row(
             children: [
               StationLogo(radioState.station!.imageUrl),
-              const Gutter(),
+              SizedBox(width: 8),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

@@ -9,13 +9,13 @@ import 'package:http/http.dart' as http;
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:radio/app.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:radio/utils/shared_pref.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  setPathUrlStrategy();
+  usePathUrlStrategy();
 
   // JustAudioMediaKit.ensureInitialized();
 

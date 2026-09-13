@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:fuzzy/fuzzy.dart';
@@ -27,7 +26,7 @@ class StationSearchDelegate extends SearchDelegate<RadioStation?> {
         child: Row(
           children: [
             StationLogo(station.imageUrl),
-            const GutterTiny(),
+            SizedBox(width: 4),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +51,7 @@ class StationSearchDelegate extends SearchDelegate<RadioStation?> {
                 ],
               ),
             ),
-            const GutterTiny(),
+            SizedBox(width: 4),
             Consumer(
               builder: (context, ref, _) {
                 final isFav = ref.watch(

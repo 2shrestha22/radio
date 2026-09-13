@@ -1,4 +1,3 @@
-import 'package:awesome_flutter_extensions/awesome_flutter_extensions.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -19,20 +18,20 @@ class PrivacyPolicyPage extends StatelessWidget {
             children: [
               Text(
                 'Effective Date: Aug 8, 2024',
-                style: context.textStyles.titleMedium,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 8.0),
               const Text(
                 'Radio NP is a free, open-source application and does not collect anything from the end users.',
               ),
               const SizedBox(height: 16.0),
-              Text('Streaming APIs', style: context.textStyles.titleLarge),
+              Text('Streaming APIs', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8.0),
               const Text(
                 'The application streams audio using original Radio station provided endpoints or third-party streaming endpoints. While the app do not collect any personal data, please refer to the streaming provider\'s privacy policy for more information on how they handle data.',
               ),
               const SizedBox(height: 16.0),
-              Text('Open Source', style: context.textStyles.titleLarge),
+              Text('Open Source', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8.0),
               RichText(
                 text: TextSpan(
@@ -57,7 +56,7 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16.0),
-              Text('Changes', style: context.textStyles.titleLarge),
+              Text('Changes', style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 8.0),
               const Text(
                 'Policy may be updated occasionally. Changes will be posted here.',

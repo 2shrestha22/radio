@@ -35,7 +35,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   go_router: ^18.0.1
-  flutter_gutter: ^2.1.1
   just_audio: ^0.10.4
   just_audio_background: ^0.0.1-beta.12
   flutter_animate: ^4.5.0
@@ -49,13 +48,10 @@ dependencies:
   google_fonts: ^8.0.2
   extended_image: ^10.0.1
   rxdart: ^0.28.0
-  url_strategy: ^0.3.0
-  awesome_flutter_extensions: ^2.0.1
   intl: ^0.20.2
   url_launcher: ^6.3.0
   flutter_sticky_header: ^0.8.0
   http: ^1.4.0
-  phosphoricons_flutter: ^1.0.0
 
 dev_dependencies:
   flutter_test:

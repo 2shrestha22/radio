@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/models/radio_station.dart';
@@ -54,7 +53,7 @@ class _StationListViewState extends ConsumerState<StationListView>
                 child: Row(
                   children: [
                     StationLogo(station.imageUrl),
-                    const GutterTiny(),
+                    SizedBox(width: 4),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +87,7 @@ class _StationListViewState extends ConsumerState<StationListView>
                         ],
                       ),
                     ),
-                    const GutterTiny(),
+                    SizedBox(width: 4),
                     IconButton(
                       onPressed: () => widget.onFavTap(station),
                       icon: switch (station.fav) {
