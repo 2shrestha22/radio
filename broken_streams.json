@@ -1,891 +1,1310 @@
 [
   {
-    "name": "Nepali Radio Network",
-    "url": "https://astream.nepalipatro.com.np:8239/index.html",
-    "status": "ERROR",
-    "error": "Cannot connect to host astream.nepalipatro.com.np:8239 ssl:default [Connect call failed ('157.10.100.89', 8239)]",
-    "method": null
+    "name": "Radio Janata",
+    "url": "http://streaming.hamropatro.com:8895",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Annapurna Nepal",
-    "url": "http://stream.prixa.net:8000/annapurna",
-    "status": "TIMEOUT",
-    "error": "No response within 10s",
-    "method": null
+    "name": "Classic FM",
+    "url": "http://streaming.hamropatro.com:8783",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Citizen FM",
-    "url": "https://streaming.webhostnepal.com:7032/;",
-    "status": "ERROR",
-    "error": "Cannot connect to host streaming.webhostnepal.com:7032 ssl:default [Connect call failed ('95.217.153.73', 7032)]",
-    "method": null
+    "name": "Radio Taplejung",
+    "url": "http://live.itech.host:9012/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Prakriti",
+    "url": "http://streaming.hamropatro.com:8276",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Himalayan",
     "url": "http://stream.zeno.fm/9ghqvd62238uv",
     "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "error": "HTTP 503"
   },
   {
-    "name": "Radio Ramaroshan",
-    "url": "http://216.55.141.189:8621/;",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Tulsipur FM",
+    "url": "http://streaming.hamropatro.com:8327",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Saptarangi FM",
-    "url": "http://live.itech.host:9629/stream",
+    "name": "Radio Didibahini",
+    "url": "http://live.itech.host:8326/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Nepalbani",
+    "url": "http://live.itechnepal.com:8676/stream",
+    "status": "TIMEOUT",
+    "error": "No response within 8s"
   },
   {
     "name": "Radio Dhangadhi",
     "url": "http://216.55.141.189:8713/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
-  },
-  {
-    "name": "Pathivara FM",
-    "url": "http://live.itech.host:8744/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Khandbari fm",
-    "url": "http://live.itechnepal.com:8286/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Himal FM ",
-    "url": "http://streaming.hamropatro.com:8054/;",
-    "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Namobuddha",
     "url": "https://streaming.hamropatro.com:8329/;",
     "status": "ERROR",
-    "error": "Cannot connect to host streaming.hamropatro.com:8329 ssl:default [Connection reset by peer]",
-    "method": null
+    "error": "Cannot connect to host streaming.hamropatro.com:8329 ssl:False [Connection reset by peer]"
   },
   {
     "name": "Ilam FM",
     "url": "http://live.itechnepal.com:9635/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Star FM",
     "url": "http://live.itechnepal.com:9539/stream?type=.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itechnepal.com:9539 ssl:default [Connect call failed ('95.216.19.178', 9539)]",
-    "method": null
+    "error": "Cannot connect to host live.itechnepal.com:9539 ssl:False [Connect call failed ('95.216.19.178', 9539)]"
   },
   {
-    "name": "Tinjure Online",
-    "url": "http://streaming.hamropatro.com:8455/;",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Highway",
+    "url": "http://streaming.hamropatro.com:8014/;",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Chitwan Radio Network",
-    "url": "http://streaming.hamropatro.com:8603/;",
-    "status": "ERROR",
-    "error": "Cannot connect to host streaming.hamropatro.com:8603 ssl:default [Connect call failed ('216.55.141.189', 8603)]",
-    "method": null
+    "name": "Mero Sathi FM",
+    "url": "http://streaming.hamropatro.com:8571/;",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Sarada",
     "url": "http://live.itech.host:9443/stream?mp3",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Ichchhakamana FM",
-    "url": "http://streaming.softnep.net:8139/;",
+    "name": "Radio Langtang",
+    "url": "http://streaming.hamropatro.com:8032/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Madanpokhara FM",
+    "url": "http://streaming.hamropatro.com:8236/;",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Damauli FM",
+    "url": "http://streaming.hamropatro.com:8529/;",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Rajmarga",
+    "url": "http://streaming.softnep.net:8299/;",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Bindas",
     "url": "http://streaming.hamropatro.com:8615/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Darchula FM",
     "url": "https://streaming.softnep.net:10951/;",
     "status": 502,
-    "error": "HTTP 502",
-    "method": null
+    "error": "HTTP 502"
   },
   {
     "name": "Radio Koseli FM",
     "url": "http://streaming.softnep.net:8149/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "RADIO SAAJHA CHAUTARI",
     "url": "https://samachardata.radioca.st/;",
     "status": 502,
-    "error": "HTTP 502",
-    "method": null
+    "error": "HTTP 502"
   },
   {
     "name": "Radio Sanket",
     "url": "http://216.55.141.189:8523/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Sadvab",
     "url": "http://streaming.hamropatro.com:8577/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Unnati",
     "url": "https://live.itech.host:8009/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8009 ssl:default [Connect call failed ('95.216.19.178', 8009)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:8009 ssl:False [Connect call failed ('95.216.19.178', 8009)]"
   },
   {
-    "name": "Radio Bihani",
-    "url": "http://streaming.softnep.net:8061/;",
-    "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8061 ssl:default [Connect call failed ('217.79.245.66', 8061)]",
-    "method": null
+    "name": "Radio Makawanpur gadi",
+    "url": "http://streaming.hamropatro.com:8767/;",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Dautari FM",
     "url": "http://live.itechnepal.com:7042/stream?type=.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itechnepal.com:7042 ssl:default [Connect call failed ('95.216.19.178', 7042)]",
-    "method": null
+    "error": "Cannot connect to host live.itechnepal.com:7042 ssl:False [Connect call failed ('95.216.19.178', 7042)]"
   },
   {
     "name": "Radio Bardibas",
     "url": "http://streaming.hamropatro.com:8240/;",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "status": "ERROR",
+    "error": "Cannot connect to host streaming.hamropatro.com:8240 ssl:False [Connect call failed ('216.55.141.189', 8240)]"
   },
   {
     "name": "Radio Top Town",
     "url": "http://live.itech.host:4630/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Samagra Madhesh",
     "url": "http://streaming.softnep.net:8151/;",
     "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8151 ssl:default [Connect call failed ('217.79.245.66', 8151)]",
-    "method": null
+    "error": "Cannot connect to host streaming.softnep.net:8151 ssl:False [Connect call failed ('217.79.245.66', 8151)]"
   },
   {
     "name": "Radio Janamukhi",
     "url": "http://streaming.hamropatro.com:8301/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Seven Star",
     "url": "http://streaming.softnep.net:8177/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Barahi",
     "url": "http://streaming.softnep.net:8083/;",
     "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8083 ssl:default [Connect call failed ('217.79.245.66', 8083)]",
-    "method": null
+    "error": "Cannot connect to host streaming.softnep.net:8083 ssl:False [Connect call failed ('217.79.245.66', 8083)]"
   },
   {
-    "name": "Narayani FM 103.8 MHz",
-    "url": "http://streaming.hamropatro.com:8272/;",
+    "name": "Radio Bharatpur",
+    "url": "http://streaming.hamropatro.com:8325/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Sungabha  104.6",
     "url": "http://streaming.hamropatro.com:8795/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Vision FM (Okhaldhunga)",
     "url": "http://streaming.hamropatro.com:8645/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Sarlahi",
     "url": "http://216.55.141.189:8633/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio pallawee ",
     "url": "https://radio-streaming-serv.hamropatro.com:8020/radio.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8020 ssl:default [nodename nor servname provided, or not know",
-    "method": null
-  },
-  {
-    "name": "Radio Chitwan ",
-    "url": "https://live.itech.host:2275/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Radio Ramechhap",
-    "url": "http://streaming.hamropatro.com:8098/;",
-    "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8020 ssl:False [nodename nor servname provided, or not known]"
   },
   {
     "name": "Bhanu FM",
     "url": "http://streaming.softnep.net:8211/;",
     "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8211 ssl:default [Connect call failed ('217.79.245.66', 8211)]",
-    "method": null
+    "error": "Cannot connect to host streaming.softnep.net:8211 ssl:False [Connect call failed ('217.79.245.66', 8211)]"
   },
   {
     "name": "Radio Roshi ",
     "url": "http://centova1.toofancom.com:4193/;",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Shivashakti",
-    "url": "http://live.itech.host:7028/live",
-    "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:7028 ssl:default [Connect call failed ('95.216.19.178', 7028)]",
-    "method": null
+    "name": "Radio Malangwa",
+    "url": "http://streaming.hamropatro.com:8711/;",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Namaste",
-    "url": "http://live.itech.host:8338/stream?mp3",
+    "name": "Radio Muktinath",
+    "url": "http://live.itechnepal.com:9180/live",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Sumhatlung FM",
+    "url": "http://streaming.softnep.net:8095/;",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Eagle FM",
+    "url": "http://live.itechnepal.com:9048/stream?type=.mp3",
+    "status": "ERROR",
+    "error": "Cannot connect to host live.itechnepal.com:9048 ssl:False [Connect call failed ('95.216.19.178', 9048)]"
+  },
+  {
+    "name": "Radio Sailung",
+    "url": "http://live.itechnepal.com:9174/stream?type=.mp3",
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Paschim Today",
     "url": "https://live.itech.host:3240/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Radio Madhyabindu",
-    "url": "https://streaming.softnep.net:10981/;",
-    "status": 502,
-    "error": "HTTP 502",
-    "method": null
+    "name": "Swarnim FM",
+    "url": "http://216.55.141.189:8419",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Lamjung",
     "url": "https://live.itech.host:8951/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8951 ssl:default [Connect call failed ('95.216.19.178', 8951)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:8951 ssl:False [Connect call failed ('95.216.19.178', 8951)]"
   },
   {
-    "name": "Radio Nagarik",
-    "url": "http://node-12.zeno.fm/5g8sn1w1em8uv?rj-ttl=5&rj-tok=AAABd_IDgdkAp4IYSd9uAPj8rg",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "name": "FM Plus",
+    "url": "http://streaming.hamropatro.com:8499",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Rapti",
     "url": "http://streaming.softnep.net:10902/;stream.nsv&type=mp3&volume=10",
     "status": 400,
-    "error": "HTTP 400",
-    "method": null
+    "error": "HTTP 400"
+  },
+  {
+    "name": "Radio Bajura",
+    "url": "http://streaming.softnep.net:8105",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Athrai",
+    "url": "http://streaming.hamropatro.com:8094",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sahino",
+    "url": "http://live.itech.host:7093/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Hapure",
+    "url": "http://streaming.hamropatro.com:8068",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Chankheli",
+    "url": "http://streaming.softnep.net:8071",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Simara",
     "url": "https://streaming.softnep.net:10925/;",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Rampur",
-    "url": "http://live.itech.host:2030/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Machhapuchhre FM",
-    "url": "https://live.itech.host:2680/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Kushum",
+    "url": "http://streaming.hamropatro.com:8056",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio All Star Online",
     "url": "http://live.itechnepal.com:7039/stream?type=.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itechnepal.com:7039 ssl:default [Connect call failed ('95.216.19.178', 7039)]",
-    "method": null
+    "error": "Cannot connect to host live.itechnepal.com:7039 ssl:False [Connect call failed ('95.216.19.178', 7039)]"
   },
   {
-    "name": "Radio Society FM",
-    "url": "http://live.itech.host:1680/stream",
-    "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:1680 ssl:default [Connect call failed ('95.216.19.178', 1680)]",
-    "method": null
+    "name": "Radio Paschim Awaj",
+    "url": "https://live.itech.host:3230/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Terhathum ",
+    "url": "https://live.itech.host:9155/stream",
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Ruru FM",
     "url": "https://stream.zeno.fm/4pfph3kr44zuv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Sarangi (Pokhara)",
-    "url": "https://streaming.softnep.net:10982/;stream.nsv&type=mp3&volume=70",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "name": "Shakti FM",
+    "url": "http://streaming.hamropatro.com:8709",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Shreenagar FM",
     "url": "https://live.itech.host:9598/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:9598 ssl:default [Connect call failed ('95.216.19.178', 9598)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:9598 ssl:False [Connect call failed ('95.216.19.178', 9598)]"
+  },
+  {
+    "name": "Radio Ekata",
+    "url": "http://216.55.141.189:8515",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Hamro Paila FM",
     "url": "https://live.itech.host:8719/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8719 ssl:default [Connect call failed ('95.216.19.178', 8719)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:8719 ssl:False [Connect call failed ('95.216.19.178', 8719)]"
   },
   {
     "name": "Radio Rasuwa",
     "url": "https://streaming.softnep.net:10992/",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Jajarkot",
     "url": "https://live.itech.host:2360/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:2360 ssl:default [Connect call failed ('95.216.19.178', 2360)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:2360 ssl:False [Connect call failed ('95.216.19.178', 2360)]"
   },
   {
-    "name": "Pakhribas FM",
-    "url": "https://live.itech.host:7051/stream",
+    "name": "Radio Tiphadee",
+    "url": "https://live.itech.host:9382/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Karnali FM Jumla",
+    "url": "http://216.55.141.189:8773",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Barathawa",
     "url": "https://stream.zeno.fm/as8n057z4k8uv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Ghanteshwor",
     "url": "https://canada1.reliastream.com/proxy/narendra?mp=/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Kanchan",
     "url": "https://streaming.softnep.net:10907/;stream.nsv&type=mp3&volume=70",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Jalpa",
+    "url": "http://streaming.hamropatro.com:8377",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Gurkha Radio",
     "url": "https://securestream.casthost.net:8033/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host securestream.casthost.net:8033 ssl:default [Connect call failed ('198.50.162.224', 8033)]",
-    "method": null
+    "error": "Cannot connect to host securestream.casthost.net:8033 ssl:False [Connect call failed ('198.50.162.224', 8033)]"
   },
   {
-    "name": "Radio Nikash",
-    "url": "https://live.itech.host:1580/stream",
-    "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:1580 ssl:default [Connect call failed ('95.216.19.178', 1580)]",
-    "method": null
-  },
-  {
-    "name": "Halesi FM",
-    "url": "http://185.181.63.148:8010/halesifm",
+    "name": "Radio Mahila Aawaj",
+    "url": "http://streaming.hamropatro.com:8361",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Paurakhi",
-    "url": "https://live.itech.host:8903/stream?type=.mp3",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Samarthya",
+    "url": "http://streaming.hamropatro.com:8365",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Kapurkot FM",
+    "url": "http://streaming.hamropatro.com:8493",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Malarani",
+    "url": "http://streaming.hamropatro.com:8755",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Lekhnath",
     "url": "https://streaming.softnep.net:10848/;stream.nsv&type=mp3",
     "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "error": "HTTP 503"
+  },
+  {
+    "name": "Radio Mahabharat",
+    "url": "http://streaming.hamropatro.com:8865",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sambridha Nepal",
+    "url": "http://streaming.hamropatro.com:8879",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Suryodaya FM",
     "url": "http://live.itechnepal.com:7165/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itechnepal.com:7165 ssl:default [Connect call failed ('95.216.19.178', 7165)]",
-    "method": null
+    "error": "Cannot connect to host live.itechnepal.com:7165 ssl:False [Connect call failed ('95.216.19.178', 7165)]"
   },
   {
     "name": "Radio Rhythm",
     "url": "https://stream.zeno.fm/1zu1zan4mp8uv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Chapakot",
     "url": "http://live.itech.host:2320/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Mix FM",
     "url": "http://live.itech.host:2460/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Dhurkot",
+    "url": "http://streaming.hamropatro.com:8459",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Power FM",
+    "url": "http://streaming.hamropatro.com:8587/stream",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Shaileshwori FM",
+    "url": "https://live.itech.host:8273/stream",
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Malmala",
     "url": "https://live.itech.host:3180/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:3180 ssl:default [Connect call failed ('95.216.19.178', 3180)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:3180 ssl:False [Connect call failed ('95.216.19.178', 3180)]"
   },
   {
-    "name": "Siddhartha  FM",
-    "url": "http://live.itech.host:9575/stream",
+    "name": "Radio Chimteshwor",
+    "url": "http://live.itech.host:8974/stream?mp3",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Sanatan Radio Network",
+    "url": "http://216.55.141.189:8857/;stream.mp3",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Devghat",
+    "url": "http://streaming.hamropatro.com:8855",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Tharuhat",
     "url": "https://stream.zeno.fm/pq0bz4vez38uv",
-    "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Sunakhari Radio live",
     "url": "https://live.itech.host:9526/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:9526 ssl:default [Connect call failed ('95.216.19.178', 9526)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:9526 ssl:False [Connect call failed ('95.216.19.178', 9526)]"
+  },
+  {
+    "name": "Radio Pratibodh F.M",
+    "url": "http://streaming.hamropatro.com:8036",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Derby",
     "url": "https://centova1.toofancom.com/proxy/radioderby?mp=/stream",
     "status": 502,
-    "error": "HTTP 502",
-    "method": null
+    "error": "HTTP 502"
+  },
+  {
+    "name": "Happy FM",
+    "url": "http://streaming.softnep.net:8263/",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Tamor",
     "url": "https://live.itech.host:8945/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Namaste FM",
     "url": "https://live.itech.host:7019/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:7019 ssl:default [Connect call failed ('95.216.19.178', 7019)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:7019 ssl:False [Connect call failed ('95.216.19.178', 7019)]"
   },
   {
-    "name": "Kohalpur FM",
-    "url": "http://streaming.softnep.net:8265",
-    "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8265 ssl:default [Connect call failed ('217.79.245.66', 8265)]",
-    "method": null
+    "name": "Radio Maurakhara FM",
+    "url": "http://streaming.softnep.net:8317",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Rukmini",
+    "url": "http://streaming.hamropatro.com:8853",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Nigarani",
+    "url": "http://streaming.hamropatro.com:5501",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Tufan",
+    "url": "http://streaming.hamropatro.com:8761",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Shringeshwor (SFM)",
     "url": "https://stream-152.zeno.fm/1qgfbe6sz1zuv",
     "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "error": "HTTP 503"
   },
   {
-    "name": "Radio Aandhikhola",
-    "url": "https://live.itech.host:8863/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Kaski 96.5",
+    "url": "http://streaming.hamropatro.com:8495",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Katahariya FM",
     "url": "https://live.itech.host:4590/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Manko Majheri",
     "url": "http://live.itech.host:2620/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:2620 ssl:default [Connect call failed ('95.216.19.178', 2620)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:2620 ssl:False [Connect call failed ('95.216.19.178', 2620)]"
+  },
+  {
+    "name": "Radio Puspanjali",
+    "url": "http://streaming.hamropatro.com:8679",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Bageshwori FM",
     "url": "https://radio-streaming-serv.hamropatro.com:8050/radio.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8050 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8050 ssl:False [nodename nor servname provided, or not known]"
   },
   {
-    "name": "Jayaprithvi FM",
-    "url": "https://streaming.softnep.net:10824/;",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "name": "Radio Jhankar",
+    "url": "http://streaming.hamropatro.com:8090",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "NB Radio Network",
-    "url": "https://streaming.softnep.net:10877/;",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "name": "Samabeshi FM",
+    "url": "http://streaming.hamropatro.com:5511",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Naya Aviyan FM",
+    "url": "https://live.itech.host:3280/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio  Aarambha",
+    "url": "http://streaming.hamropatro.com:5515",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Rapti",
+    "url": "https://live.itech.host:3250/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Apan FM",
+    "url": "http://streaming.hamropatro.com:8445",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Bhairab Radio",
     "url": "http://stream.zeno.fm/qe715t14gwzuv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "Radio BSC Nepal",
     "url": "https://live.itech.host:2800/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Bannigadhi",
+    "url": "https://live.itech.host:4665/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Bulbule FM",
+    "url": "http://216.55.141.189:8573",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Mission",
+    "url": "http://centova1.toofancom.com:4163",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Lipulek",
+    "url": "http://216.55.141.189:8321",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Baitadi",
     "url": "http://95.217.153.73:8044/;",
     "status": "ERROR",
-    "error": "Cannot connect to host 95.217.153.73:8044 ssl:default [Connect call failed ('95.217.153.73', 8044)]",
-    "method": null
+    "error": "Cannot connect to host 95.217.153.73:8044 ssl:False [Connect call failed ('95.217.153.73', 8044)]"
   },
   {
     "name": "Radio Active FM",
     "url": "http://95.217.153.73:8042/;",
     "status": "ERROR",
-    "error": "Cannot connect to host 95.217.153.73:8042 ssl:default [Connect call failed ('95.217.153.73', 8042)]",
-    "method": null
+    "error": "Cannot connect to host 95.217.153.73:8042 ssl:False [Connect call failed ('95.217.153.73', 8042)]"
   },
   {
-    "name": "Nsanchar Online Radio",
-    "url": "https://stream.zeno.fm/uyo4dbsay4cuv",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Radio Hemja",
-    "url": "https://live.itech.host:1510/stream",
+    "name": "Shepherd FM (Chitwan)",
+    "url": "http://centova1.toofancom.com:5180",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:1510 ssl:default [Connect call failed ('95.216.19.178', 1510)]",
-    "method": null
+    "error": "Cannot connect to host centova1.toofancom.com:5180 ssl:False [Connect call failed ('82.145.63.122', 5180)]"
+  },
+  {
+    "name": "Jhuleni FM",
+    "url": "http://streaming.hamropatro.com:8803",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Kairan",
+    "url": "http://streaming.hamropatro.com:8793",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Prabhu FM",
+    "url": "http://streaming.hamropatro.com:8805",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Bagmati",
+    "url": "http://streaming.hamropatro.com:8363",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Darshan Fm Online",
+    "url": "http://streaming.hamropatro.com:8363",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Kamalbazar",
+    "url": "http://streaming.hamropatro.com:8172",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sudur Sanchar",
+    "url": "http://streaming.hamropatro.com:8010",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Arun",
     "url": "https://live.itech.host:3090/stream",
-    "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:3090 ssl:default [Connect call failed ('95.216.19.178', 3090)]",
-    "method": null
-  },
-  {
-    "name": "Janaknandani F.M",
-    "url": "http://rserver.domaininnepal.com:8014/janaknandani",
-    "status": "ERROR",
-    "error": "Cannot connect to host rserver.domaininnepal.com:8014 ssl:default [Connect call failed ('202.51.74.118', 8014)]",
-    "method": null
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Mithilanchal FM",
     "url": "https://live.itech.host:8645/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8645 ssl:default [Connect call failed ('95.216.19.178', 8645)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:8645 ssl:False [Connect call failed ('95.216.19.178', 8645)]"
   },
   {
-    "name": "Radio Sargam",
-    "url": "http://rstream.abgroupnepal.com:8000/radiosargam",
-    "status": "ERROR",
-    "error": "Cannot connect to host rstream.abgroupnepal.com:8000 ssl:default [nodename nor servname provided, or not known]",
-    "method": null
+    "name": "Radio Gaunghar",
+    "url": "http://streaming.hamropatro.com:8817",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Bara",
     "url": "http://stream.zeno.fm/72cb9dcu1nhvv",
     "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "error": "HTTP 503"
   },
   {
     "name": "Radio Samagra",
     "url": "https://live.itech.host:9394/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Radio Naya Nepal FM",
-    "url": "https://live.itech.host:8585/stream",
-    "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8585 ssl:default [Connect call failed ('95.216.19.178', 8585)]",
-    "method": null
+    "name": "Radio Himali",
+    "url": "http://streaming.hamropatro.com:8144",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio laligurans",
-    "url": "https://live.itech.host:8933/stream",
+    "name": "Radio Hamro Samabeshi",
+    "url": "http://streaming.hamropatro.com:8833",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Serofero",
+    "url": "http://streaming.hamropatro.com:8465",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Dadadara",
+    "url": "http://streaming.hamropatro.com:8683",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Heart Beat F.M.",
+    "url": "http://216.55.141.189:8737",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Janata Samaj Radio Network",
+    "url": "http://streaming.hamropatro.com:8635",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:8933 ssl:default [Connect call failed ('95.216.19.178', 8933)]",
-    "method": null
+    "error": "400, message=\"Bad status line:\\n  Expected HTTP/, RTSP/ or ICE/:\\n\\n  b'ICY 401 Service Unavailable'\\n      ^\", url='http://streaming.hamropatro.com:8635'"
+  },
+  {
+    "name": "UK FM",
+    "url": "http://streaming.hamropatro.com:8843",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Mantra",
+    "url": "http://streaming.hamropatro.com:8831",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Gangajal",
+    "url": "http://streaming.hamropatro.com:8092",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sworgabhumee FM",
+    "url": "http://streaming.hamropatro.com:8681",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Shimbhunath",
     "url": "https://live.itech.host:3905/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Sarobar Radio Network",
+    "url": "http://streaming.hamropatro.com:8859",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Shubheksha FM",
+    "url": "http://216.55.141.189:8086",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Online FM",
     "url": "https://stream.zeno.fm/0cu4ikikynntv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio KBM",
+    "url": "http://streaming.hamropatro.com:8869",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Marin",
+    "url": "http://streaming.hamropatro.com:8871",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Sajha Aawaj",
     "url": "https://live.itech.host:2580/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Radio ABC",
-    "url": "https://live.itech.host:2300/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Kabeli",
+    "url": "http://streaming.hamropatro.com:8076",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Chhatrabhumi",
     "url": "https://radio-streaming-serv.hamropatro.com:8010/radio.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8010 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8010 ssl:False [nodename nor servname provided, or not known]"
   },
   {
-    "name": "Radio Suddhodhan",
-    "url": "https://radio-streaming-serv.hamropatro.com:8070/radio.mp3",
-    "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8070 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "name": "Radio Kutumba",
+    "url": "http://streaming.hamropatro.com:8885",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Upahar FM",
+    "url": "https://live.itech.host:4775/stream",
+    "status": 404,
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Bagmati",
     "url": "https://stream-42.zeno.fm/occ1fsmvdq0uv?zs=GC0HK9Y5QE-5wu_PVVgitw",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Radio Attariya",
-    "url": "https://radio-streaming-serv.hamropatro.com:8150/radio.mp3",
-    "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8150 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "name": "Radio Rajapur",
+    "url": "http://streaming.hamropatro.com:8132",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Rastriya Sandesh",
     "url": "http://stream.zeno.fm/qe715t14gwzuv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
-    "name": "Radio Sathi FM",
-    "url": "https://live.itech.host:4180/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Shreenagar FM",
+    "url": "http://streaming.hamropatro.com:8599",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
-    "name": "Suryamukhi FM",
-    "url": "https://radio-streaming-serv.hamropatro.com:8030/radio.mp3",
-    "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8030 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "name": "Sambad FM",
+    "url": "http://streaming.hamropatro.com:5509",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Online Radio Nabin Sanchar",
+    "url": "http://streaming.hamropatro.com:8174",
+    "status": "TIMEOUT",
+    "error": "No response within 8s"
+  },
+  {
+    "name": "Radio Pathsala Nepal",
+    "url": "http://streaming.hamropatro.com:8677",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sanjiwani FM",
+    "url": "http://streaming.hamropatro.com:8252",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Dibyabani",
+    "url": "http://streaming.hamropatro.com:8563",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sanskriti",
+    "url": "http://streaming.hamropatro.com:8651",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Bajhang",
+    "url": "http://streaming.hamropatro.com:8691",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Barahathawa FM",
     "url": "https://live.itech.host:1605/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Sahayatri",
     "url": "https://live.itech.host:2390/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:2390 ssl:default [Connect call failed ('95.216.19.178', 2390)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:2390 ssl:False [Connect call failed ('95.216.19.178', 2390)]"
   },
   {
-    "name": "Radio Sudoorawaz",
-    "url": "https://live.itech.host:8639/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "name": "Radio Ninglashaini FM",
+    "url": "http://streaming.softnep.net:8179",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Kathariya Online Radio",
     "url": "https://stream.zeno.fm/6fdk6gyrhm8uv",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Kapilvastu",
+    "url": "http://streaming.hamropatro.com:8108",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Dolpa FM",
     "url": "https://live.itech.host:8337/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Janakpur",
+    "url": "http://216.55.141.189:9380",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Tila Aawaj",
     "url": "https://stream.zeno.fm/yowpdmuxurrvv",
     "status": 401,
-    "error": "HTTP 401",
-    "method": null
+    "error": "HTTP 401"
   },
   {
     "name": "BP Bichar Radio",
     "url": "https://radio-streaming-serv.hamropatro.com:8140/radio.mp3",
     "status": "ERROR",
-    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8140 ssl:default [nodename nor servname provided, or not know",
-    "method": null
+    "error": "Cannot connect to host radio-streaming-serv.hamropatro.com:8140 ssl:False [nodename nor servname provided, or not known]"
+  },
+  {
+    "name": "Radio Matribhumi",
+    "url": "http://streaming.hamropatro.com:8811",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sambriddhi",
+    "url": "http://streaming.hamropatro.com:8715",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Satyabani",
+    "url": "http://streaming.hamropatro.com:8881",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Dhanushadham",
+    "url": "http://streaming.hamropatro.com:8028",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sitganga",
+    "url": "http://streaming.hamropatro.com:8867",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Indreni",
+    "url": "http://streaming.hamropatro.com:8519",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Samad FM",
+    "url": "http://streaming.hamropatro.com:8008",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Jhurjhure",
+    "url": "http://216.55.141.189:1084",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Nayan",
+    "url": "http://streaming.softnep.net:8331/",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Juntara",
+    "url": "http://streaming.hamropatro.com:8791",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Paschimanchal FM",
+    "url": "http://streaming.hamropatro.com:8729",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sangeet",
+    "url": "http://streaming.softnep.net:8047",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Khalanga",
     "url": "https://live.itech.host:8314/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio King Fm",
+    "url": "http://streaming.hamropatro.com:8625",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Kailali",
     "url": "http://streaming.softnep.net:8267",
-    "status": "ERROR",
-    "error": "Cannot connect to host streaming.softnep.net:8267 ssl:default [Connect call failed ('217.79.245.66', 8267)]",
-    "method": null
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Kiss FM",
+    "url": "http://streaming.hamropatro.com:8649",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Pokhariya",
+    "url": "http://streaming.hamropatro.com:8333",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Prithivi FM",
+    "url": "https://live.itech.host:2145/stream",
+    "status": 404,
+    "error": "HTTP 404"
+  },
+  {
+    "name": "Radio Narayani (Online)",
+    "url": "http://streaming.hamropatro.com:8863",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Mudkechula FM",
+    "url": "http://streaming.hamropatro.com:8875",
+    "status": 401,
+    "error": "HTTP 401"
   },
   {
     "name": "Radio Terai",
     "url": "https://live.itech.host:4905/stream",
     "status": "ERROR",
-    "error": "Cannot connect to host live.itech.host:4905 ssl:default [Connect call failed ('95.216.19.178', 4905)]",
-    "method": null
+    "error": "Cannot connect to host live.itech.host:4905 ssl:False [Connect call failed ('95.216.19.178', 4905)]"
   },
   {
-    "name": "Pathibhara FM",
-    "url": "https://live.itech.host:8749/stream",
+    "name": "Radio Palung",
+    "url": "http://streaming.hamropatro.com:8084",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Sunaulo FM",
+    "url": "http://streaming.hamropatro.com:8034",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Tikapur",
+    "url": "https://live.itech.host:9519/live",
+    "status": "ERROR",
+    "error": "Cannot connect to host live.itech.host:9519 ssl:False [[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1081)]"
+  },
+  {
+    "name": "Radio Sannitriveni",
+    "url": "http://streaming.hamropatro.com:8058",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Paschim Pokhara",
+    "url": "http://streaming.hamropatro.com:8012",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Manakamana FM",
+    "url": "http://streaming.hamropatro.com:8200",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Panchadewal",
+    "url": "http://streaming.hamropatro.com:8511",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Geruwa FM",
+    "url": "http://streaming.hamropatro.com:8315",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Nalagad",
+    "url": "http://streaming.hamropatro.com:9001",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Shubhakalika FM",
+    "url": "http://streaming.hamropatro.com:8100",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Shepherd (Dhulikhel)",
+    "url": "http://centova1.toofancom.com:5128",
+    "status": "ERROR",
+    "error": "Cannot connect to host centova1.toofancom.com:5128 ssl:False [Connect call failed ('82.145.63.122', 5128)]"
+  },
+  {
+    "name": "Radio Bhojpur FM",
+    "url": "http://live.itechnepal.com:9078/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Radio Surkhet",
-    "url": "https://live.itech.host:3830/stream",
-    "status": 404,
-    "error": "HTTP 404",
-    "method": null
-  },
-  {
-    "name": "Chitwan Online FM",
-    "url": "https://26383.live.streamtheworld.com/SAM04AAC227_SC",
-    "status": 403,
-    "error": "HTTP 403",
-    "method": null
+    "error": "HTTP 404"
   },
   {
     "name": "Radio Janani",
     "url": "https://live.itech.host:8773/stream",
     "status": 404,
-    "error": "HTTP 404",
-    "method": null
+    "error": "HTTP 404"
   },
   {
-    "name": "Radio Malashree",
-    "url": "https://stream.zeno.fm/fjdb83oq3e0uv",
-    "status": 503,
-    "error": "HTTP 503",
-    "method": null
+    "name": "Radio Sainamaina",
+    "url": "http://streaming.hamropatro.com:8030",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Panini FM",
+    "url": "http://streaming.hamropatro.com:5505",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Api FM",
+    "url": "http://streaming.hamropatro.com:5503",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Kolhabi",
+    "url": "http://streaming.hamropatro.com:5521",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Radio Ghodaghodi FM",
+    "url": "http://streaming.hamropatro.com:5523",
+    "status": 401,
+    "error": "HTTP 401"
+  },
+  {
+    "name": "Swargadwari Online Radio",
+    "url": "http://streaming.hamropatro.com:5529",
+    "status": 401,
+    "error": "HTTP 401"
   }
 ]

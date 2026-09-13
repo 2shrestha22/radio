@@ -60,5 +60,6 @@ Future<void> loadStations() async {
   }
   allRadioStations = (jsonDecode(data) as List)
       .map((e) => RadioStation.fromJson(e))
+      .where((s) => !s.disabled)
       .toList();
 }

@@ -15,6 +15,7 @@ abstract class RadioStation with _$RadioStation {
     required String? address,
     @Default(false) bool fav,
     int? province,
+    @Default(false) bool disabled,
   }) = _RadioStation;
 
   String get imageUrl =>
