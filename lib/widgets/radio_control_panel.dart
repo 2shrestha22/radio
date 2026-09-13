@@ -19,28 +19,30 @@ class RadioControlPanel extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final radioState = ref.watch(radioProvider);
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: ColoredBox(
-            color: Theme.of(context).colorScheme.surfaceContainer,
-          ),
-        ),
-        Positioned.fill(
-          child: ImageFiltered(
-            imageFilter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
-            child: ExtendedImage.network(
-              radioState.station!.imageUrl,
-              cache: true,
-              fit: BoxFit.cover,
+    return IntrinsicHeight(
+      child: ClipRect(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: ColoredBox(
+                color: Theme.of(context).colorScheme.surfaceContainer,
+              ),
             ),
-          ),
-        ),
-        Positioned.fill(
-          child: ColoredBox(
-            color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.7),
-          ),
-        ),
+            Positioned.fill(
+              child: ImageFiltered(
+                imageFilter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
+                child: ExtendedImage.network(
+                  radioState.station!.imageUrl,
+                  cache: true,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned.fill(
+              child: ColoredBox(
+                color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.7),
+              ),
+            ),
         Padding(
           padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
           child: Row(
@@ -138,7 +140,9 @@ class RadioControlPanel extends ConsumerWidget {
             ],
           ),
         ),
-      ],
+          ],
+        ),
+      ),
     );
   }
 }

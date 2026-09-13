@@ -40,21 +40,15 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 640),
-          child: Stack(
+          child: Column(
             children: [
-              IndexedStack(index: _selectedIndex, children: _views),
+              Expanded(
+                child: IndexedStack(index: _selectedIndex, children: _views),
+              ),
               if (hasStation)
-                Positioned(
-                  left: 8,
-                  right: 8,
-                  bottom: 8,
-                  child: SafeArea(
-                    top: false,
-                    child: ClipRRect(
-                      borderRadius: kBorderRadius,
-                      child: const RadioControlPanel(),
-                    ),
-                  ),
+                const SafeArea(
+                  top: false,
+                  child: RadioControlPanel(),
                 ),
             ],
           ),

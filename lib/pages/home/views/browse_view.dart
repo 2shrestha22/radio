@@ -22,7 +22,7 @@ class BrowseView extends ConsumerWidget {
             province: sectionList[i],
             showDivider: i < sectionList.length - 1,
           ),
-        const SliverPadding(padding: EdgeInsets.only(bottom: 100)),
+
       ],
     );
   }
