@@ -11,7 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 class AboutPage extends ConsumerWidget {
   const AboutPage({super.key});
 
-  static const _version = '1.1.5';
+  static const _version = '1.1.6';
   static const _repoUrl = 'https://github.com/2shrestha22/radio';
 
 
