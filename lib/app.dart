@@ -16,7 +16,8 @@ class App extends StatelessWidget {
       title: 'Radio NP',
       routerConfig: _router,
       // debugShowCheckedModeBanner: false,
-      theme: appTheme(context),
+      theme: appTheme(),
+      darkTheme: appDarkTheme(),
     );
   }
 }

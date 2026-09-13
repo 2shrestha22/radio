@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorite_stations.dart';
+part of 'frequently_played.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,28 +9,28 @@ part of 'favorite_stations.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(FavoriteStations)
-const favoriteStationsProvider = FavoriteStationsProvider._();
+@ProviderFor(FrequentlyPlayed)
+final frequentlyPlayedProvider = FrequentlyPlayedProvider._();
 
-final class FavoriteStationsProvider
-    extends $NotifierProvider<FavoriteStations, List<RadioStation>> {
-  const FavoriteStationsProvider._()
+final class FrequentlyPlayedProvider
+    extends $NotifierProvider<FrequentlyPlayed, List<RadioStation>> {
+  FrequentlyPlayedProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'favoriteStationsProvider',
+        name: r'frequentlyPlayedProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$favoriteStationsHash();
+  String debugGetCreateSourceHash() => _$frequentlyPlayedHash();
 
   @$internal
   @override
-  FavoriteStations create() => FavoriteStations();
+  FrequentlyPlayed create() => FrequentlyPlayed();
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(List<RadioStation> value) {
@@ -41,14 +41,13 @@ final class FavoriteStationsProvider
   }
 }
 
-String _$favoriteStationsHash() => r'28cd684ad065ce7b567e1dafba57093707af1724';
+String _$frequentlyPlayedHash() => r'94c25030944721446fa8c74962bdd391de4c29c3';
 
-abstract class _$FavoriteStations extends $Notifier<List<RadioStation>> {
+abstract class _$FrequentlyPlayed extends $Notifier<List<RadioStation>> {
   List<RadioStation> build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<List<RadioStation>, List<RadioStation>>;
     final element =
         ref.element
@@ -58,6 +57,6 @@ abstract class _$FavoriteStations extends $Notifier<List<RadioStation>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

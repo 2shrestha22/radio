@@ -10,11 +10,11 @@ part of 'province_controller.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(ProvinceController)
-const provinceControllerProvider = ProvinceControllerProvider._();
+final provinceControllerProvider = ProvinceControllerProvider._();
 
 final class ProvinceControllerProvider
     extends $NotifierProvider<ProvinceController, List<Province>> {
-  const ProvinceControllerProvider._()
+  ProvinceControllerProvider._()
     : super(
         from: null,
         argument: null,
@@ -42,14 +42,13 @@ final class ProvinceControllerProvider
 }
 
 String _$provinceControllerHash() =>
-    r'12b5d6361e94962287a65744e4143e991bd3b0f8';
+    r'a451e3637c1e77cd2459d7ad8f56b2f1a24b1be5';
 
 abstract class _$ProvinceController extends $Notifier<List<Province>> {
   List<Province> build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<List<Province>, List<Province>>;
     final element =
         ref.element
@@ -59,6 +58,6 @@ abstract class _$ProvinceController extends $Notifier<List<Province>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

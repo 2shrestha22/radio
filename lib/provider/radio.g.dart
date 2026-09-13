@@ -10,10 +10,10 @@ part of 'radio.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(Radio)
-const radioProvider = RadioProvider._();
+final radioProvider = RadioProvider._();
 
 final class RadioProvider extends $NotifierProvider<Radio, RadioState> {
-  const RadioProvider._()
+  RadioProvider._()
     : super(
         from: null,
         argument: null,
@@ -40,14 +40,13 @@ final class RadioProvider extends $NotifierProvider<Radio, RadioState> {
   }
 }
 
-String _$radioHash() => r'b27e475194e20f91e3c20db4a685f53ab670a909';
+String _$radioHash() => r'ec2decbd263258314c09dd5842a901eeedc98e74';
 
 abstract class _$Radio extends $Notifier<RadioState> {
   RadioState build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<RadioState, RadioState>;
     final element =
         ref.element
@@ -57,6 +56,6 @@ abstract class _$Radio extends $Notifier<RadioState> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

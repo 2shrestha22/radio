@@ -1,13 +1,16 @@
+import 'dart:ui';
+
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
 import 'package:radio/provider/stations.dart';
 import 'package:radio/utils/bitrate.dart';
 import 'package:radio/utils/const.dart';
 import 'package:radio/widgets/loader.dart';
+import 'package:radio/widgets/playing_indicator.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class RadioControlPanel extends ConsumerWidget {
@@ -16,148 +19,126 @@ class RadioControlPanel extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final radioState = ref.watch(radioProvider);
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10.0),
-          topRight: Radius.circular(10.0),
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: ColoredBox(
+            color: Theme.of(context).colorScheme.surfaceContainer,
+          ),
         ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          DefaultTextStyle(
-            style: Theme.of(context).textTheme.bodySmall!,
-            child: Column(
-              children: [
-                StationLogo(radioState.station!.imageUrl),
-                const GutterTiny(),
-                Builder(
-                  builder: (context) {
-                    if (radioState.bitRate != null) {
-                      return Text(formatBitrate(radioState.bitRate!));
-                    }
-                    return const Text('-- Kbps');
-                  },
-                ),
-              ],
+        Positioned.fill(
+          child: ImageFiltered(
+            imageFilter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
+            child: ExtendedImage.network(
+              radioState.station!.imageUrl,
+              cache: true,
+              fit: BoxFit.cover,
             ),
           ),
-          const Gutter(),
-          Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  radioState.station!.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                DefaultTextStyle(
-                  style: Theme.of(context).textTheme.bodySmall!,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(radioState.station!.getFreqString()),
-                      Flexible(
-                        child: Builder(
-                          builder: (context) {
-                            if (radioState.title != null) {
-                              return Text(
-                                ' | ${radioState.title!}',
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              );
-                            }
-                            return const Text('');
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                OverflowBar(
-                  alignment: MainAxisAlignment.center,
+        ),
+        Positioned.fill(
+          child: ColoredBox(
+            color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.7),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
+          child: Row(
+            children: [
+              StationLogo(radioState.station!.imageUrl, size: 48),
+              SizedBox(width: 8),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AnimatedSwitcher(
-                      duration: animationDuration,
-                      // transitionBuilder fixes
-                      // https://github.com/flutter/flutter/issues/121336
-                      transitionBuilder: (
-                        Widget child,
-                        Animation<double> animation,
-                      ) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                      child: switch (radioState.streamingState) {
-                        StreamingState.buffering => IconButton(
-                            key: const ValueKey('loader-icon'),
-                            icon: const Loader(),
-                            disabledColor: Theme.of(context).iconTheme.color,
-                            onPressed: null,
-                          ),
-                        StreamingState.playing => IconButton(
-                            key: const ValueKey('pause-button'),
-                            onPressed: () async {
-                              await ref.read(radioProvider.notifier).pause();
-                            },
-                            icon: const Icon(LucideIcons.pause),
-                          ),
-                        null => IconButton(
-                            key: const ValueKey('play-button'),
-                            onPressed: () async {
-                              await ref.read(radioProvider.notifier).play();
-                            },
-                            icon: const Icon(LucideIcons.play),
-                          )
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(LucideIcons.square),
-                      onPressed: radioState.playerState.isRunning
-                          ? () async {
-                              await ref.read(radioProvider.notifier).stop();
-                            }
-                          : null,
-                    ),
-                    if (radioState.station != null)
-                      Consumer(
-                        builder: (context, ref, child) {
-                          final station = ref.watch(stationsProvider);
-                          return IconButton(
-                            onPressed: () => ref
-                                .read(stationsProvider.notifier)
-                                .toggleFav(radioState.station!.id),
-                            icon: switch (station
-                                .firstWhere(
-                                  (e) => e.id == radioState.station!.id,
-                                )
-                                .fav) {
-                              true => const Icon(
-                                  Icons.favorite,
-                                  key: ValueKey('true'),
-                                  color: Colors.red,
-                                ),
-                              false => const Icon(Icons.favorite_outline),
-                            },
-                          );
-                        },
+                    Text(
+                      radioState.station!.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    Text(
+                      radioState.bitRate != null
+                          ? '${radioState.station!.getFreqString()} · ${formatBitrate(radioState.bitRate!)}'
+                          : radioState.station!.getFreqString(),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                    Row(
+                      children: [
+                        if (radioState.streamingState == StreamingState.playing)
+                          const Padding(
+                            padding: EdgeInsets.only(right: 6),
+                            child: PlayingIndicator(size: 12, color: Colors.red),
+                          ),
+                        Expanded(
+                          child: Text(
+                            radioState.title ?? '',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              AnimatedSwitcher(
+                duration: animationDuration,
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                child: switch (radioState.streamingState) {
+                  StreamingState.buffering => IconButton(
+                    key: const ValueKey('loader-icon'),
+                    icon: const Loader(),
+                    disabledColor: Theme.of(context).iconTheme.color,
+                    onPressed: null,
+                  ),
+                  StreamingState.playing => IconButton(
+                    key: const ValueKey('stop-button'),
+                    onPressed: () async {
+                      await ref.read(radioProvider.notifier).stop();
+                    },
+                    icon: HugeIcon(icon: HugeIcons.strokeRoundedStop),
+                  ),
+                  null => IconButton(
+                    key: const ValueKey('play-button'),
+                    onPressed: () async {
+                      await ref.read(radioProvider.notifier).play();
+                    },
+                    icon: HugeIcon(icon: HugeIcons.strokeRoundedPlay),
+                  ),
+                },
+              ),
+              if (radioState.station != null)
+                Consumer(
+                  builder: (context, ref, child) {
+                    final station = ref.watch(stationsProvider);
+                    return IconButton(
+                      onPressed: () => ref
+                          .read(stationsProvider.notifier)
+                          .toggleFav(radioState.station!.id),
+                      icon: switch (station
+                          .firstWhere((e) => e.id == radioState.station!.id)
+                          .fav) {
+                        true => HugeIcon(
+                          icon: HugeIcons.strokeRoundedFavourite,
+                          key: const ValueKey('true'),
+                          color: Colors.red,
+                        ),
+                        false => HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
+                      },
+                    );
+                  },
+                ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

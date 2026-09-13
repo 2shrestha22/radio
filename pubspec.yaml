@@ -34,14 +34,13 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  go_router: ^17.2.0
-  flutter_gutter: ^2.1.1
+  go_router: ^18.0.1
   just_audio: ^0.10.4
   just_audio_background: ^0.0.1-beta.12
   flutter_animate: ^4.5.0
-  lucide_icons_flutter: 3.1.12 #https://github.com/vqh2602/lucide-flutter-main/issues/15
+  hugeicons: ^1.1.7
   flutter_riverpod: ^3.0.3
-  riverpod_annotation: ^3.0.3
+  riverpod_annotation: ^4.0.0
   freezed_annotation: ^3.1.0
   fuzzy: ^0.5.1
   shared_preferences: ^2.2.3
@@ -49,8 +48,6 @@ dependencies:
   google_fonts: ^8.0.2
   extended_image: ^10.0.1
   rxdart: ^0.28.0
-  url_strategy: ^0.3.0
-  awesome_flutter_extensions: ^2.0.1
   intl: ^0.20.2
   url_launcher: ^6.3.0
   flutter_sticky_header: ^0.8.0
@@ -66,7 +63,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
-  riverpod_generator: ^3.0.3
+  riverpod_generator: ^4.0.0+1
   build_runner: ^2.4.11
   riverpod_lint: ^3.0.3
   custom_lint: ^0.8.0

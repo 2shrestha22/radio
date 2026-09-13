@@ -9,23 +9,24 @@ import 'package:http/http.dart' as http;
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:radio/app.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:radio/utils/shared_pref.dart';
-import 'package:url_strategy/url_strategy.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  setPathUrlStrategy();
+  usePathUrlStrategy();
 
   // JustAudioMediaKit.ensureInitialized();
 
   await loadStations();
   await Future.wait([
     JustAudioBackground.init(
-        androidNotificationChannelId: 'np.com.sargam.radio.channel.audio',
-        androidNotificationChannelName: 'Internet Radio',
-        androidNotificationOngoing: true,
-        androidNotificationIcon: "drawable/ic_notification"),
+      androidNotificationChannelId: 'np.com.sargam.radio.channel.audio',
+      androidNotificationChannelName: 'Internet Radio',
+      androidNotificationOngoing: true,
+      androidNotificationIcon: "drawable/ic_notification",
+    ),
     SharedPref.init(),
   ]);
 
@@ -36,7 +37,8 @@ Future<void> loadStations() async {
   // TODO: add option to load from assets for github in settings page.
 
   final remoteUri = Uri.parse(
-      'https://cdn.jsdelivr.net/gh/2shrestha22/radio/assets/radio_list.json');
+    'https://cdn.jsdelivr.net/gh/2shrestha22/radio/assets/radio_list.json',
+  );
 
   String data;
   if (kDebugMode) {
@@ -56,6 +58,8 @@ Future<void> loadStations() async {
       data = await rootBundle.loadString("assets/radio_list.json");
     }
   }
-  allRadioStations =
-      (jsonDecode(data) as List).map((e) => RadioStation.fromJson(e)).toList();
+  allRadioStations = (jsonDecode(data) as List)
+      .map((e) => RadioStation.fromJson(e))
+      .where((s) => !s.disabled)
+      .toList();
 }

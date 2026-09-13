@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RadioState {
 
- RadioStation? get station; RadioPlayerState get playerState;/// It will be null if [playerState] is not started or paused.
- StreamingState? get streamingState; String? get title; int? get bitRate; RadioPlayerException? get error;
+ RadioStation? get station; RadioPlayerState get playerState; StreamingState? get streamingState; String? get title; int? get bitRate; RadioPlayerException? get error;
 /// Create a copy of RadioState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -229,7 +228,6 @@ class _RadioState implements RadioState {
 
 @override final  RadioStation? station;
 @override@JsonKey() final  RadioPlayerState playerState;
-/// It will be null if [playerState] is not started or paused.
 @override final  StreamingState? streamingState;
 @override final  String? title;
 @override final  int? bitRate;

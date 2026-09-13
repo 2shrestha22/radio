@@ -5,6 +5,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:radio/exceptions/radio_player_exception.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:radio/provider/frequently_played.dart';
 import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -34,7 +35,6 @@ class Radio extends _$Radio {
     return const RadioState();
   }
 
-  /// Focus a station and start playing.
   Future<void> setFocusedStation(RadioStation station) async {
     if (state.station == station && _audioPlayer.playing && !_needUrlReset) {
       return;
@@ -59,7 +59,6 @@ class Radio extends _$Radio {
     }
 
     Uri streamUri;
-
     if (kIsWeb) {
       streamUri = Uri.parse(station.streamUrl).replace(scheme: 'https');
     } else {
@@ -67,82 +66,71 @@ class Radio extends _$Radio {
     }
 
     try {
-      await _audioPlayer.setAudioSource(
-        AudioSource.uri(
-          streamUri,
-          tag: playerTag,
-        ),
-      );
+      await _audioPlayer
+          .setAudioSource(AudioSource.uri(streamUri, tag: playerTag))
+          .timeout(const Duration(seconds: 10));
       unawaited(_audioPlayer.play());
+      ref.read(frequentlyPlayedProvider.notifier).recordPlay(station.id);
       _needUrlReset = false;
     } on PlayerException catch (_) {
       _needUrlReset = true;
       state = state.copyWith(error: StationLoadException());
     } on PlayerInterruptedException catch (_) {
-      state = state.copyWith(error: null);
       _needUrlReset = true;
+    } on TimeoutException catch (_) {
+      _needUrlReset = true;
+      state = state.copyWith(error: StationLoadException());
     }
   }
 
-  /// Play focused station.
   Future<void> play() async {
-    if (_needUrlReset) {
-      // resetting stream url.
-      await setFocusedStation(state.station!);
-    } else {
-      unawaited(_audioPlayer.play());
-    }
+    await setFocusedStation(state.station!);
   }
 
-  // Pause focused station.
-  Future<void> pause() async {
-    await _audioPlayer.pause();
+  Future<void> stop() async {
+    await _audioPlayer.stop();
+    _needUrlReset = true;
   }
-
-  Future<void> stop() => _audioPlayer.stop();
 
   void _listenUpdates() {
-    _audioPlayer.playerStateStream.listen(
-      (event) {
-        StreamingState? getStreamingState() {
-          if (event.playing) {
-            return StreamingState.playing;
-          }
-          if (event.processingState == ProcessingState.buffering ||
-              event.processingState == ProcessingState.loading) {
-            return StreamingState.buffering;
-          }
-          return null;
-        }
-
-        RadioPlayerState getPlayerState() {
-          if (!event.playing && event.processingState == ProcessingState.idle) {
-            return RadioPlayerState.stopped;
+    _audioPlayer.playerStateStream
+        .listen((event) {
+          StreamingState? getStreamingState() {
+            if (event.processingState == ProcessingState.buffering ||
+                event.processingState == ProcessingState.loading) {
+              return StreamingState.buffering;
+            }
+            if (event.playing) {
+              return StreamingState.playing;
+            }
+            return null;
           }
 
-          if (!event.playing &&
-              event.processingState == ProcessingState.ready) {
-            return RadioPlayerState.paused;
+          RadioPlayerState getPlayerState() {
+            if (!event.playing &&
+                (event.processingState == ProcessingState.idle ||
+                    event.processingState == ProcessingState.ready)) {
+              return RadioPlayerState.stopped;
+            }
+
+            return RadioPlayerState.started;
           }
 
-          return RadioPlayerState.started;
-        }
+          state = state.copyWith(
+            playerState: getPlayerState(),
+            streamingState: getStreamingState(),
+          );
+        })
+        .addTo(_subscription);
 
-        state = state.copyWith(
-          playerState: getPlayerState(),
-          streamingState: getStreamingState(),
-        );
-      },
-    ).addTo(_subscription);
-
-    _audioPlayer.icyMetadataStream.listen(
-      (event) {
-        state = state.copyWith(
-          bitRate: event?.headers?.bitrate,
-          title: event?.info?.title,
-        );
-      },
-    ).addTo(_subscription);
+    _audioPlayer.icyMetadataStream
+        .listen((event) {
+          state = state.copyWith(
+            bitRate: event?.headers?.bitrate,
+            title: event?.info?.title,
+          );
+        })
+        .addTo(_subscription);
   }
 
   void resetEffect() {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gutter/flutter_gutter.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:radio/models/radio_station.dart';
+import 'package:radio/provider/player_state.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/widgets/playing_indicator.dart';
 import 'package:radio/widgets/station_logo.dart';
 
 class StationListView extends ConsumerStatefulWidget {
@@ -27,19 +28,15 @@ class _StationListViewState extends ConsumerState<StationListView>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final activeStationId = ref.watch(
-      radioProvider.select((s) => s.station?.id),
-    );
+    final radioState = ref.watch(radioProvider);
+    final activeStationId = radioState.station?.id;
+    final isPlaying = radioState.streamingState == StreamingState.playing;
 
     if (widget.stations.isEmpty) {
-      return const SliverFillRemaining(
-        child: Icon(LucideIcons.dot),
-      );
+      return SliverFillRemaining(child: HugeIcon(icon: HugeIcons.strokeRoundedCircle, size: 8));
     }
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      sliver: SliverList.separated(
-        separatorBuilder: (context, index) => const Divider(height: 0),
+    return SliverList.separated(
+        separatorBuilder: (context, index) => const Divider(height: 0, indent: 8, endIndent: 8),
         itemCount: widget.stations.length,
         itemBuilder: (context, index) {
           final theme = Theme.of(context);
@@ -56,7 +53,7 @@ class _StationListViewState extends ConsumerState<StationListView>
                 child: Row(
                   children: [
                     StationLogo(station.imageUrl),
-                    const GutterTiny(),
+                    SizedBox(width: 4),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,12 +62,22 @@ class _StationListViewState extends ConsumerState<StationListView>
                             station.name,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleMedium
-                                ?.copyWith(fontWeight: FontWeight.bold),
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          Text(
-                            station.getFreqString(),
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          Row(
+                            children: [
+                              Text(
+                                station.getFreqString(),
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              if (isActive && isPlaying)
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 6),
+                                  child: PlayingIndicator(size: 12, color: Colors.red),
+                                ),
+                            ],
                           ),
                           Text(
                             station.address ?? '--',
@@ -80,16 +87,16 @@ class _StationListViewState extends ConsumerState<StationListView>
                         ],
                       ),
                     ),
-                    const GutterTiny(),
+                    SizedBox(width: 4),
                     IconButton(
                       onPressed: () => widget.onFavTap(station),
                       icon: switch (station.fav) {
-                        true => const Icon(
-                            Icons.favorite,
-                            key: ValueKey('true'),
-                            color: Colors.red,
-                          ),
-                        false => const Icon(Icons.favorite_outline),
+                        true => HugeIcon(
+                          icon: HugeIcons.strokeRoundedFavourite,
+                          key: const ValueKey('true'),
+                          color: Colors.red,
+                        ),
+                        false => HugeIcon(icon: HugeIcons.strokeRoundedFavourite),
                       },
                     ),
                   ],
@@ -98,7 +105,6 @@ class _StationListViewState extends ConsumerState<StationListView>
             ),
           );
         },
-      ),
     );
   }
 
