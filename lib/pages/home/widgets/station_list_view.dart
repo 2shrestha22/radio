@@ -49,9 +49,7 @@ class _StationListViewState extends ConsumerState<StationListView>
               color: isActive
                   ? theme.colorScheme.primaryContainer.withValues(alpha: 0.4)
                   : Colors.transparent,
-              child: Stack(
-                children: [
-                  Padding(
+              child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Row(
                   children: [
@@ -69,9 +67,18 @@ class _StationListViewState extends ConsumerState<StationListView>
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text(
-                            station.getFreqString(),
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          Row(
+                            children: [
+                              Text(
+                                station.getFreqString(),
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              if (isActive && isPlaying)
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 6),
+                                  child: PlayingIndicator(size: 12, color: Colors.red),
+                                ),
+                            ],
                           ),
                           Text(
                             station.address ?? '--',
@@ -95,14 +102,6 @@ class _StationListViewState extends ConsumerState<StationListView>
                     ),
                   ],
                 ),
-              ),
-                  if (isActive && isPlaying)
-                    const Positioned(
-                      top: 8,
-                      right: 8,
-                      child: PlayingIndicator(size: 14, color: Colors.red),
-                    ),
-                ],
               ),
             ),
           );
