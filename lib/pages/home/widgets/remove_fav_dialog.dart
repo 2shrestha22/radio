@@ -9,21 +9,18 @@ class RemoveFavDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Remove ${station.name} from favorite?'),
-      content: Padding(
-        padding: const EdgeInsets.only(bottom: 8),
-        child: Text(
-          '${station.name} will be removed from your favorite list. You can add it again later from all station list.',
-        ),
+      title: const Text('Remove from favorites?'),
+      content: Text(
+        'Are you sure you want to remove ${station.name}?',
       ),
       actions: [
-        OutlinedButton(
-          child: const Text('Cancel'),
+        TextButton(
           onPressed: () => Navigator.of(context).pop(false),
+          child: const Text('Cancel'),
         ),
-        FilledButton(
-          child: const Text('Remove'),
+        TextButton(
           onPressed: () => Navigator.of(context).pop(true),
+          child: const Text('Remove'),
         ),
       ],
     );

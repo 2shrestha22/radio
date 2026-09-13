@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:radio/utils/const.dart';
 import 'package:radio/pages/home/views/browse_view.dart';
 import 'package:radio/pages/home/views/favorite_view.dart';
 import 'package:radio/pages/home/widgets/station_search_delegate.dart';
 import 'package:radio/provider/radio.dart';
+import 'package:radio/pages/about_page.dart';
 import 'package:radio/widgets/radio_control_panel.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -36,6 +36,15 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Radio NP'),
+        actions: [
+          IconButton(
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedInformationCircle, color: Theme.of(context).iconTheme.color),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const AboutPage()),
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: ConstrainedBox(

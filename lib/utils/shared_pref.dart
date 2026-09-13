@@ -40,4 +40,8 @@ class SharedPref {
     scores[stationId] = (scores[stationId] ?? 0) * 0.5 + 1.0;
     await _sharedPref.setString(_frecencyKey, jsonEncode(scores));
   }
+
+  static Future<void> clearFrecency() async {
+    await _sharedPref.remove(_frecencyKey);
+  }
 }
