@@ -11,7 +11,7 @@ class StationLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: kBorderRadius,
+      borderRadius: BorderRadius.circular(size * 0.12),
       clipBehavior: Clip.hardEdge,
       child: ExtendedImage.network(
         imageUrl,

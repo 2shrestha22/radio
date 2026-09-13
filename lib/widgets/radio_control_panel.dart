@@ -42,10 +42,10 @@ class RadioControlPanel extends ConsumerWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          padding: const EdgeInsets.fromLTRB(12, 8, 8, 8),
           child: Row(
             children: [
-              StationLogo(radioState.station!.imageUrl),
+              StationLogo(radioState.station!.imageUrl, size: 48),
               SizedBox(width: 8),
               Expanded(
                 child: Column(
