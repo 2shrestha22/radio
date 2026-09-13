@@ -46,22 +46,17 @@ class _HomePageState extends ConsumerState<HomePage> {
           ),
         ],
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 640),
-          child: Column(
-            children: [
-              Expanded(
-                child: IndexedStack(index: _selectedIndex, children: _views),
-              ),
-              if (hasStation)
-                const SafeArea(
-                  top: false,
-                  child: RadioControlPanel(),
-                ),
-            ],
+      body: Column(
+        children: [
+          Expanded(
+            child: IndexedStack(index: _selectedIndex, children: _views),
           ),
-        ),
+          if (hasStation)
+            const SafeArea(
+              top: false,
+              child: RadioControlPanel(),
+            ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,

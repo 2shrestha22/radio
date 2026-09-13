@@ -11,7 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 class AboutPage extends ConsumerWidget {
   const AboutPage({super.key});
 
-  static const _version = '1.1.6';
+  static const _version = '1.1.7';
   static const _repoUrl = 'https://github.com/2shrestha22/radio';
 
 
@@ -27,10 +27,7 @@ class AboutPage extends ConsumerWidget {
         ),
         title: const Text('About'),
       ),
-      body: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 640),
-          child: ListView(
+      body: ListView(
             children: [
               const SizedBox(height: 24),
               ClipRRect(
@@ -120,8 +117,6 @@ class AboutPage extends ConsumerWidget {
                 },
               ),
             ],
-          ),
-        ),
       ),
     );
   }
