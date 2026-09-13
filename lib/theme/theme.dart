@@ -20,6 +20,7 @@ ThemeData _buildTheme(Brightness brightness) {
     dividerTheme: DividerThemeData(
       color: colorScheme.outlineVariant.withValues(alpha: 0.3),
     ),
+    splashFactory: NoSplash.splashFactory,
     appBarTheme: const AppBarTheme(surfaceTintColor: Colors.transparent),
     textTheme: textTheme,
     inputDecorationTheme: InputDecorationTheme(
