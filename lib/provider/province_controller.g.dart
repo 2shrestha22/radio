@@ -42,7 +42,7 @@ final class ProvinceControllerProvider
 }
 
 String _$provinceControllerHash() =>
-    r'12b5d6361e94962287a65744e4143e991bd3b0f8';
+    r'a451e3637c1e77cd2459d7ad8f56b2f1a24b1be5';
 
 abstract class _$ProvinceController extends $Notifier<List<Province>> {
   List<Province> build();

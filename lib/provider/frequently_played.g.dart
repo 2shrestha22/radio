@@ -41,7 +41,7 @@ final class FrequentlyPlayedProvider
   }
 }
 
-String _$frequentlyPlayedHash() => r'8ba363856b68dbb0a569985895f250bd2eaf984c';
+String _$frequentlyPlayedHash() => r'94c25030944721446fa8c74962bdd391de4c29c3';
 
 abstract class _$FrequentlyPlayed extends $Notifier<List<RadioStation>> {
   List<RadioStation> build();
