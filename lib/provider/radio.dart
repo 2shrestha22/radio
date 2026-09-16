@@ -58,15 +58,14 @@ class Radio extends _$Radio {
       await _audioPlayer.stop();
     }
 
-    Uri streamUri;
-    if (kIsWeb) {
-      streamUri = Uri.parse(station.streamUrl).replace(scheme: 'https');
-    } else {
-      streamUri = Uri.parse(station.streamUrl);
-    }
+    final allUrls = [station.streamUrl, ...station.alternateStreamUrls];
+    final streamUris = allUrls.map((url) {
+      final uri = Uri.parse(url);
+      return kIsWeb ? uri.replace(scheme: 'https') : uri;
+    }).toList();
 
     try {
-      await _tryLoadAndPlay(streamUri, playerTag);
+      await _tryLoadAndPlay(streamUris, playerTag);
       ref.read(frequentlyPlayedProvider.notifier).recordPlay(station.id);
       _needUrlReset = false;
     } on PlayerInterruptedException catch (_) {
@@ -131,21 +130,24 @@ class Radio extends _$Radio {
         .addTo(_subscription);
   }
 
-  Future<void> _tryLoadAndPlay(Uri uri, MediaItem tag) async {
-    try {
-      await _audioPlayer
-          .setAudioSource(AudioSource.uri(uri, tag: tag))
-          .timeout(const Duration(seconds: 10));
-    } on PlayerInterruptedException {
-      rethrow;
-    } on Exception catch (_) {
-      // One retry on transient failure.
-      await Future<void>.delayed(const Duration(seconds: 2));
-      await _audioPlayer
-          .setAudioSource(AudioSource.uri(uri, tag: tag))
-          .timeout(const Duration(seconds: 10));
+  Future<void> _tryLoadAndPlay(List<Uri> uris, MediaItem tag) async {
+    for (final (i, uri) in uris.indexed) {
+      try {
+        await _audioPlayer
+            .setAudioSource(AudioSource.uri(uri, tag: tag))
+            .timeout(const Duration(seconds: 10));
+        unawaited(_audioPlayer.play());
+        return;
+      } on PlayerInterruptedException {
+        rethrow;
+      } on Exception catch (_) {
+        if (i < uris.length - 1) {
+          await Future<void>.delayed(const Duration(seconds: 2));
+          continue;
+        }
+        rethrow;
+      }
     }
-    unawaited(_audioPlayer.play());
   }
 
   void resetEffect() {

@@ -40,7 +40,7 @@ final class RadioProvider extends $NotifierProvider<Radio, RadioState> {
   }
 }
 
-String _$radioHash() => r'ec2decbd263258314c09dd5842a901eeedc98e74';
+String _$radioHash() => r'35d8754333a851d1f255dfbcd9acfc2d992353d4';
 
 abstract class _$Radio extends $Notifier<RadioState> {
   RadioState build();

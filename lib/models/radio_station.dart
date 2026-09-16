@@ -11,6 +11,7 @@ abstract class RadioStation with _$RadioStation {
     required String id,
     required String name,
     required String streamUrl,
+    @Default([]) List<String> alternateStreamUrls,
     required double? frequency,
     required String? address,
     @Default(false) bool fav,

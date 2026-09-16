@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RadioStation {
 
- String get id; String get name; String get streamUrl; double? get frequency; String? get address; bool get fav; int? get province; bool get disabled;
+ String get id; String get name; String get streamUrl; List<String> get alternateStreamUrls; double? get frequency; String? get address; bool get fav; int? get province; bool get disabled;
 /// Create a copy of RadioStation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $RadioStationCopyWith<RadioStation> get copyWith => _$RadioStationCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RadioStation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.streamUrl, streamUrl) || other.streamUrl == streamUrl)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.address, address) || other.address == address)&&(identical(other.fav, fav) || other.fav == fav)&&(identical(other.province, province) || other.province == province)&&(identical(other.disabled, disabled) || other.disabled == disabled));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RadioStation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.streamUrl, streamUrl) || other.streamUrl == streamUrl)&&const DeepCollectionEquality().equals(other.alternateStreamUrls, alternateStreamUrls)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.address, address) || other.address == address)&&(identical(other.fav, fav) || other.fav == fav)&&(identical(other.province, province) || other.province == province)&&(identical(other.disabled, disabled) || other.disabled == disabled));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,streamUrl,frequency,address,fav,province,disabled);
+int get hashCode => Object.hash(runtimeType,id,name,streamUrl,const DeepCollectionEquality().hash(alternateStreamUrls),frequency,address,fav,province,disabled);
 
 @override
 String toString() {
-  return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, address: $address, fav: $fav, province: $province, disabled: $disabled)';
+  return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, alternateStreamUrls: $alternateStreamUrls, frequency: $frequency, address: $address, fav: $fav, province: $province, disabled: $disabled)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $RadioStationCopyWith<$Res>  {
   factory $RadioStationCopyWith(RadioStation value, $Res Function(RadioStation) _then) = _$RadioStationCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String streamUrl, double? frequency, String? address, bool fav, int? province, bool disabled
+ String id, String name, String streamUrl, List<String> alternateStreamUrls, double? frequency, String? address, bool fav, int? province, bool disabled
 });
 
 
@@ -65,12 +65,13 @@ class _$RadioStationCopyWithImpl<$Res>
 
 /// Create a copy of RadioStation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? streamUrl = null,Object? frequency = freezed,Object? address = freezed,Object? fav = null,Object? province = freezed,Object? disabled = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? streamUrl = null,Object? alternateStreamUrls = null,Object? frequency = freezed,Object? address = freezed,Object? fav = null,Object? province = freezed,Object? disabled = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,streamUrl: null == streamUrl ? _self.streamUrl : streamUrl // ignore: cast_nullable_to_non_nullable
-as String,frequency: freezed == frequency ? _self.frequency : frequency // ignore: cast_nullable_to_non_nullable
+as String,alternateStreamUrls: null == alternateStreamUrls ? _self.alternateStreamUrls : alternateStreamUrls // ignore: cast_nullable_to_non_nullable
+as List<String>,frequency: freezed == frequency ? _self.frequency : frequency // ignore: cast_nullable_to_non_nullable
 as double?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String?,fav: null == fav ? _self.fav : fav // ignore: cast_nullable_to_non_nullable
 as bool,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable
@@ -160,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String streamUrl,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String streamUrl,  List<String> alternateStreamUrls,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RadioStation() when $default != null:
-return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
+return $default(_that.id,_that.name,_that.streamUrl,_that.alternateStreamUrls,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
   return orElse();
 
 }
@@ -181,10 +182,10 @@ return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.addres
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String streamUrl,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String streamUrl,  List<String> alternateStreamUrls,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)  $default,) {final _that = this;
 switch (_that) {
 case _RadioStation():
-return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
+return $default(_that.id,_that.name,_that.streamUrl,_that.alternateStreamUrls,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -201,10 +202,10 @@ return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.addres
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String streamUrl,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String streamUrl,  List<String> alternateStreamUrls,  double? frequency,  String? address,  bool fav,  int? province,  bool disabled)?  $default,) {final _that = this;
 switch (_that) {
 case _RadioStation() when $default != null:
-return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
+return $default(_that.id,_that.name,_that.streamUrl,_that.alternateStreamUrls,_that.frequency,_that.address,_that.fav,_that.province,_that.disabled);case _:
   return null;
 
 }
@@ -216,12 +217,19 @@ return $default(_that.id,_that.name,_that.streamUrl,_that.frequency,_that.addres
 @JsonSerializable()
 
 class _RadioStation extends RadioStation {
-  const _RadioStation({required this.id, required this.name, required this.streamUrl, required this.frequency, required this.address, this.fav = false, this.province, this.disabled = false}): super._();
+  const _RadioStation({required this.id, required this.name, required this.streamUrl, final  List<String> alternateStreamUrls = const [], required this.frequency, required this.address, this.fav = false, this.province, this.disabled = false}): _alternateStreamUrls = alternateStreamUrls,super._();
   factory _RadioStation.fromJson(Map<String, dynamic> json) => _$RadioStationFromJson(json);
 
 @override final  String id;
 @override final  String name;
 @override final  String streamUrl;
+ final  List<String> _alternateStreamUrls;
+@override@JsonKey() List<String> get alternateStreamUrls {
+  if (_alternateStreamUrls is EqualUnmodifiableListView) return _alternateStreamUrls;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_alternateStreamUrls);
+}
+
 @override final  double? frequency;
 @override final  String? address;
 @override@JsonKey() final  bool fav;
@@ -241,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RadioStation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.streamUrl, streamUrl) || other.streamUrl == streamUrl)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.address, address) || other.address == address)&&(identical(other.fav, fav) || other.fav == fav)&&(identical(other.province, province) || other.province == province)&&(identical(other.disabled, disabled) || other.disabled == disabled));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RadioStation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.streamUrl, streamUrl) || other.streamUrl == streamUrl)&&const DeepCollectionEquality().equals(other._alternateStreamUrls, _alternateStreamUrls)&&(identical(other.frequency, frequency) || other.frequency == frequency)&&(identical(other.address, address) || other.address == address)&&(identical(other.fav, fav) || other.fav == fav)&&(identical(other.province, province) || other.province == province)&&(identical(other.disabled, disabled) || other.disabled == disabled));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,streamUrl,frequency,address,fav,province,disabled);
+int get hashCode => Object.hash(runtimeType,id,name,streamUrl,const DeepCollectionEquality().hash(_alternateStreamUrls),frequency,address,fav,province,disabled);
 
 @override
 String toString() {
-  return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, frequency: $frequency, address: $address, fav: $fav, province: $province, disabled: $disabled)';
+  return 'RadioStation(id: $id, name: $name, streamUrl: $streamUrl, alternateStreamUrls: $alternateStreamUrls, frequency: $frequency, address: $address, fav: $fav, province: $province, disabled: $disabled)';
 }
 
 
@@ -261,7 +269,7 @@ abstract mixin class _$RadioStationCopyWith<$Res> implements $RadioStationCopyWi
   factory _$RadioStationCopyWith(_RadioStation value, $Res Function(_RadioStation) _then) = __$RadioStationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String streamUrl, double? frequency, String? address, bool fav, int? province, bool disabled
+ String id, String name, String streamUrl, List<String> alternateStreamUrls, double? frequency, String? address, bool fav, int? province, bool disabled
 });
 
 
@@ -278,12 +286,13 @@ class __$RadioStationCopyWithImpl<$Res>
 
 /// Create a copy of RadioStation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? streamUrl = null,Object? frequency = freezed,Object? address = freezed,Object? fav = null,Object? province = freezed,Object? disabled = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? streamUrl = null,Object? alternateStreamUrls = null,Object? frequency = freezed,Object? address = freezed,Object? fav = null,Object? province = freezed,Object? disabled = null,}) {
   return _then(_RadioStation(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,streamUrl: null == streamUrl ? _self.streamUrl : streamUrl // ignore: cast_nullable_to_non_nullable
-as String,frequency: freezed == frequency ? _self.frequency : frequency // ignore: cast_nullable_to_non_nullable
+as String,alternateStreamUrls: null == alternateStreamUrls ? _self._alternateStreamUrls : alternateStreamUrls // ignore: cast_nullable_to_non_nullable
+as List<String>,frequency: freezed == frequency ? _self.frequency : frequency // ignore: cast_nullable_to_non_nullable
 as double?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as String?,fav: null == fav ? _self.fav : fav // ignore: cast_nullable_to_non_nullable
 as bool,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable
