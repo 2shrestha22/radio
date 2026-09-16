@@ -66,20 +66,18 @@ class Radio extends _$Radio {
     }
 
     try {
-      await _audioPlayer
-          .setAudioSource(AudioSource.uri(streamUri, tag: playerTag))
-          .timeout(const Duration(seconds: 10));
-      unawaited(_audioPlayer.play());
+      await _tryLoadAndPlay(streamUri, playerTag);
       ref.read(frequentlyPlayedProvider.notifier).recordPlay(station.id);
       _needUrlReset = false;
-    } on PlayerException catch (_) {
-      _needUrlReset = true;
-      state = state.copyWith(error: StationLoadException());
     } on PlayerInterruptedException catch (_) {
       _needUrlReset = true;
-    } on TimeoutException catch (_) {
+      state = state.copyWith(streamingState: null);
+    } on Exception catch (_) {
       _needUrlReset = true;
-      state = state.copyWith(error: StationLoadException());
+      state = state.copyWith(
+        error: StationLoadException(),
+        streamingState: null,
+      );
     }
   }
 
@@ -131,6 +129,23 @@ class Radio extends _$Radio {
           );
         })
         .addTo(_subscription);
+  }
+
+  Future<void> _tryLoadAndPlay(Uri uri, MediaItem tag) async {
+    try {
+      await _audioPlayer
+          .setAudioSource(AudioSource.uri(uri, tag: tag))
+          .timeout(const Duration(seconds: 10));
+    } on PlayerInterruptedException {
+      rethrow;
+    } on Exception catch (_) {
+      // One retry on transient failure.
+      await Future<void>.delayed(const Duration(seconds: 2));
+      await _audioPlayer
+          .setAudioSource(AudioSource.uri(uri, tag: tag))
+          .timeout(const Duration(seconds: 10));
+    }
+    unawaited(_audioPlayer.play());
   }
 
   void resetEffect() {
