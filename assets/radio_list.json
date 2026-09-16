@@ -3,7 +3,9 @@
     "id": "Y_OOEauq-U3AB9GcRyuee",
     "name": "Ujyaalo Radio Network",
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/32",
-    "alternateStreamUrls": ["https://stream-151.zeno.fm/h527zwd11uquv"],
+    "alternateStreamUrls": [
+      "https://stream-151.zeno.fm/h527zwd11uquv"
+    ],
     "frequency": 90.0,
     "address": "Ujyaalo Ghar (Behind Central Zoo), Lalitpur - 4, Shanti Chowk, Jawalakhel",
     "province": 3
@@ -20,7 +22,9 @@
     "id": "63DAluhRgl-PcYeixk5eY",
     "name": "Radio Nepal",
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/154",
-    "alternateStreamUrls": ["http://stream1.radionepal.gov.np/live"],
+    "alternateStreamUrls": [
+      "http://stream1.radionepal.gov.np/live"
+    ],
     "frequency": 100.0,
     "address": "Kathmandu, Nepal",
     "province": 3
@@ -118,8 +122,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/34",
     "frequency": 94.0,
     "address": "Kathmandu, Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "I1Jug5DZ_H02zOkR_vTJb",
@@ -152,8 +155,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/146",
     "frequency": 97.5,
     "address": "MI Complex, Jamal, Kathmandu",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "6g5aK_OCZNmsr2OfE88-P",
@@ -176,8 +178,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/592",
     "frequency": 92.1,
     "address": "Chabahil, Kathmandu, Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "w-xqQkq10wg-Fyxshi5C4",
@@ -224,8 +225,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5092732051652608",
     "frequency": 91.8,
     "address": "Kathmandu -14, Lampati",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "jJpIBkFuwV23IRPOF_Zip",
@@ -324,8 +324,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/487",
     "frequency": 96.5,
     "address": "Kathmandu, Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "YWiaE-BtVZgE-FRWn7YIj",
@@ -365,8 +364,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8443",
     "frequency": 106.3,
     "address": "Sundarharaicha 10 Municipality, Biratchowk, Morang",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "tkz5PN265yPEQRRVqxQod",
@@ -374,8 +372,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/452",
     "frequency": 91.8,
     "address": "Rupandehi, Butwal",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "U7ylk78O4f3hujNZCXaCP",
@@ -383,8 +380,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/197",
     "frequency": 92.0,
     "address": "Achham",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "LbG6D9eqAk7R85B1khBti",
@@ -417,8 +413,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5688678351372288",
     "frequency": 101.6,
     "address": "Damak, Jhapa",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "Rc2vjF1R7zdxV9zm5Mu8V",
@@ -571,8 +566,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/570",
     "frequency": 105.0,
     "address": "Birendranagar-6, Surkhet",
-    "province": 6,
-    "disabled": true
+    "province": 6
   },
   {
     "id": "7f2AGuq_q9NKQa2VQU0lA",
@@ -638,8 +632,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/603",
     "frequency": 100.3,
     "address": "Anamnagar, Kathmandu",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "Owyt9eYS1zmT0Rq41donH",
@@ -680,8 +673,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/145",
     "frequency": null,
     "address": "Myanglung-1, Terhathum",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "vFsMscYrvs-sKzj6loMSY",
@@ -705,8 +697,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/29",
     "frequency": 101.0,
     "address": "Tikapur 9/B Multiple Campus Road",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "DBeiUztuOfcWyY2MnlVD2",
@@ -756,8 +747,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/123",
     "frequency": null,
     "address": "Bharatpur - 22, Patihani",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "IhYwXQU9v7Ixv6Q9uk38X",
@@ -781,8 +771,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8032/;",
     "frequency": 90.3,
     "address": "Laharepauwa-8, Syaubari, Rasuwa",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "vZdbgmBPqOrWUFYetMLwn",
@@ -872,8 +861,7 @@
     "streamUrl": "http://216.55.141.189:8593/;",
     "frequency": 95.5,
     "address": "Butwal-4, Rupandehi",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "rjUkgL_fX75NQzqNPIuIH",
@@ -982,8 +970,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/58",
     "frequency": 89.0,
     "address": "Bareng, Baglung",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "WY2auAGQzxcnbRhrN4OPf",
@@ -1023,8 +1010,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8767/;",
     "frequency": 95.0,
     "address": "Makwanpurgadhi, Makranchuli",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "CTpZ6AisxFZzj5euxpL6M",
@@ -1257,8 +1243,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5756424605007872",
     "frequency": 94.6,
     "address": "Ratnanagar-2, Tandi, Chitwan",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "oFK4rG6jTEINJR8-tH7m8",
@@ -1324,8 +1309,7 @@
     "name": "Dhaulagiri Fm",
     "streamUrl": "http://streaming.hamropatro.com:8535/;",
     "frequency": 98.6,
-    "address": null,
-    "disabled": true
+    "address": null
   },
   {
     "id": "pGxlwsxIsD1c6_ief96Cj",
@@ -1357,8 +1341,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/556",
     "frequency": 98.3,
     "address": "Bharatpur-24, Shivanagar, Chitwan, Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "xT70TNYpdZZNMr_o31O8L",
@@ -1391,8 +1374,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/45",
     "frequency": 96.5,
     "address": "Tikapur-1, Kailali",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "o_A6Z9kYuzKX5899TiXFH",
@@ -1409,8 +1391,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/492",
     "frequency": 88.0,
     "address": "Ratnanagar-1, Chitwan",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "i7zjzzf21lHA_FNxyWPyY",
@@ -1418,8 +1399,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/495",
     "frequency": 88.4,
     "address": "Pyuthan, Nepal",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "anGTRxaGQElcgyLZnWKzr",
@@ -1482,8 +1462,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8823",
     "frequency": 92.6,
     "address": "Anarmani, Birtamod",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "vu1pN-RMFIL8CCOv3xxlL",
@@ -1524,8 +1503,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/4",
     "frequency": 90.4,
     "address": "Gorkha-Nepal",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "MRyK_cgN99boJj8GgPsb3",
@@ -1541,8 +1519,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/25",
     "frequency": 98.8,
     "address": "Jeleshwar Municipality, Ward No. 2, Mahottari",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "oNASSgr9ILQrIvk-KlOsw",
@@ -1550,8 +1527,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/39",
     "frequency": 101.0,
     "address": "Kawasoti-5, Nawalparasi",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "cQF9C8O1HPC2MqCRpltpB",
@@ -1657,8 +1633,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/538",
     "frequency": 104.7,
     "address": "Kawasoti, Nawalpur",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "65n9GFh7vEISQc1ZYTEuV",
@@ -1690,8 +1665,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5723814438633472",
     "frequency": 90.8,
     "address": "Simara, Bara",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "E7XMBBv9M_LGqZ4AQqOqo",
@@ -1823,8 +1797,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8469",
     "frequency": 107.4,
     "address": "Kharbang, Baglung",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "xn7-UplacOWYe3DtTku4Z",
@@ -1856,8 +1829,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5661344508411904",
     "frequency": 93.8,
     "address": "Rolpa, Nepal",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "HOOIt-3-SFg8C7iYEJZXa",
@@ -1895,8 +1867,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/195",
     "frequency": 94.0,
     "address": "Jiri-6, Dolakha",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "sl3ebLFmfp3eLlHbciODf",
@@ -1904,8 +1875,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/205",
     "frequency": 91.0,
     "address": "Pokhara, Kaski",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "Ug5Z9L4OfU4h9I_Aj0_j4",
@@ -1947,8 +1917,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/402",
     "frequency": 89.0,
     "address": "Mangalsen, Achham",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "rid9b-kawZKKDGnNmILUt",
@@ -1981,8 +1950,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5666633592864768",
     "frequency": 101.3,
     "address": "Pokhara, Kaski",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "grp4t5UfjPt4HfPltN97o",
@@ -2042,8 +2010,7 @@
     "streamUrl": "https://streaming.softnep.net:10992/",
     "frequency": 102.1,
     "address": "Rasuwa-5, Dhunche",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "LCz6bwY7k87-91DNoC_Wd",
@@ -2093,8 +2060,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8016/",
     "frequency": 95.6,
     "address": "Burtibang, Baglung",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "C6jpwtbEambf_oRAN7dIC",
@@ -2102,8 +2068,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/638",
     "frequency": 101.7,
     "address": "Kalaiya-4, Bara",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "asHTsUBTVh65uXGECkr48",
@@ -2201,8 +2166,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/263",
     "frequency": 93.4,
     "address": "हेटौंडा–४ अजरअमररोड (अजरअमर भवन)",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "dFJKVzotJRqR0J_M5xbeV",
@@ -2218,8 +2182,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/536",
     "frequency": 90.1,
     "address": "Nirmal Basti, Thori, Parsa",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "86NT1PtJNHdt1YzajvFvE",
@@ -2245,8 +2208,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/565",
     "frequency": 102.4,
     "address": "DiktelRupakot Majhuwagadhi Municlipty 01 Diktel",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "GtshKbU6xsrcOLmXcrbSz",
@@ -2496,8 +2458,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5727587936501760",
     "frequency": 89.8,
     "address": "Sunwal-12 ,Nawalparasi",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "07lFlWpPOHdwu3NLyl0Wc",
@@ -2545,8 +2506,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5730595890003968",
     "frequency": null,
     "address": "Haraincha Municipality-3, Biratchowk, Morang",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "TgbhqMh0ptxRpwqBa-QST",
@@ -2554,8 +2514,7 @@
     "streamUrl": "https://live.itech.host:8815/stream",
     "frequency": 90.7,
     "address": "Sunwal-1, Nawalparasi",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "ELRST3VqSk-IUeE-cl-_C",
@@ -2563,8 +2522,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5664612039000064",
     "frequency": 98.8,
     "address": "Siddharthanagar -8, BP Path, Bhairahawa",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "6GdfAuOiO9e7xVf783Hsm",
@@ -2580,8 +2538,7 @@
     "streamUrl": "http://216.55.141.189:8857/;stream.mp3",
     "frequency": null,
     "address": "Chitwan , Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "t-9tZl54k6VD4lwvxCNIJ",
@@ -2632,8 +2589,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5666950514475008",
     "frequency": 98.4,
     "address": "Kamalamai-4,Sindhuli Bagamati Pradesh Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "1Jz9iLNg3ixJLBXk28FAp",
@@ -2742,8 +2698,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5718361893765120",
     "frequency": 101.5,
     "address": "Kohalpur-11, Sajhachowk, Banke",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "C6W277h0gJY0NduOKVaKK",
@@ -2889,8 +2844,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5114406746718208",
     "frequency": null,
     "address": " Gokarneshwor Municipality-7, Kathmandu",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "MG9LsKGJNy68mg6f9iqGv",
@@ -2907,8 +2861,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8090",
     "frequency": 97.5,
     "address": "Manthali-1, Ramechhap",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "SrZyluYRih5cZXECh-zwP",
@@ -2932,8 +2885,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5668801058177024",
     "frequency": 96.3,
     "address": "jayaprithvi municipality -10 Chainpur, Bajhang",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "dPFdZh3xMkhRHmIX2IVri",
@@ -2959,8 +2911,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5695504950231040",
     "frequency": null,
     "address": " Beldandi - 01, Kanchanpur",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "-SIjub787tzJOo7FFnSBM",
@@ -2992,8 +2943,7 @@
     "name": "Radio Rapti",
     "streamUrl": "https://live.itech.host:3250/stream",
     "frequency": 104.8,
-    "address": null,
-    "disabled": true
+    "address": null
   },
   {
     "id": "KO4sLmO-SnbrBCfaBowpN",
@@ -3107,8 +3057,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5665015346495488",
     "frequency": 96.6,
     "address": "Durga Bhagawati-2, Rautahat",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "_dERlS1BlofJUZbCLsKtK",
@@ -3159,8 +3108,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5729629102931968",
     "frequency": null,
     "address": "Kawasoti-3, Nawalpur",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "uLFjNtwaB6-ARsk0JF_wl",
@@ -3270,8 +3218,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5761074705989632",
     "frequency": 88.5,
     "address": "Pokhara Metropolitan-25 Hemja Milanchowk",
-    "province": 4,
-    "disabled": true
+    "province": 4
   },
   {
     "id": "zb2RywfTKhZ1ZDIFaql1M",
@@ -3327,8 +3274,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5644470370435072",
     "frequency": 95.5,
     "address": "Bhanu Chowk, Kishori Nagar, Janakpur Dham",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "NfDOcWjhYAbULZrg3j_Ww",
@@ -3370,8 +3316,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/1754975255810",
     "frequency": 88.8,
     "address": "Mechinagar-10 Dhulabari Jhapa",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "gC-uB8He3OuKvU5yAt_kz",
@@ -3422,8 +3367,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5082680318230528",
     "frequency": 104.5,
     "address": "Darchula Nepal",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "kRyl4jPz_pf3vLEkcl1TZ",
@@ -3520,8 +3464,7 @@
     "streamUrl": "http://216.55.141.189:8737",
     "frequency": 91.3,
     "address": "Kapilvastu",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "gbiM5rpygFxSCBOH7LDGW",
@@ -3588,8 +3531,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5186611748798464",
     "frequency": 105.2,
     "address": "Dhankuta Nepal",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "OVogGbbgXL6zGjAMIA3BH",
@@ -3631,16 +3573,14 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/620",
     "frequency": 106.6,
     "address": "जनकपुरधाम - ७ जिरोमाईल",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "t919z0nxhqn771sW5t0oY",
     "name": "Sarobar Radio Network",
     "streamUrl": "http://streaming.hamropatro.com:8859",
     "frequency": null,
-    "address": null,
-    "disabled": true
+    "address": null
   },
   {
     "id": "-DCS1kD6XZbi3G0-F89Mz",
@@ -3674,8 +3614,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5075718478233600",
     "frequency": 89.0,
     "address": "Tulashipur Deputy Metropolitan Municipality 7 jhumare Dang",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "K1BOlF07KRhYK0oh_MOOo",
@@ -3692,8 +3631,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8871",
     "frequency": 102.7,
     "address": "Marin Gaupalika -1 Sindhuli Nepali",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "Nc7ofOFYf48C8kjT7sLup",
@@ -3727,8 +3665,7 @@
     "streamUrl": "https://streaming.softnep.net:10969/;stream.nsv&type=mp3&volume=70%22",
     "frequency": 104.8,
     "address": "Siddhicharan Nagarpalika 11 Panityanki, Kamere dada, Okhaldhunga",
-    "province": 1,
-    "disabled": true
+    "province": 1
   },
   {
     "id": "82xKtbkh_M6xKces1iCuZ",
@@ -3770,8 +3707,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8331",
     "frequency": 94.3,
     "address": "Baijanath 7 Banke Nepal",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "mL3B81Bo_4ZiXLe02x31S",
@@ -3779,8 +3715,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5177331062669312",
     "frequency": 95.1,
     "address": "Suddhodhan Gaupalika - 4, Pharshatikar, Rupandehi",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "V-VYoSKhj2Eqgl97r-nrV",
@@ -3788,8 +3723,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5177825520779264",
     "frequency": 106.5,
     "address": "सूदुरपश्चिम प्रदेश डाेटी जिल्ला पुर्विचाैकी गाउँपालिक वडा नं ४ सानागाउँ डाेटी",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "-8f747C82L_0iIA3o1dAG",
@@ -3814,8 +3748,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5129816242126848",
     "frequency": 92.0,
     "address": "गोदावरी न पा २ अत्तरिया कैलाली ",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "OaJ5da8rpi6ppi_xXVC1h",
@@ -3881,8 +3814,7 @@
     "streamUrl": "http://streaming.hamropatro.com:8557",
     "frequency": 91.1,
     "address": "Malangawa -09 - Sarlahi Nepal",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "aqqrR1KeifsoDglFyYcoP",
@@ -3949,8 +3881,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5100736360742912",
     "frequency": 88.8,
     "address": "Runtigadi 6 Holeri, Rolpa",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "caxHLTxLTujT4aimcT4it",
@@ -4044,8 +3975,7 @@
     "streamUrl": "https://live.itech.host:1605/stream",
     "frequency": 101.1,
     "address": "Barahathawa -5,Sarlahi",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "MmZqkU9kmVc80YBOL4ogD",
@@ -4062,8 +3992,7 @@
     "streamUrl": "https://live.itech.host:9035/stream",
     "frequency": 105.0,
     "address": "Belauri - 06, Campus Road, Kanchanpur, Nepal",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "gVy68mvHm84EPMQxKsyUr",
@@ -4079,8 +4008,7 @@
     "streamUrl": "https://live.itech.host:8639/stream",
     "frequency": 95.0,
     "address": "Amargadhi - 5, BIddhut Road, Dadeldhura",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "BSXvhBV8k3NxESzRg9qpr",
@@ -4122,8 +4050,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/6219820993347584",
     "frequency": 89.3,
     "address": "Janakpur-14, Madhesh Province",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "REvHgu6KrhR6oCgrt0R6k",
@@ -4163,8 +4090,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5145621453340672",
     "frequency": 90.0,
     "address": "Gajuri -1 Gajuribazar Dhadhing",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "BJIVlBx77OHSlycJjU8fy",
@@ -4404,8 +4330,7 @@
     "streamUrl": "http://streaming.softnep.net:8267",
     "frequency": 103.7,
     "address": " Sukhad, Kailali,",
-    "province": 7,
-    "disabled": true
+    "province": 7
   },
   {
     "id": "J4xDqltsgqyd6wrcWq3HQ",
@@ -4557,8 +4482,7 @@
     "streamUrl": "https://live.itech.host:3830/stream",
     "frequency": 90.2,
     "address": " Birendranagar - Surkhet",
-    "province": 6,
-    "disabled": true
+    "province": 6
   },
   {
     "id": "8UdOMoA2eudMk2zvahs6_",
@@ -4566,8 +4490,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/123",
     "frequency": null,
     "address": "24 Hours Nonstop Music Chitwan,Nepal",
-    "province": 3,
-    "disabled": true
+    "province": 3
   },
   {
     "id": "O9uokjtG0Jyhsr8lNBgL5",
@@ -4767,8 +4690,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/5198917836734464",
     "frequency": 91.3,
     "address": "Mithila Municipality -06,Dhalkebar,Dhanusha Nepal",
-    "province": 2,
-    "disabled": true
+    "province": 2
   },
   {
     "id": "mBAG2xO64BuHLt0gL9Kb2",
@@ -4851,8 +4773,7 @@
     "streamUrl": "https://www.hamropatro.com/api/radio/stream/518",
     "frequency": 100.5,
     "address": "Liwang-6, Rolpa",
-    "province": 5,
-    "disabled": true
+    "province": 5
   },
   {
     "id": "TYFWMXhoznA7MEK1zCAMN",
